@@ -42,8 +42,12 @@ public class Logger{
     logPurpose = "";
     lineCount = 1;
     timeStamp = timeStampLoadL();
-    out = new PrintWriter(loc+name+".txt");
-    out.println("^^Log init:"+timeStamp+">>");
+    try{
+      out = new PrintWriter(loc+name+"-"+timeStamp+".txt");
+      out.println("^^Log init:"+timeStamp+">>");
+    }catch(IOException e){
+      out = null;
+    }
     timeStamp = timeStampLoad();
   }
   
@@ -53,15 +57,19 @@ public class Logger{
   *@param l The file location
   *@param p The purpose of the log file
   */
-  public Logger(String n,String l,String p) throws IOException{
+  public Logger(String n,String l,String p){
     name = n;
     loc = l;
     logPurpose = p;
     lineCount = 1;
     timeStamp = timeStampLoadL();
-    out = new PrintWriter(loc+name+".txt");
-    out.println(name+"\n"+logPurpose+"\n");
-    out.println("^^Log init:"+timeStamp+">>");
+    try{
+      out = new PrintWriter(loc+name+"-"+timeStamp+".txt");
+      out.println(name+"\n"+logPurpose+"\n");
+      out.println("^^Log init:"+timeStamp+">>");
+    }catch(IOException e){
+      out = null;
+    }
     timeStamp = timeStampLoad();
   }
   
