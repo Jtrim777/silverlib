@@ -7,11 +7,25 @@ import java.io.*;
 import silverlib.log.*;
 import java.util.*;
 
+/**
+<h1>Simplified Image Class</h1>
+A class that stores an image as a collection of <code>Color</code> objects, and provides
+methods for examining, editing, dividing, and saving that image.
+*/
 public class Img{
   private Color[] pixels;
   private int height;
   private int width;
   
+  /**
+  Initializes an <code>Img</code> object uploaded from an image file at the given location. 
+  <code>nm</code> must be a valid file location that points to a .png, .jpg, or .jpeg
+  file.
+  
+  @param nm The absolute file location of the desired image
+  @throws   IOException
+  @since    1.3
+  */
   public Img(String nm) throws IOException{
     File f = new File(nm);
     BufferedImage rawImg = ImageIO.read(f);
@@ -30,26 +44,70 @@ public class Img{
     }
   }
   
+  /**
+  Initializes an <code>Img</code> object given an array of <code>Color</code> objects
+  and the width of the image.The length of <code>pix</code> must be a multiple of <code>w</code>.
+  
+  @param pix The array of <code>Color</code> objects that defines the pixels in the image.
+  @param w   The width of the image, in pixels
+  @since    1.3.1
+  */
   public Img(Color[] pix,int w){
     height = pix.length/w;
     width = pix.length/height;
     pixels = pix;
   }
   
+  /**
+  @return The width of the image, in pixels.
+  @since 1.3
+  */
   public int width(){return width;}
+  
+  /**
+  @return The height of the image, in pixels.
+  @since 1.3
+  */
   public int height(){return height;}
+  
+  /**
+  @return The array of <code>Color</code> objects that form the pixels of the image.
+  @since 1.3
+  */
   public Color[] pixels(){return pixels;}
   
+  /**
+  Sets the pixel at <code>(x,y)</code> to the <code>Color</code> n.
+  
+  @param x The x-coordinate of the pixel to change
+  @param y The y-coordinate of the pixel to change
+  @param n The <code>Color</code> to change the pixel to
+  @since 1.3
+  */
   public void set(int x, int y, Color n){
     int i = x + (y*width);
     pixels[i] = n;
   }
   
+  /**
+  @param x The x-coordinate of the pixel to query
+  @param y The y-coordinate of the pixel to query
+  @return The <code>Color</code> of the pixel at <code>(x,y)</code>.
+  @since 1.3
+  */
   public Color get(int x, int y){
     int i = x + (y*width);
     return pixels[i];
   }
   
+  /**
+  Saves the <code>Img</code> object to a png file with file path <code>nm</code>.
+  <code>nm</code> must be a valid absolute file path without a file extension.
+  Prints "Failed to save Image" to the console if the IO operation fails.
+  
+  @param nm The absolute file-path without extension to save the PNG at
+  @since 1.3.1
+  */
   public void save(String nm){
     BufferedImage out = new BufferedImage(width, height,BufferedImage.TYPE_INT_RGB);
     
@@ -72,7 +130,18 @@ public class Img{
     }
     
   }
-
+  
+  /**
+  Generates an <code>Img</code> object representing a section of this object, between 
+  the corners defined by their pixel coordinates.
+  
+  @param x1 The x-coordinate of the upper-left corner
+  @param y1 The y-coordinate of the upper-left corner
+  @param x2 The x-coordinate of the lower-right corner
+  @param y2 The y-coordinate of the lower-right corner
+  @return The subimage
+  @since 1.3.2
+  */
   public Img subimage(int x1, int y1, int x2, int y2){
     int w = x2-x1;
     int h = y2-y1;
