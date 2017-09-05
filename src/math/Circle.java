@@ -19,7 +19,7 @@ public class Circle {
     
     for(int i=yMin;i<yMax;i++){
       for(int j=xMin;j<xMax;j++){
-        if(Num.square(i)+Num.square(j) == Num.square(r)){
+        if(Num.within(Num.square(i)+Num.square(j),Num.square(r),2)){
           Point p = new Point(j,i);
           pts.add(p);
         }

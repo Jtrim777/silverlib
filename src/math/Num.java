@@ -34,4 +34,8 @@ public class Num{
   public static int GCD(int a, int b) { return b==0 ? a : GCD(b, a%b); }
   
   public static int square(int base){return base*base;}
+  
+  public static boolean within(int base,int target,int tol){
+    return Math.abs(target-base) <= tol;
+  }
 }
