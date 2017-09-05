@@ -10,17 +10,17 @@ public class Circle {
     center = c;
     radius = r;
     
-    xMin = c.x()-r-1;
-    xMax = c.x()+r+1;
-    yMin = c.y()-r-1;
-    yMax = c.y()+r+1;
+    int xMin = c.x()-r-1;
+    int xMax = c.x()+r+1;
+    int yMin = c.y()-r-1;
+    int yMax = c.y()+r+1;
     
     pts = new ArrayList<Point>();
     
     for(int i=yMin;i<yMax;i++){
       for(int j=xMin;j<xMax;j++){
         if(Num.square(i)+Num.square(j) == Num.square(r)){
-          p = new Point(j,i);
+          Point p = new Point(j,i);
           pts.add(p);
         }
       }
