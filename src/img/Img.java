@@ -5,6 +5,7 @@ import javax.imageio.*;
 import java.awt.Color;
 import java.io.*;
 import silverlib.log.*;
+import silverlib.math.*;
 import java.util.*;
 
 /**
@@ -87,6 +88,24 @@ public class Img{
   public void set(int x, int y, Color n){
     int i = x + (y*width);
     pixels[i] = n;
+  }
+  
+  /**
+  Sets the pixel at <code>Point</code> p to the <code>Color</code> n.
+  
+  @param p The Point of the pixel to change
+  @param n The <code>Color</code> to change the pixel to
+  @since 1.3
+  */
+  
+  public void drawPoint(Point p,Color n){
+    set(p.x(),p.y(),n);
+  }
+  
+  public void drawCirc(Circle c,Color n){
+    for(Point p:c.pts()){
+      set(p.x(),p.y(),n);
+    }
   }
   
   /**
