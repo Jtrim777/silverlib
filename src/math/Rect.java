@@ -1,3 +1,5 @@
+package silverlib.math;
+
 public class Rect{
   private Line[] lines;
   private Point loc;

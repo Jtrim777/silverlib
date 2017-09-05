@@ -1,3 +1,5 @@
+package silverlib.math;
+
 public class Point{
   int x;
   int y;

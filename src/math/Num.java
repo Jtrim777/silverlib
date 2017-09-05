@@ -1,3 +1,5 @@
+package silverlib.math;
+
 public class Num{
   public static float random(float floor,float cel){
     return ((cel-floor)*(float)Math.random())+floor;
