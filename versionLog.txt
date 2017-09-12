@@ -17,7 +17,11 @@
 1.5 - geo & geo.Shape
   1.5.1 - geo.Line;geo.Rect;geo.Circle
   1.5.2 - geo.Dot
+<<<<<<< HEAD
   
 1.6 - io
   1.6.1 - io.IO
   1.6.2 - geo.Fillable;fix Line init;fix empty Img init;drawFill for Rect & Circle
+=======
+  1.5.3 - geo.Fillable;fix Line init;fix empty Img init;drawFill for Rect & Circle
+>>>>>>> 31cef6f48dbc4cdb3183cb09fcec1c6d52994401
