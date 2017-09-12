@@ -2,11 +2,16 @@ package silverlib.geo;
 
 import java.util.ArrayList;
 import silverlib.math.*;
+import silverlib.img.*;
+import java.awt.Color;
 
 /** <h1>Circle Class </h1>
 Contains a list of points that define the edges of a circle*/
-public class Circle extends Shape{
+public class Circle extends Shape implements Fillable{
   private int radius;
+  private int tol;
+  private Color fill;
+  //private int lineWidth;
   
   /** Initializes a <code>Circle</code> object from a <code>Point</code> and a radius.
   
@@ -17,6 +22,8 @@ public class Circle extends Shape{
   public Circle(Point c,int r){
     super(c);
     radius = r;
+    //lineWidth = 2;
+    tol = (int)((double)r/1.09);
     
     int xMin = c.x()-r-2;
     int xMax = c.x()+r+2;
@@ -25,12 +32,14 @@ public class Circle extends Shape{
     
     for(int i=yMin;i<yMax;i++){
       for(int j=xMin;j<xMax;j++){
-        if(Num.within(Num.square(i-c.y())+Num.square(j-c.x()),Num.square(r),20)){
+        if(Num.within(Num.square(i-c.y())+Num.square(j-c.x()),Num.square(r),tol)){
           Point p = new Point(j,i);
-          pts().add(p);
+          pts.add(p);
         }
       }
     }
+    
+    fill = CLEAR;
   }
   
   /**@return A <code>String</code> representation of the <code>Circle</code> object, in 
@@ -40,7 +49,7 @@ public class Circle extends Shape{
   public String toString(){
     String out = "{";
     
-    for(Point i:pts()){
+    for(Point i:pts){
       out += i.toString() + ", "; 
     }
     
@@ -53,4 +62,37 @@ public class Circle extends Shape{
   /**@return The radius of the Circle
   @since 1.5.1*/
   public int radius(){return radius;}
+  
+  public Color fill(){return fill;}
+  
+  public void setFill(Color c){
+    fill = c;
+  }
+  
+  @Override
+  public void draw(Img im){
+    if(fill.equals(CLEAR)){
+      super.draw(im);
+    }else{
+      drawFill(im);
+    }
+  }
+  
+  public void drawFill(Img im){
+    int xMin = loc.x()-radius-2;
+    int xMax = loc.x()+radius+2;
+    int yMin = loc.y()-radius-2;
+    int yMax = loc.y()+radius+2;
+    
+    for(int i=yMin;i<yMax;i++){
+      for(int j=xMin;j<xMax;j++){
+        if((Num.square(i-loc.y())+Num.square(j-loc.x())) < Num.square(radius)){
+          Point d = new Point(j,i);
+          im.drawPoint(d,fill);
+        }
+      }
+    }
+    
+    super.draw(im);
+  }
 }

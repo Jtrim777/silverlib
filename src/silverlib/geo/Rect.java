@@ -1,13 +1,17 @@
 package silverlib.geo;
 
 import silverlib.math.*;
+import silverlib.log.*;
+import java.awt.Color;
+import silverlib.img.*;
 
 /** <h1>Rectangle class</h1>
  Contains a series of 4 <code>Line</code>s*/
-public class Rect extends Shape{
+public class Rect extends Shape implements Fillable{
   private Line[] lines;
   private int width;
   private int height;
+  private Color fill;
   
   /** Initializes a <code>Rect</code> object from an x and y coordinate, and the width
   and height of the <code>Shape</code>.
@@ -20,6 +24,7 @@ public class Rect extends Shape{
   */
   public Rect(int x,int y,int w,int h){
     super(x,y);
+    fill = CLEAR;
     width=w;
     height=h;
     
@@ -37,14 +42,14 @@ public class Rect extends Shape{
     Point p2 = new Point(x+(w-1),y+(h-1));
     Point p3 = new Point(x,y+(h-1));
     
-    lines[0] = new Line(loc(),p1);
+    lines[0] = new Line(loc,p1);
     lines[1] = new Line(p3,p2);
-    lines[2] = new Line(loc(),p3);
+    lines[2] = new Line(loc,p3);
     lines[3] = new Line(p1,p2);
     
     for(Line line:lines){
-      for(Point pt:line.pts()){
-        pts().add(pt);
+      for(Point pt:line.pts){
+        pts.add(pt);
       }
     }
   }
@@ -58,6 +63,7 @@ public class Rect extends Shape{
   */
   public Rect(int x,int y,int s){
     super(x,y);
+    fill = CLEAR;
     width=s;
     height=s;
     
@@ -67,14 +73,14 @@ public class Rect extends Shape{
     Point p2 = new Point(x+(s-1),y+(s-1));
     Point p3 = new Point(x,y+(s-1));
     
-    lines[0] = new Line(loc(),p1);
+    lines[0] = new Line(loc,p1);
     lines[1] = new Line(p3,p2);
-    lines[2] = new Line(loc(),p3);
+    lines[2] = new Line(loc,p3);
     lines[3] = new Line(p1,p2);
     
     for(Line line:lines){
-      for(Point pt:line.pts()){
-        pts().add(pt);
+      for(Point pt:line.pts){
+        pts.add(pt);
       }
     }
   }
@@ -89,6 +95,7 @@ public class Rect extends Shape{
   */
   public Rect(Point p,int w,int h){
     super(p);
+    fill = CLEAR;
     width=w;
     height=h;
     
@@ -98,14 +105,14 @@ public class Rect extends Shape{
     Point p2 = new Point(p.x()+(w-1),p.y()+(h-1));
     Point p3 = new Point(p.x(),p.y()+(h-1));
     
-    lines[0] = new Line(loc(),p1);
+    lines[0] = new Line(loc,p1);
     lines[1] = new Line(p3,p2);
-    lines[2] = new Line(loc(),p3);
+    lines[2] = new Line(loc,p3);
     lines[3] = new Line(p1,p2);
     
     for(Line line:lines){
-      for(Point pt:line.pts()){
-        pts().add(pt);
+      for(Point pt:line.pts){
+        pts.add(pt);
       }
     }
   }
@@ -118,6 +125,7 @@ public class Rect extends Shape{
   */
   public Rect(Point p,int s){
     super(p);
+    fill = CLEAR;
     width=s;
     height=s;
     
@@ -127,14 +135,19 @@ public class Rect extends Shape{
     Point p2 = new Point(p.x()+(s-1),p.y()+(s-1));
     Point p3 = new Point(p.x(),p.y()+(s-1));
     
-    lines[0] = new Line(loc(),p1);
+    //Log.print("Line 1:");
+    lines[0] = new Line(loc,p1);
+    //Log.print("Line 2:");
     lines[1] = new Line(p3,p2);
-    lines[2] = new Line(loc(),p3);
+    //Log.print("Line 3:");
+    lines[2] = new Line(loc,p3);
+    //Log.print("Line 4:");
     lines[3] = new Line(p1,p2);
     
     for(Line line:lines){
-      for(Point pt:line.pts()){
-        pts().add(pt);
+      //Log.print(line.toString());
+      for(Point pt:line.pts){
+        pts.add(pt);
       }
     }
   }
@@ -151,6 +164,33 @@ public class Rect extends Shape{
   @since 1.5.1
   */
   public int height(){return height;}
+  public Color fill(){return fill;}
+  
+  @Override
+  public void draw(Img im){
+    if(fill.equals(CLEAR)){
+      super.draw(im);
+      Log.print("Drawing border");
+    }else{
+      drawFill(im);
+      Log.print("Drawing shape");
+    }
+  }
+  
+  public void drawFill(Img im){
+    for(int i=loc.y();i<height+loc.y();i++){
+      for(int j=loc.x();j<width+loc.x();j++){
+        Point d = new Point(j,i);
+        im.drawPoint(d,fill);
+      }
+    }
+    
+    super.draw(im);
+  }
+  
+  public void setFill(Color c){
+    fill = c;
+  }
   
   /**@return A <code>String</code> representation of the <code>Rect</code> object, in 
   the form <code>{[(x,y),(x2,y2),...],[(x,y),(x2,y2),...],...}</code>

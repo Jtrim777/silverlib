@@ -74,11 +74,19 @@ public class Img{
     pixels = new Color[width*height];
     
     for(int i=0;i<h;i++){
-      for(int j=0;j<w;i++){
+      for(int j=0;j<w;j++){
         int p = j + (i*width);
-        pixels[p] = Color.BLACK;
+        if(p<(width*height)){
+          try{
+            pixels[p] = Color.BLACK;
+          }catch(ArrayIndexOutOfBoundsException e){
+            Err.log("P:"+p+"I:"+i+"J:"+j);
+          }
+        }
       }
     }
+    
+    Log.print("Initialized");
   }
   
   /**

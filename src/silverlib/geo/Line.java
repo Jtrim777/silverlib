@@ -2,6 +2,7 @@ package silverlib.geo;
 
 import java.util.ArrayList;
 import silverlib.math.*;
+import silverlib.log.*;
 
 /** <h1>A class to represent a series of <code>Point</code>s between two endpoints</h1>
 */
@@ -19,6 +20,8 @@ public class Line extends Shape{
     Point p1;
     Point p2;
     
+    
+    
     if(a.x()<=b.x()){
       p1=a;
       p2=b;
@@ -26,6 +29,9 @@ public class Line extends Shape{
       p1=b;
       p2=a;
     }
+    
+    // Log.print("From: "+p1.toString());
+    // Log.print("To: "+p2.toString());
     
     pts().add(p1);
     
@@ -37,7 +43,11 @@ public class Line extends Shape{
     int rise = slope.num();
     int run = slope.den();
     
-    while(xT<p2.x() && yT<p2.y()){
+    if(rise==0){run = Math.abs(p1.x()-p2.x());}
+    if(run==0){rise = Math.abs(p1.y()-p2.y());}
+    
+    do{
+      Log.print("Doing");
       for(int i=0;i<Math.abs(rise);i++){
         if(rise<0){
           yT--;
@@ -49,6 +59,7 @@ public class Line extends Shape{
       }
       
       for(int i=0;i<Math.abs(run);i++){
+        //Log.print("Adding "+run +" times");
         if(run<0){
           xT--;
         }else{
@@ -57,7 +68,7 @@ public class Line extends Shape{
         
         pts().add(new Point(xT,yT));
       }
-    }
+    }while(xT<p2.x() && yT<p2.y());
   }
   
   /**@return The start <code>Point</code> of the <code>Line</code>
