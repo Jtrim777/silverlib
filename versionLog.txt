@@ -1,23 +1,25 @@
 1.1 - log.Log
   1.1.3 - log.Err
-  
+
 1.2 - log.Log.printToFile();log.Logger
 
-1.3 - img.Img & img 
+1.3 - img.Img & img
   1.3.1 - Constructor #2 & save func for img.Img
   1.3.2 - subimage func for img.Img
-  
-1.4 - math + math.Num 
+
+1.4 - math + math.Num
   1.4.1 - math.Line
     1.4.1.1 - math.Fraction
   1.4.2 - math.Rect & math.Circle
     1.4.2.1 - Adjustments to math.Circle
   1.4.3 - drawPoint func for img.Img
-  
+
 1.5 - geo & geo.Shape
   1.5.1 - geo.Line;geo.Rect;geo.Circle
   1.5.2 - geo.Dot
-  
+
 1.6 - io
   1.6.1 - io.IO
   1.6.2 - geo.Fillable;fix Line init;fix empty Img init;drawFill for Rect & Circle
+  1.6.3 - io.IO.getPath:readFile:readLines
+    1.6.3.1 - io.IO.readFile:readLines throws IOException
