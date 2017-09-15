@@ -44,4 +44,23 @@ public class IO {
 			return contents.split("\n");
 
   }
+  
+  public static String runScript(File script,String... args) throws IOException{
+    String[] command = new String[args.length + 1];
+    
+    command[0] = script.getAbsolutePath();
+    
+    for(int i=1;i<command.length;i++){
+      command[i] = args[i-1];
+    }
+    
+    Process process = Runtime.getRuntime().exec(command);
+    BufferedReader reader = new BufferedReader(new InputStreamReader(
+        process.getInputStream()));
+    String s;
+    while ((s = reader.readLine()) != null) {
+      return s;
+    }
+    return null;
+  }
 }
