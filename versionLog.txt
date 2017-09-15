@@ -23,3 +23,4 @@
   1.6.2 - geo.Fillable;fix Line init;fix empty Img init;drawFill for Rect & Circle
   1.6.3 - io.IO.getPath:readFile:readLines
     1.6.3.1 - io.IO.readFile:readLines throws IOException
+    1.6.3.2 - io.IO.readFile:readLines take String

@@ -17,7 +17,7 @@ public class IO {
     return null;
   }
 
-  public static String readFile(File f) throws IOException{
+  public static String readFile(String f) throws IOException{
 
 			FileInputStream in = new FileInputStream(f);
 			String contents = "";
@@ -31,7 +31,7 @@ public class IO {
 
   }
 
-  public static String[] readLines(File f) throws IOException{
+  public static String[] readLines(String f) throws IOException{
 
 			FileInputStream in = new FileInputStream(f);
 			String contents = "";
