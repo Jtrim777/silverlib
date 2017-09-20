@@ -25,8 +25,7 @@ public class Img{
   file.
   
   @param nm The absolute file location of the desired image
-  @throws   IOException
-  @since    1.3
+  @since 1.3
   */
   public Img(String nm) throws IOException{
     File f = new File(nm);

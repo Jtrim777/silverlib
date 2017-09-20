@@ -25,4 +25,3 @@
     1.6.3.1 - io.IO.readFile:readLines throws IOException
     1.6.3.2 - io.IO.readFile:readLines take String
   1.6.4 - io.IO.runScript
-  1.6.5 - Commit rules

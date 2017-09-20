@@ -48,7 +48,7 @@ public class Log {
   Indicates that a line nuber has been passed in the code of some object. Useful for debugging.
   
   @param o The object in which the instruction occured
-  @param msg The line number
+  @param ln The line number
   @since 1.1.1
   */
   public static void mark(Object o, int ln) {

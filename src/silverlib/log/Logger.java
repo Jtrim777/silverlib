@@ -36,7 +36,6 @@ public class Logger{
   *@param n The name of the log file
   *@param l The file location
   @since 1.2
-  @throws IOException
   */
   public Logger(String n,String l) throws IOException{
     name = n;
