@@ -29,7 +29,7 @@
         description="generate the jar file" >
     <!-- Create the distribution directory -->
 
-    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+    <!-- Put everything in ${build} into the silverlib.jar file -->
     <jar jarfile="./lib/silverlib.jar" basedir="${build}"/>
   </target>
 
