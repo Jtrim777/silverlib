@@ -21,16 +21,23 @@
   </target>
 
   <!-- Generate javadocs for current project into ${doc.dir} -->
-  <target name="doc" depends="compile" description="generate documentation">
+  <target name="docgen" depends="compile" description="generate documentation">
     <javadoc sourcepath="${src}" destdir="${doc}"/>
   </target>
 
-  <target name="dist" depends="doc"
+  <target name="dist" depends="docgen"
         description="generate the jar file" >
     <!-- Create the distribution directory -->
 
     <!-- Put everything in ${build} into the silverlib.jar file -->
     <jar jarfile="./lib/silverlib.jar" basedir="${build}"/>
+  </target>
+  
+  <target name="clean"
+        description="clean up">
+    <!-- Delete the ${build}  directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${doc}"/>
   </target>
 
 </project>

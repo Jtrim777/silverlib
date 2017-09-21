@@ -2,6 +2,8 @@
 
 cd ~/Stuff/Creations/Programming/silverlib
 
-ant
+ant -S
 
 cp -r doc/* ../silverlibDoc/
+
+ant -S clean
