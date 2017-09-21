@@ -89,6 +89,37 @@ public class Img{
   }
   
   /**
+  Initializes an empty <code>Img</code> object with a given width, height, and 
+  background color.
+  
+  @param w   The width of the image, in pixels
+  @param h   The height of the image, in pixels
+  @param c   The <code>Color</code> of the blank <code>Img</code>
+  @since    1.7
+  */
+  public Img(int w,int h,Color c){
+    height = h;
+    width = w;
+    
+    pixels = new Color[width*height];
+    
+    for(int i=0;i<h;i++){
+      for(int j=0;j<w;j++){
+        int p = j + (i*width);
+        if(p<(width*height)){
+          try{
+            pixels[p] = c;
+          }catch(ArrayIndexOutOfBoundsException e){
+            Err.log("P:"+p+"I:"+i+"J:"+j);
+          }
+        }
+      }
+    }
+    
+    Log.print("Initialized");
+  }
+  
+  /**
   @return The width of the image, in pixels.
   @since 1.3
   */

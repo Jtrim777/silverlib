@@ -8,9 +8,10 @@ import java.awt.Color;
 /** <h1>Abstract class to represent a 2D shape</h1>
 */
 public abstract class Shape{
-  private ArrayList<Point> pts;
-  private Point loc;
-  private Color col;
+  protected ArrayList<Point> pts;
+  protected Point loc;
+  protected Color col;
+  protected HashMap<String,Integer> properties;
   
   /** Initializes a <code>Shape</code> object from a <code>Point</code> and a
   <code>Color</code>. Used as a <code>super()</code> constructor in all subclasses.
@@ -23,6 +24,7 @@ public abstract class Shape{
     loc = l;
     col = c;
     pts = new ArrayList<Point>();
+    properties = new HashMap<String,Integer>();
   }
   
   /** Initializes a <code>Shape</code> object from a <code>Point</code>. Initializes <code>col</code> as <code>Color.BLACK</code>.
@@ -35,6 +37,7 @@ public abstract class Shape{
     loc = l;
     col = Color.BLACK;
     pts = new ArrayList<Point>();
+    properties = new HashMap<String,Integer>();
   }
   
   /** Initializes a <code>Shape</code> object from x and y coordinates and a
@@ -49,6 +52,7 @@ public abstract class Shape{
     loc = new Point(x,y);
     col = c;
     pts = new ArrayList<Point>();
+    properties = new HashMap<String,Integer>();
   }
   
   /** Initializes a <code>Shape</code> object from from x and y coordinates. 
@@ -63,6 +67,7 @@ public abstract class Shape{
     loc = new Point(x,y);
     col = Color.BLACK;
     pts = new ArrayList<Point>();
+    properties = new HashMap<String,Integer>();
   }
   
   /**
@@ -108,6 +113,18 @@ public abstract class Shape{
   public void setColor(Color c){
     col = c;
   }
+  
+  /**Accesses the value of property <code>n</code>
+  @param n The key of the value to be acessed
+  @return The value at <code>properties.get(n)</code>
+  @since 1.7
+  */
+  public int getProp(String n){
+    return properties.get(n);
+  }
+  // public void setProp(String n,int v){
+  //   
+  // }
   
   /** Method for all subclasses to implement so they return a <code>String</code> representation 
   of the <code>Shape</code>'s <code>Point</code>s.
