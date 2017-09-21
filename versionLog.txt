@@ -28,3 +28,4 @@
 1.7 - Scene&Movie
     1.7.0.1 - geo.Shape.setProp()
   1.7.1 - setProp() overrides in Shape subclasses,remake() for Shape subclasses,Shape subclasses get properties
+  1.7.2 - img.Scene.next()&.getImg()&init()2
