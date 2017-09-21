@@ -23,4 +23,11 @@ public class Dot extends Shape{
   public String toString(){
     return "("+loc().x()+","+loc().y()+")";
   }
+  
+  public void setProp(String n,int v){
+    super.setProp(n,v);
+    
+    pts.clear();
+    pts.add(loc);
+  }
 }

@@ -25,9 +25,15 @@ public abstract class Shape{
     col = c;
     pts = new ArrayList<Point>();
     properties = new HashMap<String,Integer>();
+    properties.put("x",loc.x);
+    properties.put("y",loc.y);
+    properties.put("red",c.getRed());
+    properties.put("green",c.getGreen());
+    properties.put("blue",c.getBlue());
   }
   
-  /** Initializes a <code>Shape</code> object from a <code>Point</code>. Initializes <code>col</code> as <code>Color.BLACK</code>.
+  /** 
+  Initializes a <code>Shape</code> object from a <code>Point</code>. Initializes <code>col</code> as <code>Color.BLACK</code>.
    Used as a <code>super()</code> constructor in all subclasses.
   
   @param l The location of the shape in a 2D coordinate plane.
@@ -38,9 +44,15 @@ public abstract class Shape{
     col = Color.BLACK;
     pts = new ArrayList<Point>();
     properties = new HashMap<String,Integer>();
+    properties.put("x",loc.x);
+    properties.put("y",loc.y);
+    properties.put("red",0);
+    properties.put("green",0);
+    properties.put("blue",0);
   }
   
-  /** Initializes a <code>Shape</code> object from x and y coordinates and a
+  /** 
+  Initializes a <code>Shape</code> object from x and y coordinates and a
   <code>Color</code>. Used as a <code>super()</code> constructor in all subclasses.
   
   @param x The x coordinate of the shape in a 2D coordinate plane.
@@ -53,6 +65,11 @@ public abstract class Shape{
     col = c;
     pts = new ArrayList<Point>();
     properties = new HashMap<String,Integer>();
+    properties.put("x",loc.x);
+    properties.put("y",loc.y);
+    properties.put("red",c.getRed());
+    properties.put("green",c.getGreen());
+    properties.put("blue",c.getBlue());
   }
   
   /** Initializes a <code>Shape</code> object from from x and y coordinates. 
@@ -68,6 +85,11 @@ public abstract class Shape{
     col = Color.BLACK;
     pts = new ArrayList<Point>();
     properties = new HashMap<String,Integer>();
+    properties.put("x",loc.x);
+    properties.put("y",loc.y);
+    properties.put("red",0);
+    properties.put("green",0);
+    properties.put("blue",0);
   }
   
   /**
@@ -112,6 +134,9 @@ public abstract class Shape{
   */
   public void setColor(Color c){
     col = c;
+    setProp("red", c.getRed());
+    setProp("green", c.getGreen());
+    setProp("blue", c.getBlue());
   }
   
   /**Accesses the value of property <code>n</code>
@@ -122,9 +147,18 @@ public abstract class Shape{
   public int getProp(String n){
     return properties.get(n);
   }
-  // public void setProp(String n,int v){
-  //   
-  // }
+  
+  /**Modifies the property with key <code>n</code> of this <code>Shape</code> object.
+  @param n The key of the property to modify
+  @param v The value to set the property to
+  @since 1.7.0.1
+  */
+  public void setProp(String n,int v){
+    properties.put(n,v);
+    loc.x = getProp("x");
+    loc.y = getProp("y");
+    col = new Color(getProp("red"),getProp("green"),getProp("blue"));
+  }
   
   /** Method for all subclasses to implement so they return a <code>String</code> representation 
   of the <code>Shape</code>'s <code>Point</code>s.

@@ -28,6 +28,12 @@ public class Rect extends Shape implements Fillable{
     width=w;
     height=h;
     
+    properties.put("width",width);
+    properties.put("height",height);
+    properties.put("fillR",fill.getRed());
+    properties.put("fillG",fill.getGreen());
+    properties.put("fillB",fill.getBlue());
+    
     lines = new Line[4];
     
     /*
@@ -67,6 +73,12 @@ public class Rect extends Shape implements Fillable{
     width=s;
     height=s;
     
+    properties.put("width",width);
+    properties.put("height",height);
+    properties.put("fillR",fill.getRed());
+    properties.put("fillG",fill.getGreen());
+    properties.put("fillB",fill.getBlue());
+        
     lines = new Line[4];
     
     Point p1 = new Point(x+(s-1),y);
@@ -99,6 +111,12 @@ public class Rect extends Shape implements Fillable{
     width=w;
     height=h;
     
+    properties.put("width",width);
+    properties.put("height",height);
+    properties.put("fillR",fill.getRed());
+    properties.put("fillG",fill.getGreen());
+    properties.put("fillB",fill.getBlue());
+    
     lines = new Line[4];
     
     Point p1 = new Point(p.x()+(w-1),p.y());
@@ -128,6 +146,12 @@ public class Rect extends Shape implements Fillable{
     fill = CLEAR;
     width=s;
     height=s;
+    
+    properties.put("width",width);
+    properties.put("height",height);
+    properties.put("fillR",fill.getRed());
+    properties.put("fillG",fill.getGreen());
+    properties.put("fillB",fill.getBlue());
     
     lines = new Line[4];
     
@@ -164,8 +188,59 @@ public class Rect extends Shape implements Fillable{
   @since 1.5.1
   */
   public int height(){return height;}
+  /**@return The fill <code>Color</code> of this rectangle
+  @since 1.6.2
+  */
   public Color fill(){return fill;}
   
+  /**Sets a property and updates class fields, also redraws the rectangle if 
+  necessary.
+  @param n The key of the property to modify
+  @param v The value to set the property to
+  @since 1.7.1
+  */
+  @Override
+  public void setProp(String n,int v){
+    super.setProp(n,v);
+    
+    if(n.equals("width") || n.equals("height")){
+      width = getProp("width");
+      height = getProp("height");
+      remake();
+    }else if(n.equals("x")||n.equals("y")){
+      remake();
+    }else if(n.equals("fillR") || n.equals("fillG") || n.equals("fillB")){
+      fill = new Color(getProp("fillR"),getProp("fillG"),getProp("fillB"));
+    }
+  }
+  
+  /** Redraws the rectangle
+  @since 1.7.1
+  */
+  public void remake(){
+    lines = new Line[4];
+    
+    Point p1 = new Point(loc.x()+(width-1),loc.y());
+    Point p2 = new Point(loc.x()+(width-1),loc.y()+(height-1));
+    Point p3 = new Point(loc.x(),loc.y()+(height-1));
+    
+    lines[0] = new Line(loc,p1);
+    lines[1] = new Line(p3,p2);
+    lines[2] = new Line(loc,p3);
+    lines[3] = new Line(p1,p2);
+    
+    for(Line line:lines){
+      for(Point pt:line.pts){
+        pts.add(pt);
+      }
+    }
+  }
+  
+  /**Draws the rectangle into an <code>Img</code> object, filling it with color
+  if the fill color has been set
+  @param im The <code>Img</code> to draw to
+  @since 1.6.2
+  */
   @Override
   public void draw(Img im){
     if(fill.equals(CLEAR)){
@@ -177,6 +252,10 @@ public class Rect extends Shape implements Fillable{
     }
   }
   
+  /**Draws the rectangle into an <code>Img</code> object, filling it with color
+  @param im The <code>Img</code> object to draw to
+  @since 1.6.2
+  */
   public void drawFill(Img im){
     for(int i=loc.y();i<height+loc.y();i++){
       for(int j=loc.x();j<width+loc.x();j++){
@@ -188,6 +267,10 @@ public class Rect extends Shape implements Fillable{
     super.draw(im);
   }
   
+  /**Sets the fill Color
+  @param c The <code>Color</code> to setFill
+  @since 1.6.2
+  */
   public void setFill(Color c){
     fill = c;
   }

@@ -17,10 +17,11 @@ public class Line extends Shape{
   public Line(Point a, Point b){
     super(a);
     
+    properties.put("x2",b.x);
+    properties.put("y2",b.y);
+    
     Point p1;
     Point p2;
-    
-    
     
     if(a.x()<=b.x()){
       p1=a;
@@ -29,9 +30,6 @@ public class Line extends Shape{
       p1=b;
       p2=a;
     }
-    
-    // Log.print("From: "+p1.toString());
-    // Log.print("To: "+p2.toString());
     
     pts().add(p1);
     
@@ -47,7 +45,6 @@ public class Line extends Shape{
     if(run==0){rise = Math.abs(p1.y()-p2.y());}
     
     do{
-      Log.print("Doing");
       for(int i=0;i<Math.abs(rise);i++){
         if(rise<0){
           yT--;
@@ -71,20 +68,84 @@ public class Line extends Shape{
     }while(xT<p2.x() && yT<p2.y());
   }
   
-  /**@return The start <code>Point</code> of the <code>Line</code>
+  @Override
+  public void setProp(String n,int v){
+    super.setProp(n,v);
+    
+    if(n.equals("x") || n.equals("y") || n.equals("x2") || n.equals("y2")){
+      Point e = new Point(getProp("x2"),getProp("y2"));
+      remake(loc,e);
+    }
+  }
+  
+  public void remake(Point a, Point b){
+    pts.clear();
+    
+    Point p1;
+    Point p2;
+    
+    if(a.x()<=b.x()){
+      p1=a;
+      p2=b;
+    }else{
+      p1=b;
+      p2=a;
+    }
+    
+    pts().add(p1);
+    
+    Fraction slope = new Fraction((p1.y()-p2.y()),(p1.x()-p2.x()));
+    slope.simplify();
+    
+    int xT = p1.x();
+    int yT = p1.y();
+    int rise = slope.num();
+    int run = slope.den();
+    
+    if(rise==0){run = Math.abs(p1.x()-p2.x());}
+    if(run==0){rise = Math.abs(p1.y()-p2.y());}
+    
+    do{
+      for(int i=0;i<Math.abs(rise);i++){
+        if(rise<0){
+          yT--;
+        }else{
+          yT++;
+        }
+        
+        pts().add(new Point(xT,yT));
+      }
+      
+      for(int i=0;i<Math.abs(run);i++){
+        //Log.print("Adding "+run +" times");
+        if(run<0){
+          xT--;
+        }else{
+          xT++;
+        }
+        
+        pts().add(new Point(xT,yT));
+      }
+    }while(xT<p2.x() && yT<p2.y());
+  }
+  
+  /**
+  @return The start <code>Point</code> of the <code>Line</code>
   @since 1.5.1
   */
   public Point start(){
     return pts().get(0);
   }
-  /**@return The end <code>Point</code> of the <code>Line</code>
+  /**
+  @return The end <code>Point</code> of the <code>Line</code>
   @since 1.5.1
   */
   public Point end(){
     return pts().get(pts().size()-1);
   }
   
-  /**@return A <code>String</code> representation of the <code>Line</code> object, in 
+  /**
+  @return A <code>String</code> representation of the <code>Line</code> object, in 
   the form <code>[(x,y),(x2,y2),...]</code>
   @since 1.5.1
   */
