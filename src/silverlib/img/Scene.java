@@ -58,7 +58,7 @@ public class Scene extends Img{
       int[] vals = new int[modParts.length];
 
       for(int i=0;i<modParts.length;i++){
-        String pp = modParts[i].split(",");
+        String[] pp = modParts[i].split(",");
         props[i] = pp[0];
         vals[i] = Integer.parseInt(pp[1]);
       }
