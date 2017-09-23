@@ -24,7 +24,7 @@ public class Dot extends Shape{
     return "("+loc().x()+","+loc().y()+")";
   }
   
-  public void setProp(String n,int v){
+  public void setProp(String n,int v) throws NoSuchPropertyException{
     super.setProp(n,v);
     
     pts.clear();

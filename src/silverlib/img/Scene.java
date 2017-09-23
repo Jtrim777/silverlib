@@ -43,34 +43,50 @@ public class Scene extends Img{
 
     layers = l;
   }
+  
+  /**
+    @param l The shapes that exist in this new scene
+    @return A new <code>Scene</code> given a new set of <code>Shape</code>s
+    @since 1.7.4
+  */
+  public Scene next(ArrayList<Shape> l){
+    layers = l;
+    return this;
+  }
 
-  public Scene next(String mods){
+  /**Gives a new <code>Scene</code> given a description of the changes that occur
+  between this <code<Scene</code> and the next
+  @param mods A description of the changes that occur between this <code<Scene</code> and the next
+  @return A new scene given <code>mods</code>
+  @since 1.7.4
+  */
+  public Scene next(String mods) throws NoSuchPropertyException{
     if(mods==null){return this;}
     else{
       String[] parts = mods.split(":");
-      String[] toEditS = parts[0].split(",");
-      int[] toEdit = new int[toEditS.length];
-      for(int i=0;i<toEdit.length;i++){
-        toEdit[i] = Integer.parseInt(toEditS[i]);
+      
+      String[] toEdit = parts[0].split(",");
+      String[] chngs = parts[1].split("`");
+      
+      ShapeMod[] tMods = new ShapeMod[toEdit.length];
+      for (Integer i = 0; i < toEdit.length; i++) {
+        tMods[i] = new ShapeMod(toEdit[i],chngs[i]);
       }
-      String[] modParts = parts[1].split("/");
-      String[] props = new String[modParts.length];
-      int[] vals = new int[modParts.length];
-
-      for(int i=0;i<modParts.length;i++){
-        String[] pp = modParts[i].split(",");
-        props[i] = pp[0];
-        vals[i] = Integer.parseInt(pp[1]);
-      }
-
-      for(int i=0;i<toEdit.length;i++){
-        layers.get(toEdit[i]).setProp(props[i],vals[i]);
+      
+      for(ShapeMod s:tMods){
+        for (Integer i = 0; i < s.props.length; i++) {
+          layers.get(s.shapeInd).setProp(s.props[i],s.vals[i]);
+        }
       }
 
       return this;
     }
   }
 
+  /**
+    @return This <code>Scene</code> as an <code>Img</code>
+    @since 1.7.3
+  */
   public Img getImg(){
     for(Shape s:layers){
       s.draw(this);

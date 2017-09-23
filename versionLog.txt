@@ -30,3 +30,6 @@
   1.7.1 - setProp() overrides in Shape subclasses,remake() for Shape subclasses,Shape subclasses get properties
   1.7.2 - img.Scene.next()&.getImg()&Scene()2
   1.7.3 - img.Movie.Movie()&init()
+  1.7.4 - img.ShapeMod&NoSuchShapeException;
+    img.Movie.addShape:moveShape:moveShapeTo:changeShapeColor:editShape:commitChanges;
+    img.Scene.next2;geo.NoSuchPropertyException;geo.Shape.props()

@@ -69,7 +69,7 @@ public class Line extends Shape{
   }
   
   @Override
-  public void setProp(String n,int v){
+  public void setProp(String n,int v) throws NoSuchPropertyException{
     super.setProp(n,v);
     
     if(n.equals("x") || n.equals("y") || n.equals("x2") || n.equals("y2")){

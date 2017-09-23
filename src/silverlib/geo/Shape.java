@@ -132,7 +132,7 @@ public abstract class Shape{
   @param c The <code>Color</code> to set to
   @since 1.5
   */
-  public void setColor(Color c){
+  public void setColor(Color c) throws NoSuchPropertyException{
     col = c;
     setProp("red", c.getRed());
     setProp("green", c.getGreen());
@@ -143,8 +143,11 @@ public abstract class Shape{
   @param n The key of the value to be acessed
   @return The value at <code>properties.get(n)</code>
   @since 1.7
+  @throws NoSuchPropertyException If <code>n</code> is not a valid property for this <code>Shape</code>
   */
-  public int getProp(String n){
+  public int getProp(String n) throws NoSuchPropertyException{
+    if(! properties.keySet().contains(n)){throw new NoSuchPropertyException(n);}
+    
     return properties.get(n);
   }
   
@@ -152,12 +155,22 @@ public abstract class Shape{
   @param n The key of the property to modify
   @param v The value to set the property to
   @since 1.7.0.1
+  @throws NoSuchPropertyException If <code>n</code> is not a valid property for this <code>Shape</code>
   */
-  public void setProp(String n,int v){
+  public void setProp(String n,int v) throws NoSuchPropertyException{
+    if(! properties.keySet().contains(n)){throw new NoSuchPropertyException(n);}
     properties.put(n,v);
     loc.x = getProp("x");
     loc.y = getProp("y");
     col = new Color(getProp("red"),getProp("green"),getProp("blue"));
+  }
+  
+  /**
+    @return A <code>Set<String></code> of all of the keys in <code>properties</code>
+    @since 1.7.4
+  */
+  public Set<String> props(){
+    return properties.keySet();
   }
   
   /** Method for all subclasses to implement so they return a <code>String</code> representation 

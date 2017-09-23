@@ -87,7 +87,7 @@ public class Circle extends Shape implements Fillable{
   @since 1.7.1
   */
   @Override
-  public void setProp(String n,int v){
+  public void setProp(String n,int v) throws NoSuchPropertyException{
     super.setProp(n,v);
     
     if(n.equals("radius") || n.equals("x") || n.equals("y")){
