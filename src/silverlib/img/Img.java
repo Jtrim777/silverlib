@@ -230,4 +230,18 @@ public class Img{
     
     return new Img(convPix,w);
   }
+
+  /**Draws and array of <code>Pixel</code>s onto the <code>Img</code>
+    @param in The array of <code>Pixel</code>s
+    @since 1.7.5
+  */
+  public void drawPixels(Pixel[] in){
+    for(Pixel p:in){
+      try{
+        drawPoint(p.loc(), p.col());
+      }catch(ArrayIndexOutOfBoundsException e){
+        Err.log("Invalid Point:\n\tx: "+p.loc().x()+"\n\ty: "+p.loc().y());
+      }
+    }
+  }
 }

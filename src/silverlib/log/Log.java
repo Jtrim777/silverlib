@@ -1,6 +1,7 @@
 package silverlib.log;
 
 import java.io.*;
+import silverlib.math.Num;
 
 public class Log {
   /**
@@ -53,6 +54,20 @@ public class Log {
   */
   public static void mark(Object o, int ln) {
     System.out.println("<<<Passed marker on line "+ln+" in class "+o.toString()+">>>");
+  }
+  
+  /**Calculates a random number between 1 and 100 and logs a message if the value is
+  greater than an inputted chance 
+  @param msg The message to println
+  @param chance The chance of printing, a value between 1-100
+  @since 1.7.5
+  */
+  public static void maybeLog(String msg,int chance){
+    int rand = Num.random(100);
+    
+    if(rand<=chance){
+      log(msg);
+    }
   }
 
   /**
