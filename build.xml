@@ -1,4 +1,4 @@
-<project name="Silver Library" default="dist" basedir=".">
+<project name="Silver Library" default="lib" basedir=".">
     <description>
         Build file for silverlib
     </description>
@@ -6,6 +6,7 @@
   <property name="src" location="src"/>
   <property name="build" location="build"/>
   <property name="doc" location="doc"/>
+  <property name="dist" location="dist"/>
 
   <target name="init">
     <!-- Create the time stamp -->
@@ -25,19 +26,20 @@
     <javadoc sourcepath="${src}" destdir="${doc}"/>
   </target>
 
-  <target name="dist" depends="docgen"
+  <target name="lib" depends="docgen"
         description="generate the jar file" >
     <!-- Create the distribution directory -->
 
     <!-- Put everything in ${build} into the silverlib.jar file -->
     <jar jarfile="./lib/silverlib.jar" basedir="${build}"/>
   </target>
-  
+
   <target name="clean"
         description="clean up">
     <!-- Delete the ${build}  directory trees -->
     <delete dir="${build}"/>
     <delete dir="${doc}"/>
+    <delete dir="${dist}"/>
   </target>
 
 </project>
