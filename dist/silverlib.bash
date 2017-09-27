@@ -64,13 +64,13 @@ if [[ $THE_OS == 'Darwin' ]]; then
   if [ $INSTALLED == false ] && [ $# == 0 ]; then
     install
     cd ..
-    rm -f $loc
+    rmdir -f $loc
   elif [ $INSTALLED == true ] && [ $# == 0 ]; then
     update
   elif [[ $1 == '-i' ]]; then
     install
     cd ..
-    rm -f $loc
+    rmdir -f $loc
   elif [[ $1 == '-u' ]]; then
     update
   elif [[ $1 == '-v' ]]; then
