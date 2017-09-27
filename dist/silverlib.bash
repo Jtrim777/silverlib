@@ -4,12 +4,7 @@ loc="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 INSTALLED=false
 
 cd $loc
-ILIST=$(cat info.txt)
-OIFS=$IFS
-IFS=';' read -r -a INFO <<< "$ILIST"
-IFS=$OIFS
-VERSION="${INFO[0]}"
-VERSION_INFO="${INFO[1]}"
+VERSION="UNKNOWN VERSION"
 
 if [[ $loc -ef ~/Library/silverlib ]]; then
   INSTALLED=true
@@ -52,11 +47,13 @@ function install {
   git config core.sparseCheckout true
   echo "dist/silverlib.jar" >> .git/info/sparse-checkout
   echo "dist/info.txt" >> .git/info/sparse-checkout
+  VERSION=`git describe --tags | cut -d '-' -f1`
 }
 
 function update {
   cd ~/Library/silverlib
   git pull origin master
+  VERSION=`git describe --tags | cut -d '-' -f1`
 }
 
 if [[ $THE_OS == 'Darwin' ]]; then
@@ -69,16 +66,12 @@ if [[ $THE_OS == 'Darwin' ]]; then
   elif [[ $1 == '-u' ]]; then
     update
   elif [[ $1 == '-v' ]]; then
-    echo -e "$VERSION"
-  elif [[ $1 == '-V' ]]; then
     echo -e "Silverlib Java Library\n Copyright 2017 Jake Trimble" 
-    echo -e "Version $VERSION"
-    echo -e "$VERSION_INFO"
+    echo -e "$VERSION"
   elif [[ $1 == '-h' ]]; then
     echo "-i to install library"
     echo "-u to update library"
     echo "-v to get library version"
-    echo "-V to get version info on this library"
     echo ""
     echo -e "Go to silordoflight.github.io/silverlib for Java Documentation on the classes\nin this library"
   fi
