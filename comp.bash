@@ -58,11 +58,6 @@ function zipIt {
   zip -r ../silverlibDoc/Silverlib.zip dist
 }
 
-function versionUpdate {
-  echo "Modifying version number and info..."
-  echo -e "$1;$2" > "dist/info.txt"
-}
-
 
 if [[ $# == 0 ]]; then
   main
@@ -75,13 +70,10 @@ elif [[ $1 == "-p" ]]; then
   pushIt "$2"
 elif [[ $1 == "-z" ]]; then
   zipIt
-elif [[ $1 == "-v" ]]; then
-  versionUpdate "$2" "$3"
 elif [[ $1 == "-h" ]]; then
   echo -e "No args: Build library, copy javadocs to silverlibDoc, create dowload zip,\nremove extra directories, push silverlibDoc"
   echo -e "-b: Only build the library"
   echo -e "-d: Push silverlibDoc"
   echo -e "-p: Push the Library source"
   echo -e "-z: Create a zipped dist"
-  echo -e "-v: Update the version, where  arg 1 is version number and arg 2 is version info"
 fi
