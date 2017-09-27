@@ -40,7 +40,7 @@ function install {
       # echo -e "export SILVERLIB_VERSION='$VERSION'" >> .bash_profile
     fi
   fi
-  
+
   cd ~/Library/silverlib
   git init
   git remote add -f origin https://gitlab.com/SiLordOfLight/silverlib.git
@@ -50,10 +50,10 @@ function install {
 
 function update {
   cd ~/Library/silverlib
-  
+
   git pull origin master --tags
   VERSION=`git describe --tags | cut -d '-' -f1`
-  
+
   git config core.sparseCheckout true
   echo "dist/silverlib.jar" >> .git/info/sparse-checkout
   echo "dist/info.txt" >> .git/info/sparse-checkout
@@ -74,7 +74,7 @@ if [[ $THE_OS == 'Darwin' ]]; then
   elif [[ $1 == '-u' ]]; then
     update
   elif [[ $1 == '-v' ]]; then
-    echo -e "Silverlib Java Library\n Copyright 2017 Jake Trimble" 
+    echo -e "Silverlib Java Library\n Copyright 2017 Jake Trimble"
     echo -e "$VERSION"
   elif [[ $1 == '--uninstall' ]]; then
     rm -rf ~/Library/silverlib

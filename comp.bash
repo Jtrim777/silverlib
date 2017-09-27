@@ -8,19 +8,19 @@ function main {
   #Build
   echo "Building Library..."
   ant -S
-  
+
   #Move javadocs to silverlibDoc
   echo "Migrating JavaDocs..."
   cp -r doc/* ../silverlibDoc/
-  
+
   #Copy jar to dist
   echo "Moving Jar..."
   cp lib/silverlib.jar dist/
-  
+
   #Zip dist and move it to silverlibDoc
   echo "Creating distribution file..."
   zip -r ../silverlibDoc/Silverlib.zip dist
-  
+
   #Remove doc&build
   echo "Cleaning directories..."
   ant -S clean
@@ -30,7 +30,7 @@ function buildOnly {
   #Build
   echo "Building Library..."
   ant -S
-  
+
   #Remove doc,build,and dist
   echo "Cleaning directories..."
   ant -S clean
@@ -38,7 +38,7 @@ function buildOnly {
 
 function pushDoc {
   cd ../silverlibDoc
-  
+
   echo "Pushing JavaDocs..."
   git add .
   git commit -m "$DATE UPDATE"
@@ -55,7 +55,8 @@ function pushIt {
 function zipIt {
   #Zip dist and move it to silverlibDoc
   echo "Creating distribution file..."
-  zip -r ../silverlibDoc/Silverlib.zip dist
+  zip -r Silverlib.zip dist
+  # zip -r ../silverlibDoc/Silverlib.zip dist
 }
 
 
