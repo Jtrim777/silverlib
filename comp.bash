@@ -68,6 +68,10 @@ elif [[ $1 == "-d" ]]; then
   pushDoc
 elif [[ $1 == "-p" ]]; then
   pushIt "$2"
+elif [[ $1 == "-mp" ]]; then
+  main
+  pushDoc
+  pushIt "$2"
 elif [[ $1 == "-z" ]]; then
   zipIt
 elif [[ $1 == "-h" ]]; then
@@ -76,4 +80,5 @@ elif [[ $1 == "-h" ]]; then
   echo -e "-d: Push silverlibDoc"
   echo -e "-p: Push the Library source"
   echo -e "-z: Create a zipped dist"
+  echo -e "-mp: Same as no args but also push source"
 fi

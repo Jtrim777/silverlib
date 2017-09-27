@@ -44,14 +44,14 @@ function install {
   cd ~/Library/silverlib
   git init
   git remote add -f origin https://gitlab.com/SiLordOfLight/silverlib.git
-  git pull --tags
+  git pull origin master --tags
   VERSION=`git describe --tags | cut -d '-' -f1`
 }
 
 function update {
   cd ~/Library/silverlib
   
-  git pull --tags
+  git pull origin master --tags
   VERSION=`git describe --tags | cut -d '-' -f1`
   
   git config core.sparseCheckout true
@@ -64,13 +64,13 @@ if [[ $THE_OS == 'Darwin' ]]; then
   if [ $INSTALLED == false ] && [ $# == 0 ]; then
     install
     cd ..
-    rmdir -f $loc
+    rm -rf $loc
   elif [ $INSTALLED == true ] && [ $# == 0 ]; then
     update
   elif [[ $1 == '-i' ]]; then
     install
     cd ..
-    rmdir -f $loc
+    rm -rf $loc
   elif [[ $1 == '-u' ]]; then
     update
   elif [[ $1 == '-v' ]]; then
