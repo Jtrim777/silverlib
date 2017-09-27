@@ -44,18 +44,20 @@ function install {
   cd ~/Library/silverlib
   git init
   git remote add -f origin https://gitlab.com/SiLordOfLight/silverlib.git
-  git config core.sparseCheckout true
-  echo "dist/silverlib.jar" >> .git/info/sparse-checkout
-  echo "dist/info.txt" >> .git/info/sparse-checkout
-  git pull origin --tags
+  git pull --tags
   VERSION=`git describe --tags | cut -d '-' -f1`
 }
 
 function update {
   cd ~/Library/silverlib
-  git pull origin master
-  git pull origin --tags
+  
+  git pull --tags
   VERSION=`git describe --tags | cut -d '-' -f1`
+  
+  git config core.sparseCheckout true
+  echo "dist/silverlib.jar" >> .git/info/sparse-checkout
+  echo "dist/info.txt" >> .git/info/sparse-checkout
+  git pull origin master
 }
 
 if [[ $THE_OS == 'Darwin' ]]; then
