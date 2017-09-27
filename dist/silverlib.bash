@@ -77,7 +77,7 @@ if [[ $THE_OS == 'Darwin' ]]; then
     echo -e "Silverlib Java Library\n Copyright 2017 Jake Trimble" 
     echo -e "$VERSION"
   elif [[ $1 == '--uninstall' ]]; then
-    rm -f ~/Library/silverlib
+    rm -rf ~/Library/silverlib
   elif [[ $1 == '-h' ]]; then
     echo "-i to install library"
     echo "-u to update library"
