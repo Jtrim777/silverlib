@@ -39,7 +39,6 @@
     <!-- Delete the ${build}  directory trees -->
     <delete dir="${build}"/>
     <delete dir="${doc}"/>
-    <delete dir="${dist}"/>
   </target>
 
 </project>
