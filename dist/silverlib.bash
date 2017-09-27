@@ -47,27 +47,35 @@ function install {
   git config core.sparseCheckout true
   echo "dist/silverlib.jar" >> .git/info/sparse-checkout
   echo "dist/info.txt" >> .git/info/sparse-checkout
+  git pull origin --tags
   VERSION=`git describe --tags | cut -d '-' -f1`
 }
 
 function update {
   cd ~/Library/silverlib
   git pull origin master
+  git pull origin --tags
   VERSION=`git describe --tags | cut -d '-' -f1`
 }
 
 if [[ $THE_OS == 'Darwin' ]]; then
   if [ $INSTALLED == false ] && [ $# == 0 ]; then
     install
+    cd ..
+    rm -f $loc
   elif [ $INSTALLED == true ] && [ $# == 0 ]; then
     update
   elif [[ $1 == '-i' ]]; then
     install
+    cd ..
+    rm -f $loc
   elif [[ $1 == '-u' ]]; then
     update
   elif [[ $1 == '-v' ]]; then
     echo -e "Silverlib Java Library\n Copyright 2017 Jake Trimble" 
     echo -e "$VERSION"
+  elif [[ $1 == '--uninstall' ]]; then
+    rm -f ~/Library/silverlib
   elif [[ $1 == '-h' ]]; then
     echo "-i to install library"
     echo "-u to update library"
