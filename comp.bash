@@ -48,7 +48,7 @@ function pushDoc {
 function pushIt {
   echo "Pushing source with commit message $1..."
   git add .
-  git commit -m $1
+  git commit -m "$1"
   git push -u origin master
 }
 
@@ -72,7 +72,7 @@ elif [[ $1 == "-b" ]]; then
 elif [[ $1 == "-d" ]]; then
   pushDoc
 elif [[ $1 == "-p" ]]; then
-  pushIt $2
+  pushIt "$2"
 elif [[ $1 == "-z" ]]; then
   zipIt
 elif [[ $1 == "-v" ]]; then
