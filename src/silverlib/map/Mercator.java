@@ -8,12 +8,20 @@ import silverlib.log.*;
 import java.io.*;
 import java.awt.Color;
 
+/** Creator of Mercator Projections
+  @since 1.8
+  @author Jake Trimble
+*/
 public class Mercator{
+  /** Creates a Mercator Projection
+    @param in The source <code>Img</code>
+    @param cent The pole to center the Projection on
+    @return A Mercator Projection of <code>in</code>
+    @throws IOException If errors occur in the <code>Img</code> editing
+    @since 1.8
+  */
   public static Img map(Img in,Point cent) throws IOException{
     int longDim = in.width();
-    if(in.height()>longDim){
-      longDim = in.height();
-    }
 
     int endWidth = (int)Math.rint(Math.PI * 2 * longDim);
 
@@ -41,9 +49,9 @@ public class Mercator{
       int xF = (int)(ratio * (double)endWidth);
 
       if(Quadrant.match(run,rise) == Quadrant.I){
-        xF += 3220;
+        xF += endWidth/2;
       }else if(Quadrant.match(run,rise) == Quadrant.II){
-        xF += 3220;
+        xF += endWidth/2;
       }
 
       outPix[i] = new Pixel(xF,yF,pix[i]);
