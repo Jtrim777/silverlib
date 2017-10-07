@@ -36,3 +36,4 @@
   1.7.5 - + img.Pixel;+ img.Img.drawPixels();+ log.Log.maybeLog();+ math.Quadrant
 1.8 - map
   1.8.0 - map.Mercator;map.Mercator.map()
+    1.8.0.1 - map.Mercator.relocate()

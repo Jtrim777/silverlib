@@ -63,4 +63,32 @@ public class Mercator{
 
     return out;
   }
+  
+  public static int[] relocate(int x,int y,Point cent,int w){
+    int endWidth = (int)Math.rint(Math.PI * 2 * w);
+    
+    int rise = y-cent.y();
+    int run = x-cent.x();
+
+    int yF = (int)Math.rint(Math.sqrt(Num.square(rise) + Num.square(run)));
+
+    double tan = (double)run/(double)rise;
+    double angle = Math.toDegrees(Math.atan(tan));
+    if(angle < 0){
+      angle = angle + 360;
+    }
+    double ratio = angle/360;
+
+    int xF = (int)(ratio * (double)endWidth);
+
+    if(Quadrant.match(run,rise) == Quadrant.I){
+      xF += endWidth/2;
+    }else if(Quadrant.match(run,rise) == Quadrant.II){
+      xF += endWidth/2;
+    }
+    
+    int[] ret = new int[]{xF,yF};
+    
+    return ret;
+  }
 }
