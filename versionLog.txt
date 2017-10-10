@@ -37,3 +37,4 @@
 1.8 - map
   1.8.0 - map.Mercator;map.Mercator.map()
     1.8.0.1 - map.Mercator.relocate()
+  1.8.1 - New Mercator formula

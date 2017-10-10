@@ -90,6 +90,9 @@ public class Num{
   @since 1.4.1.1
   */
   public static int square(int base){return base*base;}
+  public static double square(double base){return base*base;}
+  public static long square(long base){return base*base;}
+  public static float square(float base){return base*base;}
   
   /** Decides whether two numbers are within a tolerable range of each other
   @param base The lower numbers
