@@ -18,6 +18,23 @@ public class Point{
     y=b;
   }
   
+  /** Initializes a <code>Point</code> from a <code>String</code> in the format
+      <code>(x,y)</code>
+      @param s A <code>String</code> representation of the <code>Point</code> in the form <code>(x,y)</code>
+      @since 1.8.2
+      @throws ImproperFormatException If <code>s</code> does not match <code>(x,y)</code>
+  */
+  public Point(String s) throws ImproperFormatException{
+    if(s.matches("^[(]\\d+[,]\\d+[)]")){
+      String in = s.substring(1,s.length()-1);
+      String[] pts = in.split(",");
+      x = Integer.parseInt(pts[0]);
+      y = Integer.parseInt(pts[1]);
+    }else{
+      throw new ImproperFormatException(s);
+    }
+  }
+  
   /** Returns the x-coordinate of the <code>Point</code>
   @return <code>x</code>
   @since 1.4

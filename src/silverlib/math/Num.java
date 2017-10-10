@@ -84,14 +84,29 @@ public class Num{
   */
   public static int GCD(int a, int b) { return b==0 ? a : GCD(b, a%b); }
   
-  /**Squares a numbers
+  /**Squares a number
   @param base The number to Squares
   @return <code>base</code> squared
   @since 1.4.1.1
   */
   public static int square(int base){return base*base;}
+  /**Squares a number
+  @param base The number to Squares
+  @return <code>base</code> squared
+  @since 1.4.1.1
+  */
   public static double square(double base){return base*base;}
+  /**Squares a number
+  @param base The number to Squares
+  @return <code>base</code> squared
+  @since 1.4.1.1
+  */
   public static long square(long base){return base*base;}
+  /**Squares a number
+  @param base The number to Squares
+  @return <code>base</code> squared
+  @since 1.4.1.1
+  */
   public static float square(float base){return base*base;}
   
   /** Decides whether two numbers are within a tolerable range of each other

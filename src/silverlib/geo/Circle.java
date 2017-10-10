@@ -23,6 +23,9 @@ public class Circle extends Shape implements Fillable{
     super(c);
     radius = r;
     //lineWidth = 2;
+    
+    fill = CLEAR;
+    
     tol = (int)((double)r/1.09);
     
     properties.put("radius",r);
@@ -44,7 +47,7 @@ public class Circle extends Shape implements Fillable{
       }
     }
     
-    fill = CLEAR;
+    
   }
   
   /**@return A <code>String</code> representation of the <code>Circle</code> object, in 

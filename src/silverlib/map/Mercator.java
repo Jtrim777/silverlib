@@ -75,6 +75,14 @@ public class Mercator{
     return out;
   }
   
+  /** Adjusts points from Cartesian to Mercator
+      @param x x-coodinate of point to adjust
+      @param y y-coodinate of point to adjust
+      @param cent <code>Point</code> that represents the center or pole of the Mercator Projection
+      @param w The width of the orginal Cartesian map
+      @return An array where <code>[0]</code> is the x-coordinate and <code>[1]</code> is the y-coodinate
+      @since 1.8.0.1
+  */
   public static double[] relocate(int x,int y,Point cent,int w){
     double xc = (double)cent.x();
     double yc = (double)cent.y();

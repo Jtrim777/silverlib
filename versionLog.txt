@@ -37,4 +37,5 @@
 1.8 - map
   1.8.0 - map.Mercator;map.Mercator.map()
     1.8.0.1 - map.Mercator.relocate()
-  1.8.1 - New Mercator formula
+  1.8.1 - New Mercator formula; + math.num.square(float/double/long)
+  1.8.2 - + geo.ImproperFormatException; + geo.Point.Point(String); small fixes in geo.Circle
