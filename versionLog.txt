@@ -25,6 +25,7 @@
     1.6.3.1 - io.IO.readFile:readLines throws IOException
     1.6.3.2 - io.IO.readFile:readLines take String
   1.6.4 - io.IO.runScript
+
 1.7 - img.Scene&Movie
     1.7.0.1 - geo.Shape.setProp()
   1.7.1 - setProp() overrides in Shape subclasses,remake() for Shape subclasses,Shape subclasses get properties
@@ -34,8 +35,12 @@
     img.Movie.addShape:moveShape:moveShapeTo:changeShapeColor:editShape:commitChanges;
     img.Scene.next2;geo.NoSuchPropertyException;geo.Shape.props()
   1.7.5 - + img.Pixel;+ img.Img.drawPixels();+ log.Log.maybeLog();+ math.Quadrant
+
 1.8 - map
   1.8.0 - map.Mercator;map.Mercator.map()
     1.8.0.1 - map.Mercator.relocate()
   1.8.1 - New Mercator formula; + math.num.square(float/double/long)
   1.8.2 - + geo.ImproperFormatException; + geo.Point.Point(String); small fixes in geo.Circle
+  
+1.9 - Algorithims
+  1.9.0 - sci;sci.Physics;math.Geo;math.Vector;geo.PinPoint
