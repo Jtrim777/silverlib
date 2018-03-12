@@ -10,7 +10,11 @@ import java.util.regex.Pattern;
  * @since 1.9.1
  */
 public class LinearFunc extends Function {
-
+    /**
+     * The Regular Expression to match for creating a function from a <code>String</code>
+     * {@value "y=(\\d*)x([\\+-])?(\\d*)"}
+     */
+    public static final String LINEAR_REGEXP = "y=(\\d*)x([\\+-])?(\\d*)";
 
     /**
      * Initializes a <code>LinearFunc</code> given numerical values
@@ -28,7 +32,7 @@ public class LinearFunc extends Function {
     /**
      * Creates a <code>LinearFunc</code> from a textual representation
      *
-     * @param f The function as text conforming to RegExp "y=(\\d*)x([\\+-])?(\\d*)"
+     * @param f The function as text conforming to RegExp LINEAR_REGEXP
      *
      * @return An initialized <code>LinearFunc</code>
      *
@@ -36,11 +40,11 @@ public class LinearFunc extends Function {
      * @since 1.9.1
      */
     public static LinearFunc parseFunction(String f) throws FunctionFormatException {
-        if (!f.matches("y=(\\d*)x([\\+-])?(\\d*)")) {
+        if (!f.matches(LINEAR_REGEXP)) {
             throw new FunctionFormatException(f, "y=mx+b");
         }
 
-        Pattern linearFunctionPattern = Pattern.compile("y=(\\d*)x([\\+-])?(\\d*)");
+        Pattern linearFunctionPattern = Pattern.compile(LINEAR_REGEXP);
         Matcher matcher = linearFunctionPattern.matcher(f);
 
         double m = Double.parseDouble(matcher.group(1));
@@ -84,7 +88,7 @@ public class LinearFunc extends Function {
         char signY = yTrans > 0 ? '+' : '-';
         String transY = Double.toString(Math.abs(yTrans));
 
-        return String.format("y=%s(x%s%s%s)%s", slope, signX, transX, signY, transY);
+        return String.format("y = %s(x %s %s) %s %s", slope, signX, transX, signY, transY);
     }
 
 
