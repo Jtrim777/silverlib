@@ -42,5 +42,7 @@
   1.8.1 - New Mercator formula; + math.num.square(float/double/long)
   1.8.2 - + geo.ImproperFormatException; + geo.Point.Point(String); small fixes in geo.Circle
   
-1.9 - Algorithims
-  1.9.0 - sci;sci.Physics;math.Geo;math.Vector;geo.PinPoint
+1.9 - Algorithms
+  1.9.0 - sci; sci.Physics; math.Geo; math.Vector; geo.PinPoint
+  1.9.1 - math.graph; math.graph.Function; math.graph.LinearFunc; math.graph.FunctionFormatException;
+    math.graph.GraphType; math.Quadrant -> math.graph.Quadrant; math.Vector -> math.graph.Vector
