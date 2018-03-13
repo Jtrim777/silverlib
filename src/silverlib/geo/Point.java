@@ -66,6 +66,29 @@ public class Point {
         return y;
     }
 
+    /**
+     * Converts <code>Point</code> to a <code>PolarPoint</code> with polar coordinates
+     * @return <code>PolarPoint</code> with polar coordinates
+     *
+     * @since 1.9.1.3
+     */
+    public PolarPoint toPolar(){
+        double r = Math.sqrt((x*x)+(y*y));
+
+        float t = (float) Math.atan(y/x);
+
+        return new PolarPoint(r,t);
+    }
+
+    /**
+     * Adjusts point from (0,0) to new origin
+     * @param p The input point
+     * @param o The new origin
+     * @param sourceType Whether the y axis increases down or up
+     * @return The adjusted <code>Point</code>
+     *
+     * @since 1.9.1
+     */
     public static Point adjustForOrigin(Point p, Point o, GraphType sourceType) {
         int xDiff = p.x - o.x;
 
@@ -78,6 +101,16 @@ public class Point {
         return new Point(xDiff, yDiff);
     }
 
+    /**
+     * Adjusts point from (0,0) to new origin
+     * @param xP The x component of the input point
+     * @param yP The x component of the input point
+     * @param o The new origin
+     * @param sourceType Whether the y axis increases down or up
+     * @return The adjusted <code>Point</code>
+     *
+     * @since 1.9.1
+     */
     public static Point adjustForOrigin(int xP, int yP, Point o, GraphType sourceType) {
         int xDiff = xP - o.x;
 

@@ -4,28 +4,28 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * A representation of a linear function in a 2D coordinate plane
+ * A representation of a polar function in a 2D polar coordinate plane
  *
  * @author Jake Trimble
- * @since 1.9.1
+ * @since 1.9.1.3
  */
-public class LinearFunc extends Function {
+public class PolarFunction extends Function {
     /**
      * The Regular Expression to match for creating a function from a <code>String</code>
      * {@value "y=(\\d*)x([\\+-])?(\\d*)"}
      */
-    public static final String LINEAR_REGEXP = "y=(\\d*)x([\\+-])?(\\d*)";
+    public static final String POLAR_REGEXP = "y=(\\d*)x([\\+-])?(\\d*)";
 
     /**
-     * Initializes a <code>LinearFunc</code> given numerical values
+     * Initializes a <code>PolarFunc</code> given numerical values
      *
      * @param m The slope of the linear function
      * @param h The horizontal translation of the linear function
      * @param b The y-intercept of the linear function
      *
-     * @since 1.9.1
+     * @since 1.9.1.3
      */
-    public LinearFunc(double m, double h, double b) {
+    public PolarFunction(double m, double h, double b) {
         super(m, h, b);
     }
 
@@ -37,14 +37,14 @@ public class LinearFunc extends Function {
      * @return An initialized <code>LinearFunc</code>
      *
      * @throws FunctionFormatException If <code>f</code> does not match the proper RegExp
-     * @since 1.9.1
+     * @since 1.9.1.3
      */
-    public static LinearFunc parseFunction(String f) throws FunctionFormatException {
-        if (!f.matches(LINEAR_REGEXP)) {
+    public static PolarFunction parseFunction(String f) throws FunctionFormatException {
+        if (!f.matches(POLAR_REGEXP)) {
             throw new FunctionFormatException(f, "y=mx+b");
         }
 
-        Pattern linearFunctionPattern = Pattern.compile(LINEAR_REGEXP);
+        Pattern linearFunctionPattern = Pattern.compile(POLAR_REGEXP);
         Matcher matcher = linearFunctionPattern.matcher(f);
 
         double m = Double.parseDouble(matcher.group(1));
@@ -53,7 +53,7 @@ public class LinearFunc extends Function {
 
         double b = Double.parseDouble(matcher.group(3)) * sign;
 
-        LinearFunc out = new LinearFunc(m, 0, b);
+        PolarFunction out = new PolarFunction(m, 0, b);
 
         return out;
     }
@@ -78,7 +78,7 @@ public class LinearFunc extends Function {
      *
      * @return A string representation of the function in the form y = m(x-h) + b
      *
-     * @since 1.9.1
+     * @since 1.9.1.3
      */
     @Override
     public String toString() {
