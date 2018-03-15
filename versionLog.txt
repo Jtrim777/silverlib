@@ -1,5 +1,5 @@
 1.1 - log.Log
-  1.1.3 - log.Err
+  1.1.3 - log.Err 
 
 1.2 - log.Log.printToFile();log.Logger
 
@@ -11,7 +11,7 @@
   1.4.1 - math.Line
     1.4.1.1 - math.Fraction
   1.4.2 - math.Rect & math.Circle
-    1.4.2.1 - Adjustments to math.Circle
+    1.4.2.1 - Adjustments to math.Circle (1.4.3-b-001)
   1.4.3 - drawPoint func for img.Img
 
 1.5 - geo & geo.Shape
@@ -22,8 +22,8 @@
   1.6.1 - io.IO
   1.6.2 - geo.Fillable;fix Line init;fix empty Img init;drawFill for Rect & Circle
   1.6.3 - io.IO.getPath:readFile:readLines
-    1.6.3.1 - io.IO.readFile:readLines throws IOException
-    1.6.3.2 - io.IO.readFile:readLines take String
+    1.6.3.1 - io.IO.readFile:readLines throws IOException (1.6.4 b001)
+    1.6.3.2 - io.IO.readFile:readLines take String (1.6.4 b002)
   1.6.4 - io.IO.runScript
 
 1.7 - img.Scene&Movie
@@ -41,10 +41,10 @@
     1.8.0.1 - map.Mercator.relocate()
   1.8.1 - New Mercator formula; + math.num.square(float/double/long)
   1.8.2 - + geo.ImproperFormatException; + geo.Point.Point(String); small fixes in geo.Circle
-  
+
 1.9 - Algorithms
   1.9.0 - sci; sci.Physics; math.Geo; math.Vector; geo.PinPoint
   1.9.1 - math.graph; math.graph.Function; math.graph.LinearFunc; math.graph.FunctionFormatException;
           math.graph.GraphType; math.Quadrant -> math.graph.Quadrant; math.Vector -> math.graph.Vector
-    1.9.1.2 - + math.graph.QuadraticFunc; + math.graph.TrigFunc; + math.graph.TrigFuncList; Encapsulate RegExps
-    1.9.1.3 - + math.graph.PolarGraph; + geo.PolarPoint;
+    1.9.1.1 - + math.graph.QuadraticFunc; + math.graph.TrigFunc; + math.graph.TrigFuncList; Encapsulate RegExps
+    1.9.1.2 - + math.graph.PolarGraph; + geo.PolarPoint; + geo.Point.toPolar()
