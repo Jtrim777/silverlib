@@ -1,5 +1,7 @@
 package silverlib.math.graph;
 
+import silverlib.err.FunctionFormatException;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

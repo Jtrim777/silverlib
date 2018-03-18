@@ -48,3 +48,6 @@
           math.graph.GraphType; math.Quadrant -> math.graph.Quadrant; math.Vector -> math.graph.Vector
     1.9.1.1 - + math.graph.QuadraticFunc; + math.graph.TrigFunc; + math.graph.TrigFuncList; Encapsulate RegExps
     1.9.1.2 - + math.graph.PolarGraph; + geo.PolarPoint; + geo.Point.toPolar()
+  1.9.2 - + err; + err.ArgFormatException; geo.PointFormatException -> err.&; math.graph.FunctionFormatException ->
+          err.&; $ err.FunctionFormatException extds err.ArgFormatException; $ geo.PointFormatException extds
+          err.ArgFormatException

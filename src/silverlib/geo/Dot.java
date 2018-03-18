@@ -1,8 +1,6 @@
 package silverlib.geo;
 
-import java.util.ArrayList;
-
-import silverlib.math.*;
+import silverlib.err.NoSuchPropertyException;
 
 /** <h1>Point class in a graphical 2D plane</h1> */
 public class Dot extends Shape {

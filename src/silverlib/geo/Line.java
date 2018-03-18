@@ -1,9 +1,7 @@
 package silverlib.geo;
 
-import java.util.ArrayList;
-
+import silverlib.err.NoSuchPropertyException;
 import silverlib.math.*;
-import silverlib.log.*;
 
 /**
  * <h1>A class to represent a series of <code>Point</code>s between two endpoints</h1>

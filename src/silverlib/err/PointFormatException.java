@@ -1,4 +1,4 @@
-package silverlib.geo;
+package silverlib.err;
 
 /**
  * Thrown when a <code>Point</code> is initialized using a <code>String</code> with an improper format
@@ -6,7 +6,7 @@ package silverlib.geo;
  * @author Jake Trimble
  * @since 1.7.4
  */
-public class PointFormatException extends Exception {
+public class PointFormatException extends ArgFormatException {
     String format;
 
     /**
@@ -16,7 +16,7 @@ public class PointFormatException extends Exception {
      *
      * @since 1.7.4
      */
-    PointFormatException(String sn) {
-        format = sn;
+    public PointFormatException(String sn) {
+        super(sn, "(x,y)");
     }
 } 

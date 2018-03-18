@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28334c4a-e8f2-43ee-9545-8aca2ba8ffcc" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/version.txt" />
-      <change beforePath="$PROJECT_DIR$/Icon&#13;" afterPath="$PROJECT_DIR$/version.txt" />
-      <change beforePath="$PROJECT_DIR$/Silverlib.zip" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/err/ArgFormatException.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change beforePath="$PROJECT_DIR$/dist/silverlib-1.9.1.2.zip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/Circle.java" afterPath="$PROJECT_DIR$/src/silverlib/geo/Circle.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/Dot.java" afterPath="$PROJECT_DIR$/src/silverlib/geo/Dot.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/Line.java" afterPath="$PROJECT_DIR$/src/silverlib/geo/Line.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/NoSuchPropertyException.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/PinPoint.java" afterPath="$PROJECT_DIR$/src/silverlib/geo/PinPoint.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/Point.java" afterPath="$PROJECT_DIR$/src/silverlib/geo/Point.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/PointFormatException.java" afterPath="$PROJECT_DIR$/src/silverlib/err/PointFormatException.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/PolarPoint.java" afterPath="$PROJECT_DIR$/src/silverlib/geo/PolarPoint.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/Rect.java" afterPath="$PROJECT_DIR$/src/silverlib/geo/Rect.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/Shape.java" afterPath="$PROJECT_DIR$/src/silverlib/geo/Shape.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/img/Movie.java" afterPath="$PROJECT_DIR$/src/silverlib/img/Movie.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/img/Scene.java" afterPath="$PROJECT_DIR$/src/silverlib/img/Scene.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/math/graph/FunctionFormatException.java" afterPath="$PROJECT_DIR$/src/silverlib/err/FunctionFormatException.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/math/graph/LinearFunc.java" afterPath="$PROJECT_DIR$/src/silverlib/math/graph/LinearFunc.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/math/graph/PolarFunction.java" afterPath="$PROJECT_DIR$/src/silverlib/math/graph/PolarFunction.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/math/graph/QuadraticFunc.java" afterPath="$PROJECT_DIR$/src/silverlib/math/graph/QuadraticFunc.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/math/graph/TrigFunc.java" afterPath="$PROJECT_DIR$/src/silverlib/math/graph/TrigFunc.java" />
+      <change beforePath="$PROJECT_DIR$/version.txt" afterPath="$PROJECT_DIR$/version.txt" />
       <change beforePath="$PROJECT_DIR$/versionLog.txt" afterPath="$PROJECT_DIR$/versionLog.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,18 +38,28 @@
       <file leaf-file-name="versionLog.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versionLog.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="49" column="78" lean-forward="false" selection-start-line="49" selection-start-column="78" selection-end-line="49" selection-end-column="78" />
+            <state relative-caret-position="765">
+              <caret line="52" column="32" lean-forward="false" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="build.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="48" lean-forward="false" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+            <state relative-caret-position="510">
+              <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NoSuchPropertyException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/silverlib/err/NoSuchPropertyException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -41,28 +69,46 @@
         <entry file="file://$PROJECT_DIR$/version.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comp.bash" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp.bash">
+      <file leaf-file-name="ArgFormatException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/silverlib/err/ArgFormatException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-540">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+              <folding>
+                <element signature="e#797#798#0" expanded="true" />
+                <element signature="e#834#835#0" expanded="true" />
+                <element signature="e#873#874#0" expanded="true" />
+                <element signature="e#908#909#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PointFormatException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/silverlib/err/PointFormatException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="silverlib.bash" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/silverlib.bash">
+      <file leaf-file-name="FunctionFormatException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/silverlib/err/FunctionFormatException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="270">
+              <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+              <folding>
+                <element signature="e#572#573#0" expanded="true" />
+                <element signature="e#605#606#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,8 +118,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -118,9 +164,14 @@
         <option value="$PROJECT_DIR$/src/silverlib/geo/PolarPoint.java" />
         <option value="$PROJECT_DIR$/src/silverlib/math/graph/PolarFunction.java" />
         <option value="$PROJECT_DIR$/src/silverlib/math/graph/PolarGraph.java" />
+        <option value="$PROJECT_DIR$/src/err/ArgFormatException.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/err/ArgFormatException.java" />
         <option value="$PROJECT_DIR$/versionLog.txt" />
-        <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/version.txt" />
+        <option value="$PROJECT_DIR$/src/silverlib/err/FunctionFormatException.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/err/PointFormatException.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/err/NoSuchPropertyException.java" />
+        <option value="$PROJECT_DIR$/build.xml" />
       </list>
     </option>
   </component>
@@ -168,6 +219,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,41 +229,10 @@
               <item name="silverlib" type="b2602c69:ProjectViewProjectNode" />
               <item name="silverlib" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="silverlib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="silverlib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="silverlib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="geo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="silverlib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="graph" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="silverlib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sci" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,7 +264,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Build Library" type="AntRunConfiguration" factoryName="Ant Target">
-      <antsettings antfile="file://$PROJECT_DIR$/build.xml" target="lib" />
+      <antsettings antfile="file://$PROJECT_DIR$/build.xml" target="zipup" />
       <method>
         <option name="Make" enabled="false" />
       </method>
@@ -342,20 +365,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24305555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19456366" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -366,6 +387,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -398,6 +420,46 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/versionLog.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="78" lean-forward="false" selection-start-line="49" selection-start-column="78" selection-end-line="49" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="48" lean-forward="false" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/version.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp.bash">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/silverlib.bash">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/versionLog.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -540,13 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/PointFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/silverlib/math/graph/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -558,13 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/math/graph/FunctionFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -652,13 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/NoSuchPropertyException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/silverlib/geo/Point.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -680,49 +721,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versionLog.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="78" lean-forward="false" selection-start-line="49" selection-start-column="78" selection-end-line="49" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.number">
+    <entry file="file://$PROJECT_DIR$/build.number" />
+    <entry file="file://$PROJECT_DIR$/dist/silverlib.bash">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="48" lean-forward="false" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/version.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/comp.bash">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-540">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/silverlib.bash">
+    <entry file="file://$PROJECT_DIR$/versionLog.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="52" column="32" lean-forward="false" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/err/ArgFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/version.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/err/FunctionFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding>
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#605#606#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/err/PointFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/err/NoSuchPropertyException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
           <folding />
         </state>
       </provider>

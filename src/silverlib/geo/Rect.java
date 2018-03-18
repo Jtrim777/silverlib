@@ -1,6 +1,6 @@
 package silverlib.geo;
 
-import silverlib.math.*;
+import silverlib.err.NoSuchPropertyException;
 import silverlib.log.*;
 
 import java.awt.Color;

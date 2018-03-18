@@ -1,6 +1,6 @@
 package silverlib.img;
 
-import silverlib.log.*;
+import silverlib.err.NoSuchPropertyException;
 import silverlib.geo.*;
 
 import java.util.*;

@@ -1,5 +1,6 @@
 package silverlib.geo;
 
+import silverlib.err.PointFormatException;
 import silverlib.math.graph.GraphType;
 
 /**

@@ -37,7 +37,7 @@
             description="generate the zip dist file" >
         <copy file="version.txt" todir="lib"/>
 
-        <zip basedir="lib" destfile="./dist/silverlib-${version}.zip"/>
+        <zip basedir="lib" destfile="dist/silverlib-${version}.zip"/>
     </target>
 
     <target name="clean"

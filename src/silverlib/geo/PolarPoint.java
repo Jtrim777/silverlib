@@ -1,5 +1,7 @@
 package silverlib.geo;
 
+import silverlib.err.PointFormatException;
+
 /**
  * <h1> Basic Polar Point Class </h1>
  * A class that represents a polar point in a 2D polar coordinate plane.

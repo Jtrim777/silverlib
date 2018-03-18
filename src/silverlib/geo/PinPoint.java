@@ -1,5 +1,7 @@
 package silverlib.geo;
 
+import silverlib.err.PointFormatException;
+
 /**
  * <h1> Basic PinPoint Class </h1>
  * A class that represents a PinPoint in a 2D coordinate plane.

@@ -1,4 +1,4 @@
-package silverlib.math.graph;
+package silverlib.err;
 
 /**
  * Thrown when a <code>Point</code> is initialized using a <code>String</code> with an improper format
@@ -6,7 +6,7 @@ package silverlib.math.graph;
  * @author Jake Trimble
  * @since 1.9.1
  */
-public class FunctionFormatException extends Exception {
+public class FunctionFormatException extends ArgFormatException {
 
     /**
      * Initializes a <code>FunctionFormatException</code> given an invalid function and the proper format
@@ -16,7 +16,7 @@ public class FunctionFormatException extends Exception {
      *
      * @since 1.9.1
      */
-    FunctionFormatException(String fn, String format) {
-        super("The given arguments \"" + fn + "\" do not match the format \"" + format + "\"");
+    public FunctionFormatException(String fn, String format) {
+        super(fn, format);
     }
 }
