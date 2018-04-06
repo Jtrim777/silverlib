@@ -13,7 +13,7 @@ public abstract class Shape {
     protected ArrayList<Point> pts;
     protected Point loc;
     protected Color col;
-    protected HashMap<String, Integer> properties;
+    protected int strokeWidth;
 
     /**
      * Initializes a <code>Shape</code> object from a <code>Point</code> and a
@@ -28,12 +28,8 @@ public abstract class Shape {
         loc = l;
         col = c;
         pts = new ArrayList<Point>();
-        properties = new HashMap<String, Integer>();
-        properties.put("x", loc.x);
-        properties.put("y", loc.y);
-        properties.put("red", c.getRed());
-        properties.put("green", c.getGreen());
-        properties.put("blue", c.getBlue());
+        strokeWidth = 1;
+
     }
 
     /**
@@ -48,12 +44,8 @@ public abstract class Shape {
         loc = l;
         col = Color.BLACK;
         pts = new ArrayList<Point>();
-        properties = new HashMap<String, Integer>();
-        properties.put("x", loc.x);
-        properties.put("y", loc.y);
-        properties.put("red", 0);
-        properties.put("green", 0);
-        properties.put("blue", 0);
+        strokeWidth = 1;
+
     }
 
     /**
@@ -70,12 +62,8 @@ public abstract class Shape {
         loc = new Point(x, y);
         col = c;
         pts = new ArrayList<Point>();
-        properties = new HashMap<String, Integer>();
-        properties.put("x", loc.x);
-        properties.put("y", loc.y);
-        properties.put("red", c.getRed());
-        properties.put("green", c.getGreen());
-        properties.put("blue", c.getBlue());
+        strokeWidth = 1;
+
     }
 
     /**
@@ -92,12 +80,8 @@ public abstract class Shape {
         loc = new Point(x, y);
         col = Color.BLACK;
         pts = new ArrayList<Point>();
-        properties = new HashMap<String, Integer>();
-        properties.put("x", loc.x);
-        properties.put("y", loc.y);
-        properties.put("red", 0);
-        properties.put("green", 0);
-        properties.put("blue", 0);
+        strokeWidth = 1;
+
     }
 
     /**
@@ -153,8 +137,18 @@ public abstract class Shape {
      * @since 1.5
      */
     public void draw(Img frame) {
-        for (Point pt : pts) {
-            frame.drawPoint(pt, col);
+        if (strokeWidth == 1) {
+            for (Point pt : pts) {
+                frame.drawPoint(pt, col);
+            }
+        } else {
+            for (Point pt : pts){
+                Circle dot = new Circle(pt,strokeWidth);
+                dot.setColor(this.col);
+                dot.setFill(this.col);
+
+                dot.drawFill(frame);
+            }
         }
     }
 
@@ -165,57 +159,19 @@ public abstract class Shape {
      *
      * @since 1.5
      */
-    public void setColor(Color c) throws NoSuchPropertyException {
+    public void setColor(Color c) {
         col = c;
-        setProp("red", c.getRed());
-        setProp("green", c.getGreen());
-        setProp("blue", c.getBlue());
     }
 
     /**
-     * Accesses the value of property <code>n</code>
+     * Sets the stroke width of the <code>Shape</code>
      *
-     * @param n The key of the value to be acessed
+     * @param w The stroke width
      *
-     * @return The value at <code>properties.get(n)</code>
-     *
-     * @throws NoSuchPropertyException If <code>n</code> is not a valid property for this <code>Shape</code>
-     * @since 1.7
+     * @since 1.9.3
      */
-    public int getProp(String n) throws NoSuchPropertyException {
-        if (!properties.keySet().contains(n)) {
-            throw new NoSuchPropertyException(n);
-        }
-
-        return properties.get(n);
-    }
-
-    /**
-     * Modifies the property with key <code>n</code> of this <code>Shape</code> object.
-     *
-     * @param n The key of the property to modify
-     * @param v The value to set the property to
-     *
-     * @throws NoSuchPropertyException If <code>n</code> is not a valid property for this <code>Shape</code>
-     * @since 1.7.0.1
-     */
-    public void setProp(String n, int v) throws NoSuchPropertyException {
-        if (!properties.keySet().contains(n)) {
-            throw new NoSuchPropertyException(n);
-        }
-        properties.put(n, v);
-        loc.x = getProp("x");
-        loc.y = getProp("y");
-        col = new Color(getProp("red"), getProp("green"), getProp("blue"));
-    }
-
-    /**
-     * @return A <code>Set<String></code> of all of the keys in <code>properties</code>
-     *
-     * @since 1.7.4
-     */
-    public Set<String> props() {
-        return properties.keySet();
+    public void setStrokeWidth(int w){
+        strokeWidth = w;
     }
 
     /**

@@ -7,6 +7,8 @@ import silverlib.math.*;
  * <h1>A class to represent a series of <code>Point</code>s between two endpoints</h1>
  */
 public class Line extends Shape {
+    protected Point start;
+    protected Point end;
 
     /**
      * Initializes a <code>Line</code> object from two <code>Point</code>s.
@@ -19,9 +21,6 @@ public class Line extends Shape {
     public Line(Point a, Point b) {
         super(a);
 
-        properties.put("x2", b.x);
-        properties.put("y2", b.y);
-
         Point p1;
         Point p2;
 
@@ -33,6 +32,9 @@ public class Line extends Shape {
             p1 = b;
             p2 = a;
         }
+
+        start = p1;
+        end = p2;
 
         pts().add(p1);
 
@@ -77,15 +79,6 @@ public class Line extends Shape {
         } while (xT < p2.x() && yT < p2.y());
     }
 
-    @Override
-    public void setProp(String n, int v) throws NoSuchPropertyException {
-        super.setProp(n, v);
-
-        if (n.equals("x") || n.equals("y") || n.equals("x2") || n.equals("y2")) {
-            Point e = new Point(getProp("x2"), getProp("y2"));
-            remake(loc, e);
-        }
-    }
 
     public void remake(Point a, Point b) {
         pts.clear();

@@ -34,12 +34,6 @@ public class Rect extends Shape implements Fillable {
         width = w;
         height = h;
 
-        properties.put("width", width);
-        properties.put("height", height);
-        properties.put("fillR", fill.getRed());
-        properties.put("fillG", fill.getGreen());
-        properties.put("fillB", fill.getBlue());
-
         lines = new Line[4];
     
     /*
@@ -82,11 +76,7 @@ public class Rect extends Shape implements Fillable {
         width = s;
         height = s;
 
-        properties.put("width", width);
-        properties.put("height", height);
-        properties.put("fillR", fill.getRed());
-        properties.put("fillG", fill.getGreen());
-        properties.put("fillB", fill.getBlue());
+
 
         lines = new Line[4];
 
@@ -122,11 +112,7 @@ public class Rect extends Shape implements Fillable {
         width = w;
         height = h;
 
-        properties.put("width", width);
-        properties.put("height", height);
-        properties.put("fillR", fill.getRed());
-        properties.put("fillG", fill.getGreen());
-        properties.put("fillB", fill.getBlue());
+
 
         lines = new Line[4];
 
@@ -161,11 +147,6 @@ public class Rect extends Shape implements Fillable {
         width = s;
         height = s;
 
-        properties.put("width", width);
-        properties.put("height", height);
-        properties.put("fillR", fill.getRed());
-        properties.put("fillG", fill.getGreen());
-        properties.put("fillB", fill.getBlue());
 
         lines = new Line[4];
 
@@ -224,32 +205,6 @@ public class Rect extends Shape implements Fillable {
      */
     public Color fill() {
         return fill;
-    }
-
-    /**
-     * Sets a property and updates class fields, also redraws the rectangle if
-     * necessary.
-     *
-     * @param n The key of the property to modify
-     * @param v The value to set the property to
-     *
-     * @since 1.7.1
-     */
-    @Override
-    public void setProp(String n, int v) throws NoSuchPropertyException {
-        super.setProp(n, v);
-
-        if (n.equals("width") || n.equals("height")) {
-            width = getProp("width");
-            height = getProp("height");
-            remake();
-        }
-        else if (n.equals("x") || n.equals("y")) {
-            remake();
-        }
-        else if (n.equals("fillR") || n.equals("fillG") || n.equals("fillB")) {
-            fill = new Color(getProp("fillR"), getProp("fillG"), getProp("fillB"));
-        }
     }
 
     /**

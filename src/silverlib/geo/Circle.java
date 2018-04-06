@@ -14,7 +14,6 @@ public class Circle extends Shape implements Fillable {
     private int radius;
     private int tol;
     private Color fill;
-    //private int lineWidth;
 
     /**
      * Initializes a <code>Circle</code> object from a <code>Point</code> and a radius.
@@ -33,10 +32,7 @@ public class Circle extends Shape implements Fillable {
 
         tol = (int) ((double) r / 1.09);
 
-        properties.put("radius", r);
-        properties.put("fillR", fill.getRed());
-        properties.put("fillG", fill.getGreen());
-        properties.put("fillB", fill.getBlue());
+
 
         int xMin = c.x() - r - 2;
         int xMax = c.x() + r + 2;
@@ -103,27 +99,6 @@ public class Circle extends Shape implements Fillable {
         fill = c;
     }
 
-    /**
-     * Sets a property and updates class fields, also redraws the circle if
-     * necessary.
-     *
-     * @param n The key of the property to modify
-     * @param v The value to set the property to
-     *
-     * @since 1.7.1
-     */
-    @Override
-    public void setProp(String n, int v) throws NoSuchPropertyException {
-        super.setProp(n, v);
-
-        if (n.equals("radius") || n.equals("x") || n.equals("y")) {
-            radius = getProp("radius");
-            remake();
-        }
-        else if (n.equals("fillR") || n.equals("fillG") || n.equals("fillB")) {
-            fill = new Color(getProp("fillR"), getProp("fillG"), getProp("fillB"));
-        }
-    }
 
     /**
      * Redraws the circle
