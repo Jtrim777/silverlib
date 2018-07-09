@@ -124,6 +124,18 @@ public class Point {
         return new Point(xDiff, yDiff);
     }
 
+
+    /**
+     * Tests for equality with another <code>Point</code>
+     * @param p The point to compare against
+     * @return <code>true</code> if the x and y values of both <code>Point</code>s are equal, <code>false</code> otherwise
+     *
+     * @since 1.10.2
+     */
+    public boolean equals(Point p){
+        return x == p.x && y == p.y;
+    }
+
     /**
      * Returns the a String representation of the <code>Point</code>, in the
      * form <code>(x,y)</code>.

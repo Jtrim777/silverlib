@@ -56,3 +56,4 @@
 * *1.10*: Music
   * 1.10.0: music; music.Song; music.Notes; music.SlvSound; music.Note; music.Chord
   * 1.10.1: music.Song.play()
+  * 1.10.2: **+** geo.Point.equals(); **+** geo.ArbitraryShape
