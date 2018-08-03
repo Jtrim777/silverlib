@@ -2,9 +2,105 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28334c4a-e8f2-43ee-9545-8aca2ba8ffcc" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/geo/ArbitraryShape.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/geo/three_dim/Line3D.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/geo/three_dim/Point3D.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/geo/three_dim/RectPrism.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/geo/three_dim/Shape3D.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/music/MusicLibrary.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/Point.java" afterPath="$PROJECT_DIR$/src/silverlib/geo/Point.java" />
+      <change beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" />
+      <change beforePath="$PROJECT_DIR$/doc/constant-values.html" afterPath="$PROJECT_DIR$/doc/constant-values.html" />
+      <change beforePath="$PROJECT_DIR$/doc/deprecated-list.html" afterPath="$PROJECT_DIR$/doc/deprecated-list.html" />
+      <change beforePath="$PROJECT_DIR$/doc/help-doc.html" afterPath="$PROJECT_DIR$/doc/help-doc.html" />
+      <change beforePath="$PROJECT_DIR$/doc/index-all.html" afterPath="$PROJECT_DIR$/doc/index-all.html" />
+      <change beforePath="$PROJECT_DIR$/doc/index.html" afterPath="$PROJECT_DIR$/doc/index.html" />
+      <change beforePath="$PROJECT_DIR$/doc/member-search-index.js" afterPath="$PROJECT_DIR$/doc/member-search-index.js" />
+      <change beforePath="$PROJECT_DIR$/doc/member-search-index.zip" afterPath="$PROJECT_DIR$/doc/member-search-index.zip" />
+      <change beforePath="$PROJECT_DIR$/doc/overview-frame.html" afterPath="$PROJECT_DIR$/doc/overview-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/overview-summary.html" afterPath="$PROJECT_DIR$/doc/overview-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/overview-tree.html" afterPath="$PROJECT_DIR$/doc/overview-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/package-list" afterPath="$PROJECT_DIR$/doc/package-list" />
+      <change beforePath="$PROJECT_DIR$/doc/package-search-index.js" afterPath="$PROJECT_DIR$/doc/package-search-index.js" />
+      <change beforePath="$PROJECT_DIR$/doc/package-search-index.zip" afterPath="$PROJECT_DIR$/doc/package-search-index.zip" />
+      <change beforePath="$PROJECT_DIR$/doc/serialized-form.html" afterPath="$PROJECT_DIR$/doc/serialized-form.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/ArgFormatException.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/ArgFormatException.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/FunctionFormatException.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/FunctionFormatException.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/NoSuchPropertyException.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/NoSuchPropertyException.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/PointFormatException.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/PointFormatException.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/package-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/package-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/package-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/ArbitraryShape.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/ArbitraryShape.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Circle.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Circle.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Dot.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Dot.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Line.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Line.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/PinPoint.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/PinPoint.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Point.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Point.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/PolarPoint.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/PolarPoint.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Rect.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Rect.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Shape.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Shape.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/package-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/package-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/package-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/Img.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/Img.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/Movie.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/Movie.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/Pixel.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/Pixel.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/Scene.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/Scene.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/package-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/package-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/package-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/io/IO.html" afterPath="$PROJECT_DIR$/doc/silverlib/io/IO.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/io/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/io/package-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/io/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/io/package-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/io/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/io/package-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/Err.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/Err.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/Log.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/Log.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/Logger.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/Logger.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/package-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/package-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/package-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/map/Mercator.html" afterPath="$PROJECT_DIR$/doc/silverlib/map/Mercator.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/map/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/map/package-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/map/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/map/package-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/map/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/map/package-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/Fraction.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/Fraction.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/Geo.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/Geo.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/Num.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/Num.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/Function.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/Function.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/Graph.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/Graph.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/GraphType.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/GraphType.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/LinearFunc.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/LinearFunc.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/PolarFunction.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/PolarFunction.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/PolarGraph.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/PolarGraph.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/Quadrant.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/Quadrant.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/QuadraticFunc.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/QuadraticFunc.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/TrigFunc.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/TrigFunc.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/TrigFuncList.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/TrigFuncList.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/Vector.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/Vector.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/package-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/package-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/package-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/package-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/package-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/package-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/Chord.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/Chord.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/Note.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/Note.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/Notes.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/Notes.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/Song.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/Song.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/package-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/package-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/package-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/Physics.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/Physics.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/package-frame.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/package-summary.html" />
+      <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/package-tree.html" />
+      <change beforePath="$PROJECT_DIR$/doc/type-search-index.js" afterPath="$PROJECT_DIR$/doc/type-search-index.js" />
+      <change beforePath="$PROJECT_DIR$/doc/type-search-index.zip" afterPath="$PROJECT_DIR$/doc/type-search-index.zip" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/img/Movie.java" afterPath="$PROJECT_DIR$/src/silverlib/img/Movie.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/img/Scene.java" afterPath="$PROJECT_DIR$/src/silverlib/img/Scene.java" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/music/Song.java" afterPath="$PROJECT_DIR$/src/silverlib/music/Song.java" />
       <change beforePath="$PROJECT_DIR$/version.txt" afterPath="$PROJECT_DIR$/version.txt" />
       <change beforePath="$PROJECT_DIR$/versionLog.md" afterPath="$PROJECT_DIR$/versionLog.md" />
     </list>
@@ -17,27 +113,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ArbitraryShape.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/silverlib/geo/ArbitraryShape.java">
+      <file leaf-file-name="Song.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/silverlib/music/Song.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="128">
+              <caret line="392" column="45" lean-forward="false" selection-start-line="392" selection-start-column="45" selection-end-line="392" selection-end-column="45" />
               <folding>
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#389#390#0" expanded="true" />
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#441#442#0" expanded="true" />
-                <element signature="e#466#467#0" expanded="true" />
-                <element signature="e#493#494#0" expanded="true" />
-                <element signature="e#518#519#0" expanded="true" />
-                <element signature="e#545#546#0" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#599#600#0" expanded="true" />
-                <element signature="e#626#627#0" expanded="true" />
-                <element signature="e#655#656#0" expanded="true" />
-                <element signature="e#2157#2158#0" expanded="true" />
-                <element signature="e#2184#2185#0" expanded="true" />
+                <element signature="docComment;class#Song#0" expanded="false" />
+                <element signature="docComment;method#Song#0;class#Song#0" expanded="false" />
+                <element signature="docComment;method#getSong#0;class#Song#0" expanded="false" />
+                <element signature="e#13689#13690#0" expanded="true" />
+                <element signature="e#13716#13717#0" expanded="true" />
+                <element signature="docComment;method#writeToFile#0;class#Song#0" expanded="false" />
+                <element signature="method#writeToFile#0;class#Song#0" expanded="false" />
+                <element signature="docComment;method#play#0;class#Song#0" expanded="false" />
+                <element signature="method#play#0;class#Song#0" expanded="false" />
+                <element signature="docComment;method#load#0;class#Song#0" expanded="false" />
+                <element signature="method#load#0;class#Song#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SlvSound.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/silverlib/music/SlvSound.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="819">
+              <caret line="130" column="20" lean-forward="false" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MusicLibrary.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/silverlib/music/MusicLibrary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="version.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/version.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="versionLog.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/versionLog.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="709">
+                <caret line="59" column="118" lean-forward="false" selection-start-line="59" selection-start-column="118" selection-end-line="59" selection-end-column="118" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
             </state>
           </provider>
         </entry>
@@ -56,9 +196,8 @@
     <findStrings>
       <find>-</find>
       <find>+</find>
-      <find>-</find>
-      <find>-</find>
       <find>$</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -80,8 +219,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/silverlib/math/FunctionFormatException.java" />
-        <option value="$PROJECT_DIR$/src/silverlib/math/Function.java" />
         <option value="$PROJECT_DIR$/src/silverlib/math/LinearFunc.java" />
         <option value="$PROJECT_DIR$/src/silverlib/math/GraphType.java" />
         <option value="$PROJECT_DIR$/src/silverlib/math/Graph.java" />
@@ -116,15 +253,23 @@
         <option value="$PROJECT_DIR$/versionLog.txt" />
         <option value="$PROJECT_DIR$/src/silverlib/music/MySound.java" />
         <option value="$PROJECT_DIR$/src/silverlib/music/SlvSound.java" />
-        <option value="$PROJECT_DIR$/src/silverlib/music/Song.java" />
         <option value="$PROJECT_DIR$/src/silverlib/music/Chord.java" />
         <option value="$PROJECT_DIR$/src/silverlib/music/Note.java" />
         <option value="$PROJECT_DIR$/src/silverlib/music/Notes.java" />
         <option value="$PROJECT_DIR$/src/silverlib/geo/Ellipse.java" />
         <option value="$PROJECT_DIR$/src/silverlib/geo/Point.java" />
-        <option value="$PROJECT_DIR$/version.txt" />
-        <option value="$PROJECT_DIR$/versionLog.md" />
         <option value="$PROJECT_DIR$/src/silverlib/geo/ArbitraryShape.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/geo/three_dim/Point3D.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/img/Scene.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/img/Movie.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/geo/three_dim/Line3D.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/geo/three_dim/Shape3D.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/geo/three_dim/RectPrism.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/geo/three_dim/Test.java" />
+        <option value="$PROJECT_DIR$/version.txt" />
+        <option value="$PROJECT_DIR$/src/silverlib/music/MusicLibrary.java" />
+        <option value="$PROJECT_DIR$/src/silverlib/music/Song.java" />
+        <option value="$PROJECT_DIR$/versionLog.md" />
       </list>
     </option>
   </component>
@@ -159,7 +304,7 @@
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages ProjectPane="true" />
+      <flattenPackages ProjectPane="false" />
       <showMembers />
       <showModules />
       <showLibraryContents />
@@ -173,6 +318,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -195,19 +341,40 @@
               <item name="silverlib" type="b2602c69:ProjectViewProjectNode" />
               <item name="silverlib" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="silverlib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
               <item name="geo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="silverlib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
+              <item name="geo" type="462c0819:PsiDirectoryNode" />
+              <item name="three_dim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="silverlib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="silverlib" type="462c0819:PsiDirectoryNode" />
+              <item name="music" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/silverlib/geo" />
@@ -231,7 +398,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Ant Target.Build Library">
     <configuration name="Build Library" type="AntRunConfiguration" factoryName="Ant Target">
       <antsettings antfile="file://$PROJECT_DIR$/build.xml" target="zipup" />
       <method>
@@ -244,6 +411,19 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="silverlib.geo.three_dim.Test" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="silverlib" />
+      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" />
@@ -296,6 +476,15 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Ant Target.Build Library" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Test" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -348,24 +537,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18055555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -406,70 +594,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/Circle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versionLog.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="96" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="47" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comp.bash">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/math/graph/Function.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/math/graph/LinearFunc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/silverlib.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/math/Geo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="244" column="18" lean-forward="false" selection-start-line="244" selection-start-column="18" selection-end-line="244" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/img/Img.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1818">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/silverlib/math/graph/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -669,13 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="147" column="38" lean-forward="false" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/version.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -694,55 +811,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2805">
           <caret line="193" column="20" lean-forward="false" selection-start-line="193" selection-start-column="20" selection-end-line="193" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/music/Song.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="259" column="20" lean-forward="false" selection-start-line="259" selection-start-column="20" selection-end-line="259" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/music/SlvSound.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="130" column="20" lean-forward="false" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/silverlib/geo/Ellipse.java" />
-    <entry file="file://$PROJECT_DIR$/versionLog.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="709">
-            <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/version.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/silverlib/geo/Point.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -758,30 +830,198 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/silverlib/geo/ArbitraryShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="390">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#2157#2158#0" expanded="true" />
-            <element signature="e#2184#2185#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="false" />
+            <element signature="e#389#390#0" expanded="false" />
+            <element signature="e#414#415#0" expanded="false" />
+            <element signature="e#441#442#0" expanded="false" />
+            <element signature="e#466#467#0" expanded="false" />
+            <element signature="e#493#494#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#545#546#0" expanded="false" />
+            <element signature="e#571#572#0" expanded="false" />
+            <element signature="e#599#600#0" expanded="false" />
+            <element signature="e#626#627#0" expanded="false" />
+            <element signature="e#655#656#0" expanded="false" />
+            <element signature="e#2157#2158#0" expanded="false" />
+            <element signature="e#2184#2185#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="147" column="38" lean-forward="false" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/three_dim/Point3D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="55" column="50" lean-forward="false" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
+          <folding>
+            <element signature="e#531#532#0" expanded="false" />
+            <element signature="e#555#556#0" expanded="false" />
+            <element signature="e#580#581#0" expanded="false" />
+            <element signature="e#604#605#0" expanded="false" />
+            <element signature="e#629#630#0" expanded="false" />
+            <element signature="e#653#654#0" expanded="false" />
+            <element signature="e#696#697#0" expanded="false" />
+            <element signature="e#778#779#0" expanded="false" />
+            <element signature="e#1173#1174#0" expanded="false" />
+            <element signature="e#1230#1231#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/img/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1665">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/img/Movie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3495">
+          <caret line="238" column="41" lean-forward="false" selection-start-line="238" selection-start-column="41" selection-end-line="238" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/three_dim/Line3D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="53" lean-forward="false" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/three_dim/Shape3D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#604#605#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
+            <element signature="e#672#673#0" expanded="false" />
+            <element signature="e#718#719#0" expanded="false" />
+            <element signature="e#755#756#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/three_dim/RectPrism.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="100" column="32" lean-forward="false" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
+          <folding>
+            <element signature="e#2432#2433#0" expanded="false" />
+            <element signature="e#2463#2464#0" expanded="false" />
+            <element signature="e#2495#2496#0" expanded="false" />
+            <element signature="e#2523#2524#0" expanded="false" />
+            <element signature="e#2556#2557#0" expanded="false" />
+            <element signature="e#2585#2586#0" expanded="false" />
+            <element signature="e#2618#2619#0" expanded="false" />
+            <element signature="e#2647#2648#0" expanded="false" />
+            <element signature="e#2680#2681#0" expanded="false" />
+            <element signature="e#2709#2710#0" expanded="false" />
+            <element signature="e#2747#2748#0" expanded="false" />
+            <element signature="e#2781#2782#0" expanded="false" />
+            <element signature="e#2827#2828#0" expanded="false" />
+            <element signature="e#2866#2867#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/three_dim/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/sound/midi/Sequence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="190" column="11" lean-forward="false" selection-start-line="190" selection-start-column="11" selection-end-line="190" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/music/SlvSound.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="130" column="20" lean-forward="false" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/music/Song.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="392" column="45" lean-forward="false" selection-start-line="392" selection-start-column="45" selection-end-line="392" selection-end-column="45" />
+          <folding>
+            <element signature="docComment;class#Song#0" expanded="false" />
+            <element signature="docComment;method#Song#0;class#Song#0" expanded="false" />
+            <element signature="docComment;method#getSong#0;class#Song#0" expanded="false" />
+            <element signature="e#13689#13690#0" expanded="true" />
+            <element signature="e#13716#13717#0" expanded="true" />
+            <element signature="docComment;method#writeToFile#0;class#Song#0" expanded="false" />
+            <element signature="method#writeToFile#0;class#Song#0" expanded="false" />
+            <element signature="docComment;method#play#0;class#Song#0" expanded="false" />
+            <element signature="method#play#0;class#Song#0" expanded="false" />
+            <element signature="docComment;method#load#0;class#Song#0" expanded="false" />
+            <element signature="method#load#0;class#Song#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/music/MusicLibrary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/version.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versionLog.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="709">
+            <caret line="59" column="118" lean-forward="false" selection-start-line="59" selection-start-column="118" selection-end-line="59" selection-end-column="118" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -826,7 +1066,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>silverlib2</last-edited>
+          <last-edited>silverlib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
