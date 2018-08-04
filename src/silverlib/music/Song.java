@@ -18,7 +18,11 @@ import java.util.Arrays;
 public class Song implements Serializable{
     private Sequence song;
 
+    private static final String[] TRACK_NAMES = new String[]{"Treble Cleff", "Bass Cleff", "Treble Acc.", "Bass Acc.", "Other Acc. #1", "Other Acc. #2"};
+
     private int totalLength;
+
+    private String name;
 
     /**
      * Initializes a <code>Song</code> object using the string file path of the source file
@@ -26,21 +30,10 @@ public class Song implements Serializable{
      * @throws IOException If source file loading fails
      * @throws InvalidMidiDataException If <code>Sequence</code> fails to load its <code>Track</code>'s
      *
-     * @since 1.10.0
+     * @since 1.10.4
      */
-    public Song(String filePath) throws IOException, InvalidMidiDataException {
+    public Song(String filePath, boolean debug) throws IOException, InvalidMidiDataException {
         song = new Sequence(Sequence.PPQ,500,6);
-
-        Track trebleTrack = song.getTracks()[1];
-        Track bassTrack = song.getTracks()[2];
-
-        Track trebleAccTrack = song.getTracks()[3];
-        Track bassAccTrack = song.getTracks()[4];
-
-//        ArrayList<Track> tracks = new ArrayList<>();
-//        for (int i = 1; i < song.getTracks().length; i++) {
-//            tracks.add(song.getTracks()[i]);
-//        }
 
         //Load song data
         File srcFile = new File(filePath);
@@ -52,7 +45,7 @@ public class Song implements Serializable{
         String[] rawTxtTracks = modTxt.split("\n%\n");
 
         //Process song information
-        String name = songInfo[0];
+        name = songInfo[0];
         int beatsPerBar = Integer.parseInt(songInfo[1]);
         int beatLength = Note.WHOLE / Integer.parseInt(songInfo[2]);
         String tempo = songInfo[3];
@@ -61,12 +54,30 @@ public class Song implements Serializable{
 
         System.out.println("> Generating song \""+name+"\" from raw text data...");
 
-        ArrayList<String> rawTreble = new ArrayList<>(Arrays.asList(rawTxtTracks[0].replace("\n"," - ").split(" ")));
-        rawTreble.remove("");
+        for (int i = 0; i < rawTxtTracks.length; i++) {
+            ArrayList<String> rawList = new ArrayList<>(Arrays.asList(rawTxtTracks[i].replace("\n"," - ").split(" ")));
+            rawList.remove("");
 
-        ArrayList<String> rawBase = new ArrayList<>(Arrays.asList(rawTxtTracks[1].replace("\n"," - ").split(" ")));
-        rawBase.remove("");
+            this.fillTrack(song.getTracks()[i], rawList, tempo, flats, sharps, TRACK_NAMES[i], debug);
+        }
 
+        ShortMessage stop = new ShortMessage(ShortMessage.STOP);
+        MidiEvent stopi = new MidiEvent(stop,song.getTracks()[1].ticks()+500);
+
+        for (Track th : song.getTracks()) {
+            th.add(stopi);
+        }
+
+        System.out.println("\t> Complete!");
+    }
+
+    private Song(Sequence wholeSequence, String name){
+        song = wholeSequence;
+
+        this.name = name;
+    }
+
+    private void fillTrack(Track out, ArrayList<String> input, String tempo, String flats, String sharps, String trackName, boolean debugMode) throws InvalidMidiDataException {
         //Set variables for beginning
         int volume = Notes.MF.getKeyNum();
         int playhead = 0;
@@ -76,325 +87,75 @@ public class Song implements Serializable{
         int measureCount = 1;
         int curMesLength = 0;
 
-        System.out.println("\t> Loading treble cleff...");
+        System.out.println("\t> Loading "+trackName+"...");
 
-        while (playhead < rawTreble.size()) {
-            String curElem = rawTreble.get(playhead);
-
-            //Handle Crescendos/Decrescendos
-            if (playhead == stopInc){
-                volInc = 0;
-                //System.out.println(volume);
-            }
-
-            volume += volInc;
-
-            //If element is GOTO:#, go to MARK:#
-            if (curElem.contains("GOTO")){
-                String[] pts = curElem.split(":");
-
-                rawTreble.set(playhead,"-");
-
-                playhead = rawTreble.indexOf("MARK:"+pts[1]);
-
-
-            }
-
-            //If element is MARK:#, do nothing
-//            else if (curElem.contains("MARK")) {
-//
-//            }
-
-            //If measure break, print statement
-            else if (curElem.contains("-")){
-                System.out.println("\t\t> Treble Cleff :: Measure #"+measureCount+" @ "+curMesLength+" beats");
-
-                curMesLength = 0;
-                measureCount++;
-            }
-
-            //If element is VOL:X, set volume to X
-            else if (curElem.contains("VOL")){
-                String[] pts = curElem.split(":");
-
-                volume = Notes.match(pts[1]).getKeyNum();
-
-                //System.out.println("Volume set to "+pts[0]+" ("+ volume +")");
-            }
-
-            //If element is CRESC:X:#, take # notes to change to volume X
-            else if (curElem.contains("CRESC")){
-                String[] pts = curElem.split(":");
-
-                int targetV = Notes.match(pts[1]).getKeyNum();
-
-                volInc = (targetV - volume)/Integer.parseInt(pts[2]);
-                stopInc = playhead + Integer.parseInt(pts[2]);
-            }
-
-            //Otherwise, element is a note, so process it
-            else{
-                SlvSound nn = SlvSound.process(curElem, flats, sharps);
-
-                //System.out.println(nn.toString()+" @ "+timeLoc+"ms ("+playhead+")");
-
-                nn.genEvents(trebleTrack,timeLoc,volume);
-                timeLoc += nn.getDuration(tempo);
-                curMesLength += nn.getDuration(tempo);
-
-                //System.out.println(nn.toString()+" @ "+timeLoc+"ms ("+playhead+")");
-            }
-
-            playhead++;
-        }
-
-        //System.out.println(name +"'s treble track is "+timeLoc+" ticks long."+"\n\n");
-
-        //Reset variables for bass track
-         volume = Notes.MF.getKeyNum();
-         playhead = 0;
-         timeLoc = 2000;
-         volInc = 0;
-         stopInc = 0;
-         measureCount = 1;
-         curMesLength = 0;
-
-        System.out.println("\t> Loading bass cleff...");
-
-        while (playhead < rawBase.size()) {
-            String curElem = rawBase.get(playhead);
+        while (playhead < input.size()) {
+            String curElem = input.get(playhead);
+            char cmd = getFunction(curElem);
 
             //Handle Crescendos/Decrescendos
             if (playhead == stopInc){
                 volInc = 0;
-                //System.out.println(volume);
             }
 
             volume += volInc;
 
-            //If element is GOTO:#, go to MARK:#
-            if (curElem.contains("GOTO")){
-                String[] pts = curElem.split(":");
+            switch (cmd){
+                case 'G':
+                    String[] pts = curElem.split(":");
+                    input.set(playhead,"-");
+                    playhead = input.indexOf("MARK:"+pts[1]);
+                    break;
 
-                rawBase.set(playhead,"-");
+                case 'M':
+                    break;
 
-                playhead = rawBase.indexOf("MARK:"+pts[1]);
-            }
+                case 'V':
+                    String[] pts2 = curElem.split(":");
+                    volume = Notes.match(pts2[1]).getKeyNum();
+                    break;
 
-            //If element is MARK:#, do nothing
-//            else if (curElem.contains("MARK")) {
-//
-//            }
+                case 'C':
+                    String[] pts3 = curElem.split(":");
+                    int targetV = Notes.match(pts3[1]).getKeyNum();
+                    volInc = (targetV - volume)/Integer.parseInt(pts3[2]);
+                    stopInc = playhead + Integer.parseInt(pts3[2]);
+                    break;
 
-            //If measure break, print statement
-            else if (curElem.contains("-")){
-                System.out.println("\t\t> Bass Cleff :: Measure #"+measureCount+" @ "+curMesLength+" beats");
+                case 'R':
+                    if (debugMode) {
+                        System.out.println("\t\t> Treble Cleff :: Measure #" + measureCount + " @ " + curMesLength + " beats");
+                    }
 
-                curMesLength = 0;
-                measureCount++;
-            }
+                    curMesLength = 0;
+                    measureCount++;
+                    break;
 
-            //If element is VOL:X, set volume to X
-            else if (curElem.contains("VOL")){
-                String[] pts = curElem.split(":");
-
-                volume = Notes.match(pts[1]).getKeyNum();
-
-                //System.out.println("Volume set to "+pts[0]+" ("+ volume +")");
-            }
-
-            //If element is CRESC:X:#, take # notes to change to volume X
-            else if (curElem.contains("CRESC")){
-                String[] pts = curElem.split(":");
-
-                int targetV = Notes.match(pts[1]).getKeyNum();
-
-                volInc = (targetV- volume)/Integer.parseInt(pts[2]);
-                stopInc = playhead + Integer.parseInt(pts[2]);
-            }
-
-            //Otherwise, element is a note, so process it
-            else {
-                SlvSound nn = SlvSound.process(curElem, flats, sharps);
-
-                //System.out.println(nn.toString()+" @ "+timeLoc+"ms ("+playhead+")");
-
-                nn.genEvents(bassTrack,timeLoc,volume);
-                timeLoc += nn.getDuration(tempo);
-                curMesLength += nn.getDuration(tempo);
+                default:
+                    SlvSound nn = SlvSound.process(curElem, flats, sharps);
+                    nn.genEvents(out,timeLoc,volume);
+                    timeLoc += nn.getDuration(tempo);
+                    curMesLength += nn.getDuration(tempo);
             }
 
             playhead++;
         }
+    }
 
-        int saveStopTime = timeLoc;
-
-
-
-        if (rawTxtTracks.length > 2){
-            ArrayList<String> rawTrebleAcc = new ArrayList<>(Arrays.asList(rawTxtTracks[2].replace("\n"," - ").split(" ")));
-            rawTrebleAcc.remove("");
-
-            ArrayList<String> rawBassAcc = new ArrayList<>(Arrays.asList(rawTxtTracks[3].replace("\n"," - ").split(" ")));
-            rawBassAcc.remove("");
-
-            volume = Notes.MF.getKeyNum();
-            playhead = 0;
-            timeLoc = 2000;
-            volInc = 0;
-            stopInc = 0;
-            measureCount = 1;
-            curMesLength = 0;
-
-            System.out.println("\t> Loading treble accompianment cleff...");
-
-            while (playhead < rawTrebleAcc.size()) {
-                String curElem = rawTrebleAcc.get(playhead);
-
-                //Handle Crescendos/Decrescendos
-                if (playhead == stopInc){
-                    volInc = 0;
-                    //System.out.println(volume);
-                }
-
-                volume += volInc;
-
-                //If element is GOTO:#, go to MARK:#
-                if (curElem.contains("GOTO")){
-                    String[] pts = curElem.split(":");
-
-                    rawTrebleAcc.set(playhead,"-");
-
-                    playhead = rawTrebleAcc.indexOf("MARK:"+pts[1]);
-                }
-
-
-                //If measure break, print statement
-                else if (curElem.contains("-")){
-                    System.out.println("\t\t> Treble Cleff Accompaniment :: Measure #"+measureCount+" @ "+curMesLength+" beats");
-
-                    curMesLength = 0;
-                    measureCount++;
-                }
-
-                //If element is VOL:X, set volume to X
-                else if (curElem.contains("VOL")){
-                    String[] pts = curElem.split(":");
-
-                    volume = Notes.match(pts[1]).getKeyNum();
-
-                    //System.out.println("Volume set to "+pts[0]+" ("+ volume +")");
-                }
-
-                //If element is CRESC:X:#, take # notes to change to volume X
-                else if (curElem.contains("CRESC")){
-                    String[] pts = curElem.split(":");
-
-                    int targetV = Notes.match(pts[1]).getKeyNum();
-
-                    volInc = (targetV- volume)/Integer.parseInt(pts[2]);
-                    stopInc = playhead + Integer.parseInt(pts[2]);
-                }
-
-                //Otherwise, element is a note, so process it
-                else {
-                    SlvSound nn = SlvSound.process(curElem, flats, sharps);
-
-                    //System.out.println(nn.toString()+" @ "+timeLoc+"ms ("+playhead+")");
-
-                    nn.genEvents(trebleAccTrack,timeLoc,volume);
-                    timeLoc += nn.getDuration(tempo);
-                    curMesLength += nn.getDuration(tempo);
-                }
-
-                playhead++;
-            }
-
-            volume = Notes.MF.getKeyNum();
-            playhead = 0;
-            timeLoc = 2000;
-            volInc = 0;
-            stopInc = 0;
-            measureCount = 1;
-            curMesLength = 0;
-
-            System.out.println("\t> Loading bass accompianment cleff...");
-
-            while (playhead < rawBassAcc.size()) {
-                String curElem = rawBassAcc.get(playhead);
-
-                //Handle Crescendos/Decrescendos
-                if (playhead == stopInc){
-                    volInc = 0;
-                    //System.out.println(volume);
-                }
-
-                volume += volInc;
-
-                //If element is GOTO:#, go to MARK:#
-                if (curElem.contains("GOTO")){
-                    String[] pts = curElem.split(":");
-
-                    rawBassAcc.set(playhead,"-");
-
-                    playhead = rawBassAcc.indexOf("MARK:"+pts[1]);
-                }
-
-
-                //If measure break, print statement
-                else if (curElem.contains("-")){
-                    System.out.println("\t\t> Bass Cleff Accompaniment :: Measure #"+measureCount+" @ "+curMesLength+" beats");
-
-                    curMesLength = 0;
-                    measureCount++;
-                }
-
-                //If element is VOL:X, set volume to X
-                else if (curElem.contains("VOL")){
-                    String[] pts = curElem.split(":");
-
-                    volume = Notes.match(pts[1]).getKeyNum();
-
-                    //System.out.println("Volume set to "+pts[0]+" ("+ volume +")");
-                }
-
-                //If element is CRESC:X:#, take # notes to change to volume X
-                else if (curElem.contains("CRESC")){
-                    String[] pts = curElem.split(":");
-
-                    int targetV = Notes.match(pts[1]).getKeyNum();
-
-                    volInc = (targetV- volume)/Integer.parseInt(pts[2]);
-                    stopInc = playhead + Integer.parseInt(pts[2]);
-                }
-
-                //Otherwise, element is a note, so process it
-                else {
-                    SlvSound nn = SlvSound.process(curElem, flats, sharps);
-
-                    //System.out.println(nn.toString()+" @ "+timeLoc+"ms ("+playhead+")");
-
-                    nn.genEvents(bassAccTrack,timeLoc,volume);
-                    timeLoc += nn.getDuration(tempo);
-                    curMesLength += nn.getDuration(tempo);
-                }
-
-                playhead++;
-            }
+    private char getFunction(String cmd){
+        if(cmd.contains("GOTO")){
+            return 'G';
+        } else if (cmd.contains("MARK")) {
+            return 'M';
+        } else if (cmd.contains("VOL")) {
+            return 'V';
+        } else if (cmd.contains("CRESC")) {
+            return 'C';
+        } else if (cmd.contains("-")) {
+            return 'R';
+        } else {
+            return 'N';
         }
-
-        //System.out.println(name +"'s bass track is "+timeLoc+" ticks long.");
-
-        ShortMessage stop = new ShortMessage(ShortMessage.STOP);
-        MidiEvent stopi = new MidiEvent(stop,saveStopTime+500);
-
-        for (Track th : song.getTracks()){
-            th.add(stopi);
-        }
-
-
-
-        System.out.println("\t> Complete!");
     }
 
     /**
@@ -408,50 +169,53 @@ public class Song implements Serializable{
     }
 
     /**
-     * Saves this song to a java serialized
+     * Saves this song to a midi sequence file
      * @param path The path of the file to write to
      * @throws IOException If saving fails
      *
-     * @since 1.10.3
+     * @since 1.10.4
      */
     public void writeToFile(File path) throws IOException {
-        FileOutputStream outF = new FileOutputStream(path);
-
-        ObjectOutputStream fout = new ObjectOutputStream(outF);
-
-        fout.writeObject(this);
-
-        fout.close();
+        MidiSystem.write(song, MidiSystem.getMidiFileTypes(song)[0], path);
     }
 
     /**
-     * Plays the song through the devices current audio output
+     * Plays the song through the devices current audio output, sleeps process until finished, then stops player
      * @throws MidiUnavailableException If Midi is currently unavailable
      * @throws InvalidMidiDataException If the <code>javax.midi.Sequence</code> is corrupted
+     * @throws InterruptedException If the Thread is interrupted
      *
-     * @since 1.10.1
+     * @since 1.10.4
      */
-    public void play() throws MidiUnavailableException, InvalidMidiDataException {
+    public void play() throws MidiUnavailableException, InvalidMidiDataException, InterruptedException {
         Sequencer player = MidiSystem.getSequencer();
         player.setSequence(getSong());
 
         player.open();
         player.start();
+
+        Thread.sleep(song.getMicrosecondLength()/1000);
+
+        player.stop();
     }
 
     /**
-     * Loads a <code>Song</code> object from a Java serialized file
+     * Loads a <code>Song</code> object from a MIDI file
      * @param path The file from which to load
+     * @param nm The name of the Song
      * @return The <code>Song</code>
      * @throws IOException If load fails
-     * @throws ClassNotFoundException If type conversion fails
+     * @throws InvalidMidiDataException If the MIDI file is invalid
+     *
+     * @since 1.10.4
      */
-    public static Song load(File path) throws IOException, ClassNotFoundException {
-        FileInputStream fi = new FileInputStream(path);
-        ObjectInputStream oi = new ObjectInputStream(fi);
+    public static Song load(File path, String nm) throws IOException, InvalidMidiDataException {
+        Sequence seq = MidiSystem.getSequence(path);
 
-        return (Song) oi.readObject();
+        return new Song(seq, nm);
     }
 
-
+    public String getName() {
+        return name;
+    }
 }

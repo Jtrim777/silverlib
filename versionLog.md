@@ -60,3 +60,5 @@
   * 1.10.3: **+** geo.three_dim; **+** geo.three_dim.Shape3D; **+** geo.three_dim.Point3D; **+** geo.three_dim.Line3D;
           **$** music.Song.save(); **+** music.Song.load()
     * 1.10.3.1: **$** music.Song.Song()
+  * 1.10.4: **$** music.Song.Song(String, boolean); **+** music.Song.Song(Sequence); **+** music.Song.fillTrack();
+          **+** music.Song.getFunction(); **$** music.Song.writeToFile(); **$** music.Song.load()
