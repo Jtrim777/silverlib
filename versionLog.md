@@ -62,3 +62,4 @@
     * 1.10.3.1: **$** music.Song.Song()
   * 1.10.4: **$** music.Song.Song(String, boolean); **+** music.Song.Song(Sequence); **+** music.Song.fillTrack();
           **+** music.Song.getFunction(); **$** music.Song.writeToFile(); **$** music.Song.load()
+    * 1.10.4.1: **$** music.Song() now better incorporates time signature

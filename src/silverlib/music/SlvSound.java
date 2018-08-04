@@ -130,9 +130,11 @@ abstract class SlvSound {
      *
      * @since 1.10.0
      */
-    public int getDuration(String tempo){
+    public int getDuration(String tempo, int whole){
         int aTempo = Notes.match(tempo).getKeyNum();
 
-        return (int)((120.0/(double)aTempo) * (double)duration);
+        double timeRatio = (double)whole/(double)Note.WHOLE;
+
+        return (int)((120.0/(double)aTempo) * (double)duration * timeRatio);
     }
 }

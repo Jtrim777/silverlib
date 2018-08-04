@@ -48,6 +48,7 @@ public class Song implements Serializable{
         name = songInfo[0];
         int beatsPerBar = Integer.parseInt(songInfo[1]);
         int beatLength = Note.WHOLE / Integer.parseInt(songInfo[2]);
+        int wholeNote = beatLength * beatsPerBar;
         String tempo = songInfo[3];
         String flats = songInfo[4];
         String sharps = songInfo[5];
@@ -58,7 +59,7 @@ public class Song implements Serializable{
             ArrayList<String> rawList = new ArrayList<>(Arrays.asList(rawTxtTracks[i].replace("\n"," - ").split(" ")));
             rawList.remove("");
 
-            this.fillTrack(song.getTracks()[i], rawList, tempo, flats, sharps, TRACK_NAMES[i], debug);
+            this.fillTrack(song.getTracks()[i], rawList, tempo, flats, sharps, TRACK_NAMES[i], wholeNote, debug);
         }
 
         ShortMessage stop = new ShortMessage(ShortMessage.STOP);
@@ -77,7 +78,7 @@ public class Song implements Serializable{
         this.name = name;
     }
 
-    private void fillTrack(Track out, ArrayList<String> input, String tempo, String flats, String sharps, String trackName, boolean debugMode) throws InvalidMidiDataException {
+    private void fillTrack(Track out, ArrayList<String> input, String tempo, String flats, String sharps, String trackName, int wholeNote, boolean debugMode) throws InvalidMidiDataException {
         //Set variables for beginning
         int volume = Notes.MF.getKeyNum();
         int playhead = 0;
@@ -134,8 +135,8 @@ public class Song implements Serializable{
                 default:
                     SlvSound nn = SlvSound.process(curElem, flats, sharps);
                     nn.genEvents(out,timeLoc,volume);
-                    timeLoc += nn.getDuration(tempo);
-                    curMesLength += nn.getDuration(tempo);
+                    timeLoc += nn.getDuration(tempo, wholeNote);
+                    curMesLength += nn.getDuration(tempo, wholeNote);
             }
 
             playhead++;
