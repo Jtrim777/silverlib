@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28334c4a-e8f2-43ee-9545-8aca2ba8ffcc" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/geo/three_dim/Line3D.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/geo/three_dim/Point3D.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/geo/three_dim/RectPrism.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/geo/three_dim/Shape3D.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/silverlib/music/MusicLibrary.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/build/silverlib/music/Song.class" afterPath="$PROJECT_DIR$/build/silverlib/music/Song.class" />
       <change beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" />
       <change beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" />
       <change beforePath="$PROJECT_DIR$/doc/constant-values.html" afterPath="$PROJECT_DIR$/doc/constant-values.html" />
@@ -16,13 +11,10 @@
       <change beforePath="$PROJECT_DIR$/doc/help-doc.html" afterPath="$PROJECT_DIR$/doc/help-doc.html" />
       <change beforePath="$PROJECT_DIR$/doc/index-all.html" afterPath="$PROJECT_DIR$/doc/index-all.html" />
       <change beforePath="$PROJECT_DIR$/doc/index.html" afterPath="$PROJECT_DIR$/doc/index.html" />
-      <change beforePath="$PROJECT_DIR$/doc/member-search-index.js" afterPath="$PROJECT_DIR$/doc/member-search-index.js" />
       <change beforePath="$PROJECT_DIR$/doc/member-search-index.zip" afterPath="$PROJECT_DIR$/doc/member-search-index.zip" />
       <change beforePath="$PROJECT_DIR$/doc/overview-frame.html" afterPath="$PROJECT_DIR$/doc/overview-frame.html" />
       <change beforePath="$PROJECT_DIR$/doc/overview-summary.html" afterPath="$PROJECT_DIR$/doc/overview-summary.html" />
       <change beforePath="$PROJECT_DIR$/doc/overview-tree.html" afterPath="$PROJECT_DIR$/doc/overview-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/package-list" afterPath="$PROJECT_DIR$/doc/package-list" />
-      <change beforePath="$PROJECT_DIR$/doc/package-search-index.js" afterPath="$PROJECT_DIR$/doc/package-search-index.js" />
       <change beforePath="$PROJECT_DIR$/doc/package-search-index.zip" afterPath="$PROJECT_DIR$/doc/package-search-index.zip" />
       <change beforePath="$PROJECT_DIR$/doc/serialized-form.html" afterPath="$PROJECT_DIR$/doc/serialized-form.html" />
       <change beforePath="$PROJECT_DIR$/doc/silverlib/err/ArgFormatException.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/ArgFormatException.html" />
@@ -96,10 +88,9 @@
       <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/package-frame.html" />
       <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/package-summary.html" />
       <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/type-search-index.js" afterPath="$PROJECT_DIR$/doc/type-search-index.js" />
       <change beforePath="$PROJECT_DIR$/doc/type-search-index.zip" afterPath="$PROJECT_DIR$/doc/type-search-index.zip" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/img/Movie.java" afterPath="$PROJECT_DIR$/src/silverlib/img/Movie.java" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/img/Scene.java" afterPath="$PROJECT_DIR$/src/silverlib/img/Scene.java" />
+      <change beforePath="$PROJECT_DIR$/lib/silverlib.jar" afterPath="$PROJECT_DIR$/lib/silverlib.jar" />
+      <change beforePath="$PROJECT_DIR$/lib/version.txt" afterPath="$PROJECT_DIR$/lib/version.txt" />
       <change beforePath="$PROJECT_DIR$/src/silverlib/music/Song.java" afterPath="$PROJECT_DIR$/src/silverlib/music/Song.java" />
       <change beforePath="$PROJECT_DIR$/version.txt" afterPath="$PROJECT_DIR$/version.txt" />
       <change beforePath="$PROJECT_DIR$/versionLog.md" afterPath="$PROJECT_DIR$/versionLog.md" />
@@ -116,14 +107,14 @@
       <file leaf-file-name="Song.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/silverlib/music/Song.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="392" column="45" lean-forward="false" selection-start-line="392" selection-start-column="45" selection-end-line="392" selection-end-column="45" />
+            <state relative-caret-position="119">
+              <caret line="345" column="70" lean-forward="false" selection-start-line="345" selection-start-column="70" selection-end-line="345" selection-end-column="70" />
               <folding>
                 <element signature="docComment;class#Song#0" expanded="false" />
                 <element signature="docComment;method#Song#0;class#Song#0" expanded="false" />
                 <element signature="docComment;method#getSong#0;class#Song#0" expanded="false" />
-                <element signature="e#13689#13690#0" expanded="true" />
-                <element signature="e#13716#13717#0" expanded="true" />
+                <element signature="e#13261#13262#0" expanded="true" />
+                <element signature="e#13288#13289#0" expanded="true" />
                 <element signature="docComment;method#writeToFile#0;class#Song#0" expanded="false" />
                 <element signature="method#writeToFile#0;class#Song#0" expanded="false" />
                 <element signature="docComment;method#play#0;class#Song#0" expanded="false" />
@@ -138,7 +129,7 @@
       <file leaf-file-name="SlvSound.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/silverlib/music/SlvSound.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="819">
+            <state relative-caret-position="1905">
               <caret line="130" column="20" lean-forward="false" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
               <folding />
             </state>
@@ -148,7 +139,7 @@
       <file leaf-file-name="MusicLibrary.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/silverlib/music/MusicLibrary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="75">
               <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -161,7 +152,7 @@
         <entry file="file://$PROJECT_DIR$/version.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -171,8 +162,8 @@
         <entry file="file://$PROJECT_DIR$/versionLog.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="709">
-                <caret line="59" column="118" lean-forward="false" selection-start-line="59" selection-start-column="118" selection-end-line="59" selection-end-column="118" />
+              <first_editor relative-caret-position="274">
+                <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -266,9 +257,9 @@
         <option value="$PROJECT_DIR$/src/silverlib/geo/three_dim/Shape3D.java" />
         <option value="$PROJECT_DIR$/src/silverlib/geo/three_dim/RectPrism.java" />
         <option value="$PROJECT_DIR$/src/silverlib/geo/three_dim/Test.java" />
-        <option value="$PROJECT_DIR$/version.txt" />
         <option value="$PROJECT_DIR$/src/silverlib/music/MusicLibrary.java" />
         <option value="$PROJECT_DIR$/src/silverlib/music/Song.java" />
+        <option value="$PROJECT_DIR$/version.txt" />
         <option value="$PROJECT_DIR$/versionLog.md" />
       </list>
     </option>
@@ -317,8 +308,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -369,6 +358,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -532,11 +523,19 @@
       <option name="project" value="LOCAL" />
       <updated>1523051359602</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="v1.10.3">
+      <created>1533275373892</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1533275373892</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -548,7 +547,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18055555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18055555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -571,7 +570,8 @@
     <MESSAGE value="v1.9.1.3" />
     <MESSAGE value="v1.9.2" />
     <MESSAGE value="v1.10.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.10.1" />
+    <MESSAGE value="v1.10.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.10.3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -944,40 +944,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/three_dim/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/geo/three_dim/Test.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/sound/midi/Sequence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
           <caret line="190" column="11" lean-forward="false" selection-start-line="190" selection-start-column="11" selection-end-line="190" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/silverlib/music/SlvSound.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
+        <state relative-caret-position="1905">
           <caret line="130" column="20" lean-forward="false" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/silverlib/music/MusicLibrary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/silverlib/music/Song.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="392" column="45" lean-forward="false" selection-start-line="392" selection-start-column="45" selection-end-line="392" selection-end-column="45" />
+        <state relative-caret-position="119">
+          <caret line="345" column="70" lean-forward="false" selection-start-line="345" selection-start-column="70" selection-end-line="345" selection-end-column="70" />
           <folding>
             <element signature="docComment;class#Song#0" expanded="false" />
             <element signature="docComment;method#Song#0;class#Song#0" expanded="false" />
             <element signature="docComment;method#getSong#0;class#Song#0" expanded="false" />
-            <element signature="e#13689#13690#0" expanded="true" />
-            <element signature="e#13716#13717#0" expanded="true" />
+            <element signature="e#13261#13262#0" expanded="true" />
+            <element signature="e#13288#13289#0" expanded="true" />
             <element signature="docComment;method#writeToFile#0;class#Song#0" expanded="false" />
             <element signature="method#writeToFile#0;class#Song#0" expanded="false" />
             <element signature="docComment;method#play#0;class#Song#0" expanded="false" />
@@ -988,20 +990,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/silverlib/music/MusicLibrary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/version.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1009,8 +1001,8 @@
     <entry file="file://$PROJECT_DIR$/versionLog.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="709">
-            <caret line="59" column="118" lean-forward="false" selection-start-line="59" selection-start-column="118" selection-end-line="59" selection-end-column="118" />
+          <first_editor relative-caret-position="274">
+            <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
             <folding />
           </first_editor>
           <second_editor>

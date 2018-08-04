@@ -107,11 +107,7 @@ public class Song implements Serializable{
 
             //If measure break, print statement
             else if (curElem.contains("-")){
-                if(curMesLength != Note.WHOLE/ beatLength * beatsPerBar){
-                    //System.out.println("Measure "+measureCount+" is not full/overfull ("+curMesLength+")");
-                }
-
-                //System.out.println();
+                System.out.println("\t\t> Treble Cleff :: Measure #"+measureCount+" @ "+curMesLength+" beats");
 
                 curMesLength = 0;
                 measureCount++;
@@ -192,11 +188,7 @@ public class Song implements Serializable{
 
             //If measure break, print statement
             else if (curElem.contains("-")){
-                if(curMesLength != 2000){
-                    //System.out.println("Measure "+measureCount+" is not full/overfull ("+curMesLength+")");
-                }
-
-                //System.out.println();
+                System.out.println("\t\t> Bass Cleff :: Measure #"+measureCount+" @ "+curMesLength+" beats");
 
                 curMesLength = 0;
                 measureCount++;
@@ -279,11 +271,7 @@ public class Song implements Serializable{
 
                 //If measure break, print statement
                 else if (curElem.contains("-")){
-                    if(curMesLength != 2000){
-                        //System.out.println("Measure "+measureCount+" is not full/overfull ("+curMesLength+")");
-                    }
-
-                    //System.out.println();
+                    System.out.println("\t\t> Treble Cleff Accompaniment :: Measure #"+measureCount+" @ "+curMesLength+" beats");
 
                     curMesLength = 0;
                     measureCount++;
@@ -355,11 +343,7 @@ public class Song implements Serializable{
 
                 //If measure break, print statement
                 else if (curElem.contains("-")){
-                    if(curMesLength != 2000){
-                        //System.out.println("Measure "+measureCount+" is not full/overfull ("+curMesLength+")");
-                    }
-
-                    //System.out.println();
+                    System.out.println("\t\t> Bass Cleff Accompaniment :: Measure #"+measureCount+" @ "+curMesLength+" beats");
 
                     curMesLength = 0;
                     measureCount++;

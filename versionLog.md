@@ -59,3 +59,4 @@
   * 1.10.2: **+** geo.Point.equals(); **+** geo.ArbitraryShape
   * 1.10.3: **+** geo.three_dim; **+** geo.three_dim.Shape3D; **+** geo.three_dim.Point3D; **+** geo.three_dim.Line3D;
           **$** music.Song.save(); **+** music.Song.load()
+    * 1.10.3.1: **$** music.Song.Song()
