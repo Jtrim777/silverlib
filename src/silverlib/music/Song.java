@@ -27,6 +27,7 @@ public class Song implements Serializable{
     /**
      * Initializes a <code>Song</code> object using the string file path of the source file
      * @param filePath The string file path of the source file
+     * @param debug Prints debug statements during compilation if true
      * @throws IOException If source file loading fails
      * @throws InvalidMidiDataException If <code>Sequence</code> fails to load its <code>Track</code>'s
      *
@@ -56,6 +57,60 @@ public class Song implements Serializable{
         System.out.println("> Generating song \""+name+"\" from raw text data...");
 
         for (int i = 0; i < rawTxtTracks.length; i++) {
+            ArrayList<String> rawList = new ArrayList<>(Arrays.asList(rawTxtTracks[i].replace("\n"," - ").split(" ")));
+            rawList.remove("");
+
+            this.fillTrack(song.getTracks()[i], rawList, tempo, flats, sharps, TRACK_NAMES[i], wholeNote, debug);
+        }
+
+        ShortMessage stop = new ShortMessage(ShortMessage.STOP);
+        MidiEvent stopi = new MidiEvent(stop,song.getTracks()[1].ticks()+500);
+
+        for (Track th : song.getTracks()) {
+            th.add(stopi);
+        }
+
+        System.out.println("\t> Complete!");
+    }
+
+    /**
+     * Initializes a <code>Song</code> object using the string file path of the source file and a specific instrument
+     * @param filePath The string file path of the source file
+     * @param instrument The main instrument to play the song on
+     * @param debug Prints debug statements during compilation if true
+     * @throws IOException If source file loading fails
+     * @throws InvalidMidiDataException If <code>Sequence</code> fails to load its <code>Track</code>'s
+     *
+     * @since 1.10.4
+     */
+    public Song(String filePath, MIntruments instrument, boolean debug) throws IOException, InvalidMidiDataException {
+        song = new Sequence(Sequence.PPQ,500,6);
+
+        //Load song data
+        File srcFile = new File(filePath);
+        String rawData = IO.readFile(srcFile.getAbsolutePath());
+
+        //Process raw string
+        String[] songInfo = rawData.split("\n")[0].split(",");
+        String modTxt = rawData.substring(rawData.indexOf('\n')+1);
+        String[] rawTxtTracks = modTxt.split("\n%\n");
+
+        //Process song information
+        name = songInfo[0];
+        int beatsPerBar = Integer.parseInt(songInfo[1]);
+        int beatLength = Note.WHOLE / Integer.parseInt(songInfo[2]);
+        int wholeNote = beatLength * beatsPerBar;
+        String tempo = songInfo[3];
+        String flats = songInfo[4];
+        String sharps = songInfo[5];
+
+        System.out.println("> Generating song \""+name+"\" from raw text data...");
+
+        for (int i = 0; i < rawTxtTracks.length; i++) {
+            ShortMessage instChangeMsg = new ShortMessage();
+            instChangeMsg.setMessage(ShortMessage.PROGRAM_CHANGE, 0, instrument.getId(), 0);
+            song.getTracks()[i].add(new MidiEvent(instChangeMsg, 0));
+
             ArrayList<String> rawList = new ArrayList<>(Arrays.asList(rawTxtTracks[i].replace("\n"," - ").split(" ")));
             rawList.remove("");
 
@@ -132,6 +187,15 @@ public class Song implements Serializable{
                     measureCount++;
                     break;
 
+                case 'I':
+                    MIntruments target = MIntruments.match(curElem.split(":")[1]);
+
+                    ShortMessage instChangeMsg = new ShortMessage();
+                    instChangeMsg.setMessage(ShortMessage.PROGRAM_CHANGE, 0, target.getId(), 0);
+
+                    out.add(new MidiEvent(instChangeMsg, timeLoc));
+                    break;
+
                 default:
                     SlvSound nn = SlvSound.process(curElem, flats, sharps);
                     nn.genEvents(out,timeLoc,volume);
@@ -154,6 +218,8 @@ public class Song implements Serializable{
             return 'C';
         } else if (cmd.contains("-")) {
             return 'R';
+        } else if (cmd.contains("INST")) {
+            return 'I';
         } else {
             return 'N';
         }

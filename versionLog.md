@@ -53,7 +53,7 @@
           err.ArgFormatException
   * *1.9.3*: **-** geo.Shape.properties; **+** geo.Shape.strokewidth; **$** geo.Shape.draw()
 
-* *1.10*: Music
+* *1.10*: Music and 3D Graphics
   * 1.10.0: music; music.Song; music.Notes; music.SlvSound; music.Note; music.Chord
   * 1.10.1: music.Song.play()
   * 1.10.2: **+** geo.Point.equals(); **+** geo.ArbitraryShape
@@ -63,3 +63,6 @@
   * 1.10.4: **$** music.Song.Song(String, boolean); **+** music.Song.Song(Sequence); **+** music.Song.fillTrack();
           **+** music.Song.getFunction(); **$** music.Song.writeToFile(); **$** music.Song.load()
     * 1.10.4.1: **$** music.Song() now better incorporates time signature
+    * 1.10.4.2: **+** music.Song(String, MInstruments, boolean); **+** music.MInstruments (*1.10.5-b001*)
+    * 1.10.4.3: **$** music.MInstruments.GRAND_PIANO (*1.10.5-b002*)
+  * 1.10.5: Instrument setting for music.Song
