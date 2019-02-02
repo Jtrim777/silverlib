@@ -1,109 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28334c4a-e8f2-43ee-9545-8aca2ba8ffcc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change beforePath="$PROJECT_DIR$/build/silverlib/geo/Line.class" afterPath="$PROJECT_DIR$/build/silverlib/geo/Line.class" />
-      <change beforePath="$PROJECT_DIR$/dist/silverlib-1.10.6-b014.zip" afterPath="$PROJECT_DIR$/dist/silverlib-1.10.6-b014.zip" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" />
-      <change beforePath="$PROJECT_DIR$/doc/constant-values.html" afterPath="$PROJECT_DIR$/doc/constant-values.html" />
-      <change beforePath="$PROJECT_DIR$/doc/deprecated-list.html" afterPath="$PROJECT_DIR$/doc/deprecated-list.html" />
-      <change beforePath="$PROJECT_DIR$/doc/help-doc.html" afterPath="$PROJECT_DIR$/doc/help-doc.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-all.html" afterPath="$PROJECT_DIR$/doc/index-all.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index.html" afterPath="$PROJECT_DIR$/doc/index.html" />
-      <change beforePath="$PROJECT_DIR$/doc/member-search-index.zip" afterPath="$PROJECT_DIR$/doc/member-search-index.zip" />
-      <change beforePath="$PROJECT_DIR$/doc/overview-frame.html" afterPath="$PROJECT_DIR$/doc/overview-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/overview-summary.html" afterPath="$PROJECT_DIR$/doc/overview-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/overview-tree.html" afterPath="$PROJECT_DIR$/doc/overview-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/package-search-index.zip" afterPath="$PROJECT_DIR$/doc/package-search-index.zip" />
-      <change beforePath="$PROJECT_DIR$/doc/serialized-form.html" afterPath="$PROJECT_DIR$/doc/serialized-form.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/ArgFormatException.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/ArgFormatException.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/FunctionFormatException.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/FunctionFormatException.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/NoSuchPropertyException.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/NoSuchPropertyException.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/PointFormatException.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/PointFormatException.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/err/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/err/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/ArbitraryShape.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/ArbitraryShape.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Circle.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Circle.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Dot.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Dot.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Line.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Line.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/PinPoint.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/PinPoint.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Point.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Point.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/PolarPoint.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/PolarPoint.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Rect.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Rect.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/Shape.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/Shape.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/Line3D.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/Line3D.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/Point3D.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/Point3D.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/RectPrism.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/RectPrism.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/Shape3D.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/Shape3D.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/geo/three_dim/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/Img.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/Img.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/Movie.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/Movie.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/Pixel.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/Pixel.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/Scene.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/Scene.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/img/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/img/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/io/IO.html" afterPath="$PROJECT_DIR$/doc/silverlib/io/IO.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/io/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/io/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/io/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/io/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/io/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/io/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/Err.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/Err.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/Log.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/Log.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/Logger.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/Logger.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/log/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/log/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/map/Mercator.html" afterPath="$PROJECT_DIR$/doc/silverlib/map/Mercator.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/map/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/map/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/map/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/map/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/map/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/map/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/Fraction.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/Fraction.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/Geo.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/Geo.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/Num.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/Num.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/Function.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/Function.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/Graph.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/Graph.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/GraphType.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/GraphType.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/LinearFunc.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/LinearFunc.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/PolarFunction.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/PolarFunction.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/PolarGraph.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/PolarGraph.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/Quadrant.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/Quadrant.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/QuadraticFunc.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/QuadraticFunc.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/TrigFunc.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/TrigFunc.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/TrigFuncList.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/TrigFuncList.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/Vector.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/Vector.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/graph/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/graph/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/math/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/math/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/Chord.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/Chord.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/MIntruments.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/MIntruments.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/MusicLibrary.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/MusicLibrary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/Note.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/Note.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/Notes.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/Notes.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/Song.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/Song.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/TestSong.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/TestSong.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/music/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/music/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/Physics.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/Physics.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/package-frame.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/package-summary.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/silverlib/sci/package-tree.html" afterPath="$PROJECT_DIR$/doc/silverlib/sci/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/type-search-index.zip" afterPath="$PROJECT_DIR$/doc/type-search-index.zip" />
-      <change beforePath="$PROJECT_DIR$/lib/silverlib.jar" afterPath="$PROJECT_DIR$/lib/silverlib.jar" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/geo/Line.java" afterPath="$PROJECT_DIR$/src/silverlib/geo/Line.java" />
-    </list>
+    <list default="true" id="28334c4a-e8f2-43ee-9545-8aca2ba8ffcc" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-225">
-              <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -639,6 +537,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1240,7 +1139,7 @@
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-225">
-          <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
           <folding />
         </state>
       </provider>
