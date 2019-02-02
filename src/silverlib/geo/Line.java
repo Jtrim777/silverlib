@@ -26,13 +26,13 @@ public class Line extends Shape {
 
         int numPoints = Math.abs(b.x()-a.x());
         int dir = b.x() > a.x() ? 1 : -1;
-        double dirY = b.y() > a.y() ? 1 : -1;
+//        double dirY = b.y() > a.y() ? 1 : -1;
 
         double slope = (double)(b.y()-a.y())/(double)(b.x()-a.x());
 
         for (int i = 0; i < numPoints; i++) {
             int newX = a.x() + (dir*i);
-            int newY = a.y() + (int)(i*slope*dirY);
+            int newY = a.y() + (int)(i*slope);
             pts.add(new Point(newX,newY));
         }
     }
