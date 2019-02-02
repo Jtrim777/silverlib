@@ -13,13 +13,16 @@ public class Line extends Shape {
     /**
      * Initializes a <code>Line</code> object from two <code>Point</code>s.
      *
-     * @param a The start <code>Point</code>
-     * @param b The end <code>Point</code>
+     * @param p1 The start <code>Point</code>
+     * @param p2 The end <code>Point</code>
      *
      * @since 1.6.10
      */
-    public Line(Point a, Point b) {
-        super(a);
+    public Line(Point p1, Point p2) {
+        super(p1);
+
+        Point a = p2.x > p1.x ? p1 : p2;
+        Point b = p2.x > p1.x ? p2 : p1;
 
         int numPoints = Math.abs(b.x()-a.x());
         int dir = b.x() > a.x() ? 1 : -1;
@@ -32,70 +35,16 @@ public class Line extends Shape {
             int newY = a.y() + (int)(i*slope*dirY);
             pts.add(new Point(newX,newY));
         }
-
-//        Point p1;
-//        Point p2;
-//
-//        if (a.x() <= b.x()) {
-//            p1 = a;
-//            p2 = b;
-//        }
-//        else {
-//            p1 = b;
-//            p2 = a;
-//        }
-//
-//        start = p1;
-//        end = p2;
-//
-//        pts().add(p1);
-//
-//        Fraction slope = new Fraction((p1.y() - p2.y()), (p1.x() - p2.x()));
-//        slope.simplify();
-//
-//        int xT = p1.x();
-//        int yT = p1.y();
-//        int rise = slope.num();
-//        int run = slope.den();
-//
-//        if (rise == 0) {
-//            run = Math.abs(p1.x() - p2.x());
-//        }
-//        if (run == 0) {
-//            rise = Math.abs(p1.y() - p2.y());
-//        }
-//
-//        do {
-//            for (int i = 0; i < Math.abs(rise); i++) {
-//                if (rise < 0) {
-//                    yT--;
-//                }
-//                else {
-//                    yT++;
-//                }
-//
-//                pts().add(new Point(xT, yT));
-//            }
-//
-//            for (int i = 0; i < Math.abs(run); i++) {
-//                //Log.print("Adding "+run +" times");
-//                if (run < 0) {
-//                    xT--;
-//                }
-//                else {
-//                    xT++;
-//                }
-//
-//                pts().add(new Point(xT, yT));
-//            }
-//        } while (xT < p2.x() && yT < p2.y());
     }
 
 
-    public void remake(Point a, Point b) {
+    public void remake(Point p1, Point p2) {
         pts.clear();
 
-        int numPoints = b.x()-a.x();
+        Point a = p2.x > p1.x ? p1 : p2;
+        Point b = p2.x > p1.x ? p2 : p1;
+
+        int numPoints = Math.abs(b.x()-a.x());
         int dir = b.x() > a.x() ? 1 : -1;
         double dirY = b.y() > a.y() ? 1 : -1;
 
