@@ -1,0 +1,2 @@
+Tremolo,4,4,Moderato,X,X
+E4=E5*0.75

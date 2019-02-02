@@ -91,13 +91,13 @@ public class Point {
      * @since 1.9.1
      */
     public static Point adjustForOrigin(Point p, Point o, GraphType sourceType) {
-        int xDiff = p.x - o.x;
+        int xDiff = p.x + o.x;
 
-        int yDiff = p.y - o.y;
+        int yDiff = p.y + o.y;
 
-        if (sourceType == GraphType.CODE) {
-            yDiff = o.y - p.y;
-        }
+//        if (sourceType == GraphType.CODE) {
+//            yDiff = o.y - p.y;
+//        }
 
         return new Point(xDiff, yDiff);
     }
@@ -113,16 +113,35 @@ public class Point {
      * @since 1.9.1
      */
     public static Point adjustForOrigin(int xP, int yP, Point o, GraphType sourceType) {
-        int xDiff = xP - o.x;
+        int xDiff = xP + o.x;
 
-        int yDiff = yP - o.y;
+        int yDiff = yP + o.y;
 
-        if (sourceType == GraphType.CODE) {
-            yDiff = o.y - yP;
-        }
+//        if (sourceType == GraphType.CODE) {
+//            yDiff = o.y - yP;
+//        }
 
         return new Point(xDiff, yDiff);
     }
+
+    /**
+     * Rotates this Point rad radians about Point o
+     * @param o The Point to rotate about
+     * @param rad The number of radians to rotate
+     * @return The adjusted <code>Point</code>
+     *
+     * @since 1.6.10
+     */
+    public Point rotateAbout(Point o, double rad) {
+        int adjX = this.x - o.x;
+        int adjY = this.y - o.y;
+
+        int rotX = (int) (adjX * Math.cos(rad) - adjY * Math.sin(rad));
+        int rotY = (int) (adjY * Math.cos(rad) + adjX * Math.sin(rad));
+
+        return new Point(rotX + o.x,rotY + o.y);
+    }
+
 
 
     /**

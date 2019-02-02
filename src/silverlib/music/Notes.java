@@ -39,27 +39,27 @@ public enum Notes {
     /**
      * The tempo Largo
      */
-    LARGO(40,"Largo"),
+    LARGO(6000,"Largo"),
     /**
      * The tempo Adagio
      */
-    ADAGIO(66,"Adagio"),
+    ADAGIO(3636,"Adagio"),
     /**
      * The tempo Andante
      */
-    ANDANTE(76,"Andante"),
+    ANDANTE(3158,"Andante"),
     /**
      * The tempo Moderato
      */
-    MODERATO(120,"Moderato"),
+    MODERATO(2000,"Moderato"),
     /**
      * The tempo Allegro
      */
-    ALLEGRO(150,"Allegro"),
+    ALLEGRO(1600,"Allegro"),
     /**
      * The tempo Presto
      */
-    PRESTO(180,"Presto"),
+    PRESTO(1333,"Presto"),
 
     C1(24,"C1"),
     C1$(25,"C1#"),

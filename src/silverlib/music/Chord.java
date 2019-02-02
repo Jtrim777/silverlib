@@ -28,6 +28,11 @@ public class Chord extends SlvSound {
             src = src.replace("$","");
         }
 
+        if(sym.contains("!")) {
+            emphasis = 36;
+            src = src.replace("!","");
+        }
+
         if (src.contains("Z")){
             String[] pts = src.split("Z");
 
@@ -38,7 +43,7 @@ public class Chord extends SlvSound {
                 notes[i] = Notes.match(kys[i]);
             }
 
-            duration =(int)((double)Note.WHOLE*Double.parseDouble(pts[1].replace('Y','.')));
+            duration =Double.parseDouble(pts[1].replace('Y','.'));
         }
         else if (src.contains("Y")){
             String[] pts = src.split("Y");
@@ -50,7 +55,7 @@ public class Chord extends SlvSound {
                 notes[i] = Notes.match(kys[i]);
             }
 
-            duration = Note.WHOLE/Integer.parseInt(pts[1]);
+            duration = 1.0/Double.parseDouble(pts[1]);
         }
         else {
             String[] kys = src.split("P");
@@ -60,7 +65,7 @@ public class Chord extends SlvSound {
                 notes[i] = Notes.match(kys[i]);
             }
 
-            duration = Note.QUARTER;
+            duration = 0.25;
         }
 
         //System.out.println(sym + " -> "+src+" -> "+this.toString());

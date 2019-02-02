@@ -65,4 +65,7 @@
     * 1.10.4.1: **$** music.Song() now better incorporates time signature
     * 1.10.4.2: **+** music.Song(String, MInstruments, boolean); **+** music.MInstruments (*1.10.5-b001*)
     * 1.10.4.3: **$** music.MInstruments.GRAND_PIANO (*1.10.5-b002*)
+    * *1.10.5-b002 -> b010*: **$** Further advancements in music.Song (Including trill and tremolo)
   * 1.10.5: Instrument setting for music.Song
+  * 1.10.6: **+** Song.init(File midiEventFile); **+** music.Song.playAt(int pos); **+** music.Song.getSheet();
+            **+** geo.Point.rotateAbout(Point); **$** geo.Point.adjustForOrigin(Point,Point)

@@ -4,6 +4,7 @@ import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiEvent;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
+import silverlib.log.Log;
 
 /** Represents a piano note or chord
  *
@@ -11,13 +12,17 @@ import javax.sound.midi.Track;
  * @author Jake Trimble
  */
 abstract class SlvSound {
-   protected int duration;
+   protected double duration;
    protected Notes[] notes;
 
    private String flats;
    private String sharps;
 
    boolean natural;
+
+   boolean trill = false;
+
+   int emphasis = 0;
 
     /**
      * Creates an SlvSound
@@ -28,7 +33,7 @@ abstract class SlvSound {
      *
      * @since 1.10.0
      */
-   SlvSound(int d, String f, String s, Notes... nts){
+   SlvSound(double d, String f, String s, Notes... nts){
        notes = nts;
        duration = d;
        flats = f;
@@ -84,7 +89,16 @@ abstract class SlvSound {
      *
      * @since 1.10.0
      */
-    public void genEvents(Track track, int timeLoc, int volume) throws InvalidMidiDataException {
+    public void genEvents(Track track, int trackNum, int timeLoc, String tempo, int volume) throws InvalidMidiDataException {
+
+        int vol = volume + emphasis <= 127 ? volume + emphasis : 127;
+
+        if (trill) {
+//            Log.log("Trilling note "+notes[0].getKey());
+            genTrill(track, trackNum, timeLoc, tempo, vol);
+            return;
+        }
+
         for (Notes n : notes){
             int nNum = n.getKeyNum();
 
@@ -93,17 +107,19 @@ abstract class SlvSound {
                     nNum--;
                 }
                 else if (sharps.contains(n.getNote())) {
-                    nNum--;
+                    nNum++;
                 }
             }
 
-            ShortMessage sm = new ShortMessage(ShortMessage.NOTE_ON,0,nNum, volume);
+            ShortMessage sm = new ShortMessage(ShortMessage.NOTE_ON,0,nNum, vol);
             MidiEvent cEvent = new MidiEvent(sm,timeLoc);
 
             track.add(cEvent);
+
+//            System.out.println("\t> Adding note "+n.getKey()+" ("+nNum+") with volume "+vol+" and duration "+getDuration(tempo)+"ms");
         }
 
-        timeLoc += duration;
+        timeLoc += getDuration(tempo);
 
         for (Notes n : notes){
             int nNum = n.getKeyNum();
@@ -113,13 +129,50 @@ abstract class SlvSound {
                     nNum--;
                 }
                 else if (sharps.contains(n.getNote())) {
-                    nNum--;
+                    nNum++;
                 }
             }
 
-            ShortMessage sm = new ShortMessage(ShortMessage.NOTE_OFF,0,nNum, volume);
+            ShortMessage sm = new ShortMessage(ShortMessage.NOTE_OFF,0,nNum, vol);
             MidiEvent cEvent = new MidiEvent(sm,timeLoc);
             track.add(cEvent);
+        }
+    }
+
+    public void genTrill(Track track, int trackNum, int timeLoc, String tempo, int volume) throws InvalidMidiDataException {
+        int primaryKey = notes[0].getKeyNum();
+        int secondKey = primaryKey - 1;
+
+        int tl = timeLoc;
+
+        if(!natural) {
+            if (flats.contains(notes[0].getNote())) {
+                primaryKey--;
+                secondKey--;
+            }
+            else if (sharps.contains(notes[0].getNote())) {
+                primaryKey++;
+                secondKey++;
+            }
+        }
+
+        int occurences = (int)(duration / (1.0/32.0));
+
+//        Log.log("Will trill "+occurences+" (a.k.a. "+duration+"/(1/32)) times");
+
+        for (int i = 0; i < occurences; i++) {
+            int toUse = i%2==0 ? secondKey : primaryKey;
+
+            ShortMessage sm1 = new ShortMessage(ShortMessage.NOTE_ON,0,toUse, volume);
+            MidiEvent cEvent1 = new MidiEvent(sm1,tl);
+
+            track.add(cEvent1);
+
+            tl += new Note(Notes.C4, (1.0/32.0), "", "").getDuration(tempo);
+
+            ShortMessage sm2 = new ShortMessage(ShortMessage.NOTE_OFF,0,toUse, volume);
+            MidiEvent cEvent2 = new MidiEvent(sm2,tl);
+            track.add(cEvent2);
         }
     }
 
@@ -130,11 +183,8 @@ abstract class SlvSound {
      *
      * @since 1.10.0
      */
-    public int getDuration(String tempo, int whole){
-        int aTempo = Notes.match(tempo).getKeyNum();
-
-        double timeRatio = (double)whole/(double)Note.WHOLE;
-
-        return (int)((120.0/(double)aTempo) * (double)duration * timeRatio);
+    public int getDuration(String tempo){
+        int whole = Notes.match(tempo).getKeyNum();
+        return (int)((double)whole * duration);
     }
 }

@@ -33,6 +33,16 @@ public class Note extends SlvSound {
         String src = sym.replace('.','Y');
         src = src.replace('*','Z');
 
+        if(sym.contains("~")) {
+            trill = true;
+            src = src.replace("~","");
+        }
+
+        if(sym.contains("!")) {
+            emphasis = 64;
+            src = src.replace("!","");
+        }
+
         if (sym.contains("$")){
             natural = true;
             src = src.replace("$","");
@@ -43,7 +53,7 @@ public class Note extends SlvSound {
 
             notes[0] = Notes.match(pts[0]);
 
-            duration =(int)((double)WHOLE*Double.parseDouble(pts[1].replace('Y','.')));
+            duration = Double.parseDouble(pts[1].replace('Y','.'));
 
             //System.out.println("Note "+notes[0].getKey()+" with duration "+duration);
         }
@@ -52,17 +62,17 @@ public class Note extends SlvSound {
 
             notes[0] = Notes.match(pts[0]);
 
-            duration = WHOLE/Integer.parseInt(pts[1]);
+            duration = 1.0/Double.parseDouble(pts[1]);
         }  else {
             notes[0] = Notes.match(src);
 
-            duration = QUARTER;
+            duration = 0.25;
         }
 
         //System.out.println(sym + " -> "+src+" -> "+this.toString());
     }
 
-    public Note(Notes k, int d, String f, String s){
+    public Note(Notes k, double d, String f, String s){
         super(d,f,s,k);
     }
 
