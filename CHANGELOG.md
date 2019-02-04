@@ -68,4 +68,4 @@
     * *1.10.5-b002 -> b010*: **$** Further advancements in music.Song (Including trill and tremolo)
   * 1.10.5: Instrument setting for music.Song
   * 1.10.6: **+** Song.init(File midiEventFile); **+** music.Song.playAt(int pos); **+** music.Song.getSheet();
-            **+** geo.Point.rotateAbout(Point); **$** geo.Point.adjustForOrigin(Point,Point)
+            **+** geo.Point.rotateAbout(Point); **$** geo.Point.adjustForOrigin(Point,Point); **$** geo.Line.init()
