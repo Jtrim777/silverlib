@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
-###  [1.10.6 b001-b016]   --   2018-12-5 > 2019-2-4
+###  [1.10.6 b001-b016]   --   2018-12-5 > 2019-2-4 @41f8d7694e5be400675bf68660f01ba0e519b6cb
 ### Added
 - New initializer for `music.Song` from MIDI file
 - `music.Song.playAt(int pos)` to play Song at position
