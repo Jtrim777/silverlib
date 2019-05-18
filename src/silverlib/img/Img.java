@@ -209,7 +209,12 @@ public class Img {
         Log.print(outPix.length + "");
 
         for (int i = 0; i < pixels.length; i++) {
-            outPix[i] = pixels[i].getRGB();
+            try {
+                outPix[i] = pixels[i].getRGB();
+            } catch (NullPointerException e) {
+                outPix[i] = Color.black.getRGB();
+                Log.print("Pixel Error");
+            }
         }
 
         out.setRGB(0, 0, width, height, outPix, 0, width);
