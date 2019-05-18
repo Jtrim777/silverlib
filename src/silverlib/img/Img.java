@@ -206,7 +206,7 @@ public class Img {
 
         int[] outPix = new int[width * height];
 
-        Log.print(outPix.length + "");
+        Log.print("Saving image with " + outPix.length + " pixels to "+nm+".png...");
 
         for (int i = 0; i < pixels.length; i++) {
             try {
