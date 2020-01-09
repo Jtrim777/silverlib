@@ -52,6 +52,7 @@ public class TestRunner {
 
         this.log("Enumerating Fields {", 1);
 
+        this.enumerateFields(targetTestContainer, instance, 0);
 
         this.log("}\n",1);
 
