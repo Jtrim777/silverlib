@@ -3,7 +3,13 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
-###  [1.10.6 b001-b016]   --   2018-12-5 > 2019-2-4
+## [1.11] -- 2020-1-9 (The Testing Update)
+### Added
+- `test` package
+- `test.Tester`: Class used to run assertion tests and examine results
+- `test.TestRunner`: Class used to run tests contained within a class
+
+##  [1.10.6]   --   2019-2-4
 ### Added
 - New initializer for `music.Song` from MIDI file
 - `music.Song.playAt(int pos)` to play Song at position
