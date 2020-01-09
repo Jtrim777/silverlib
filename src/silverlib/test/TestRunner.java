@@ -80,7 +80,7 @@ public class TestRunner {
     }
 
     private void enumerateFields(Class cls, Object ins, int round) throws IllegalAccessException {
-        Field[] allFields = cls.getFields();
+        Field[] allFields = cls.getDeclaredFields();
         this.log("["+allFields.length+" Fields]",2+round);
 
         for (Field f : allFields) {
