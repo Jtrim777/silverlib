@@ -6,11 +6,21 @@ import java.util.Set;
 
 public class TestRunner {
     private final Class targetTestContainer;
+    private boolean doEnumerateFields = true;
+    private int maxFieldDepth = 4;
 
     private static final Set<Class<?>> SIMPLE_WRAPPER_TYPES = getSimpleWrapperTypes();
 
     public TestRunner(Class targetTestContainer) {
         this.targetTestContainer = targetTestContainer;
+    }
+
+    public void setMaxFieldDepth(int maxFieldDepth) {
+        this.maxFieldDepth = maxFieldDepth;
+    }
+
+    public void toggleEnumerateFields() {
+        this.doEnumerateFields = !this.doEnumerateFields;
     }
 
     public static boolean isSimple(Class<?> clazz) {
@@ -62,11 +72,13 @@ public class TestRunner {
 
         this.log("Running Tests on "+targetTestContainer.getName()+" {",0);
 
-        this.log("Enumerating Fields {", 1);
+        if (doEnumerateFields) {
+            this.log("Enumerating Fields {", 1);
 
-        this.enumerateFields(targetTestContainer, instance, 0);
+            this.enumerateFields(targetTestContainer, instance, 0);
 
-        this.log("}\n",1);
+            this.log("}\n",1);
+        }
 
         this.log("Running Test Methods {", 1);
 
@@ -106,7 +118,7 @@ public class TestRunner {
             } else {
                 this.log(fnm+" : "+value.getClass().getName()+" {",2+round);
 
-                if (round < 4) {
+                if (round < maxFieldDepth) {
                     this.enumerateFields(value.getClass(), value, round+1);
                 } else {
                     this.log("[Abbreviated] "+value.toString(),3+round);

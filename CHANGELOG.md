@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file
 - `test.Tester.assertWithin(Number statement, Number expected, double tolerance)`
 - `test.Tester.assertPasses(Object caller, Method m, Object... args)`
 - `test.Tester.assertNull(Object statement)`
+- `maxFieldDepth` & `doEnumerateFields` settings for `test.TestRunner`
 ### Changed
 - `test.Tester.assertTrue()` renamed as `test.Tester.assertEquals()`
 - `test.TestRunner.runTests()` handles exceptions internally
