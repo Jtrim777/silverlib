@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.11.1] -- 2020-1-9
+### Changed
+- `test.TestRunner` made public
+- `test.TestRunner.runTests()` drills down four levels into fields
+
 ## [1.11] -- 2020-1-9 (The Testing Update)
 ### Added
 - `test` package

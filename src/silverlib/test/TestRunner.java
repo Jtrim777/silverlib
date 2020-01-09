@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-class TestRunner {
+public class TestRunner {
     private final Class targetTestContainer;
 
     private static final Set<Class<?>> SIMPLE_WRAPPER_TYPES = getSimpleWrapperTypes();
@@ -52,24 +52,7 @@ class TestRunner {
 
         this.log("Enumerating Fields {", 1);
 
-        for (Field f : allFields) {
-            String fnm = f.getName();
-            Object value = f.get(instance);
 
-            if (TestRunner.isSimple(value.getClass())) {
-                this.log(fnm+" : "+value.toString(),2);
-            } else {
-                this.log(fnm+" : "+value.getClass().getName()+" {",2);
-                Field[] subfields = value.getClass().getDeclaredFields();
-
-                for (Field sf : subfields) {
-                    sf.setAccessible(true);
-                    this.log(sf.getName() + " : "+sf.get(value).toString(), 3);
-                }
-
-                this.log("}",2);
-            }
-        }
         this.log("}\n",1);
 
         this.log("Running Test Methods {", 1);
@@ -92,6 +75,30 @@ class TestRunner {
         this.log("} ["+totalFailiures+" Tests Failed]", 1);
 
         this.log("} [Testing Complete]", 0);
+    }
+
+    private void enumerateFields(Class cls, Object ins, int round) throws IllegalAccessException {
+        Field[] allFields = cls.getFields();
+
+        for (Field f : allFields) {
+            f.setAccessible(true);
+            String fnm = f.getName();
+            Object value = f.get(ins);
+
+            if (TestRunner.isSimple(value.getClass())) {
+                this.log(fnm+" : "+value.toString(),2+round);
+            } else {
+                this.log(fnm+" : "+value.getClass().getName()+" {",2+round);
+
+                if (round < 4) {
+                    this.enumerateFields(value.getClass(), value, round+1);
+                } else {
+                    this.log("[Abbreviated] "+value.toString(),3+round);
+                }
+
+                this.log("}",2+round);
+            }
+        }
     }
 
     private void log(String message, int level) {
