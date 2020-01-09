@@ -88,7 +88,9 @@ public class TestRunner {
             String fnm = f.getName();
             Object value = f.get(ins);
 
-            if (TestRunner.isSimple(value.getClass())) {
+            if (value == null) {
+                this.log(fnm+" : null",2+round);
+            } else if (TestRunner.isSimple(value.getClass())) {
                 this.log(fnm+" : "+value.toString(),2+round);
             } else {
                 this.log(fnm+" : "+value.getClass().getName()+" {",2+round);
