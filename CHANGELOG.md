@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.11.2] -- 2020-1-9
+### Added
+- `test.Tester.assertWithin(Number statement, Number expected, double tolerance)`
+- `test.Tester.assertPasses(Object caller, Method m, Object... args)`
+- `test.Tester.assertNull(Object statement)`
+### Changed
+- `test.Tester.assertTrue()` renamed as `test.Tester.assertEquals()`
+
 ## [1.11.1] -- 2020-1-9
 ### Changed
 - `test.TestRunner` made public
