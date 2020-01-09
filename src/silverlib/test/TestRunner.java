@@ -44,8 +44,9 @@ public class TestRunner {
             if (m.getName().startsWith("test")) {
                 allTestMethods.add(m);
                 this.log("Found testing method: "+m.getName(), 0);
+            }else {
+                this.log("Discarding extraneous method: " + m.getName(), 0);
             }
-            this.log("Discarding extraneous method: "+m.getName(), 0);
         }
 
         this.log("Running Tests on "+targetTestContainer.getName()+" {",0);
@@ -80,6 +81,7 @@ public class TestRunner {
 
     private void enumerateFields(Class cls, Object ins, int round) throws IllegalAccessException {
         Field[] allFields = cls.getFields();
+        this.log("["+allFields.length+" Fields]",2+round);
 
         for (Field f : allFields) {
             f.setAccessible(true);
