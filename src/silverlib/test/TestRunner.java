@@ -33,7 +33,18 @@ public class TestRunner {
     }
 
     @SuppressWarnings("unchecked")
-    public void runTests() throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+    public void runTests() {
+        try {
+            runTestsCore();
+        } catch (Exception e) {
+            this.log("Encountered exceptions when running tests: "+e.getLocalizedMessage(), 0);
+            e.printStackTrace();
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private void runTestsCore() throws NoSuchMethodException, IllegalAccessException,
+            InvocationTargetException, InstantiationException {
         Object instance = targetTestContainer.getDeclaredConstructor().newInstance();
         Field[] allFields = targetTestContainer.getDeclaredFields();
         Method[] allMethods = targetTestContainer.getDeclaredMethods();

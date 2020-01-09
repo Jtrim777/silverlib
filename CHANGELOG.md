@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file
 - `test.Tester.assertNull(Object statement)`
 ### Changed
 - `test.Tester.assertTrue()` renamed as `test.Tester.assertEquals()`
+- `test.TestRunner.runTests()` handles exceptions internally
 
 ## [1.11.1] -- 2020-1-9
 ### Changed
