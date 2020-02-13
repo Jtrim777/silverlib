@@ -1,12 +1,12 @@
 package silverlib.game;
 
 public final class GameUtils {
-  enum KEventType {
+  public enum KEventType {
     PRESSED,
     RELEASED
   }
 
-  enum MEventType {
+  public enum MEventType {
     CLICKED,
     ENTERED,
     EXITED,
@@ -15,7 +15,7 @@ public final class GameUtils {
     MOVED
   }
 
-  enum MButton {
+  public enum MButton {
     LEFT,
     MIDDLE,
     RIGHT,
