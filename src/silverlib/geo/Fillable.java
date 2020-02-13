@@ -10,7 +10,7 @@ import java.awt.Color;
  * @author Jake Trimble
  * @since 1.6.2
  */
-interface Fillable {
+public interface Fillable {
     /**
      * A <code>Color</code> that is completely transparent :
      *

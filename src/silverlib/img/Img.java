@@ -90,7 +90,7 @@ public class Img {
             }
         }
 
-        Log.print("Initialized");
+//        Log.print("Initialized");
     }
 
     /**
@@ -122,7 +122,7 @@ public class Img {
             }
         }
 
-        Log.print("Initialized");
+//        Log.print("Initialized");
     }
 
     /**
@@ -176,7 +176,9 @@ public class Img {
      */
 
     public void drawPoint(Point p, Color n) {
-        set(p.x(), p.y(), n);
+        if (p.x() < width && p.y() < height && p.x() >= 0 && p.y() >= 0 ){
+            set(p.x(), p.y(), n);
+        }
     }
 
     /**

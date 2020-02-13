@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.12] -- 2020-2-12
+### Added
+- `test.SRList` for stupid classes
+- `game` package
+- `game.Game` as main abstract class for implementing games
+- `game.SceneImg` as Game-specific implementation of `Img`
+### Changed
+- Made `geo.Fillable` public
+- `img.Img` now ignore pixels set out of bounds
+
 ## [1.11.2] -- 2020-1-9
 ### Added
 - `test.Tester.assertWithin(Number statement, Number expected, double tolerance)`
