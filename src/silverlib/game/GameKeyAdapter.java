@@ -21,7 +21,7 @@ final class GameKeyAdapter extends AbstractKeyAdapter {
     }
 
     public void apply(String data) {
-      this.currentGame.processKeyEvent(KEventType.RELEASED, data);
+      this.currentGame.processKeyEvent(GameUtils.KEventType.RELEASED, data);
     }
   }
 
@@ -33,12 +33,9 @@ final class GameKeyAdapter extends AbstractKeyAdapter {
     }
 
     public void apply(String data) {
-      this.currentGame.processKeyEvent(KEventType.PRESSED, data);
+      this.currentGame.processKeyEvent(GameUtils.KEventType.PRESSED, data);
     }
   }
 
-  enum KEventType {
-    PRESSED,
-    RELEASED
-  }
+
 }

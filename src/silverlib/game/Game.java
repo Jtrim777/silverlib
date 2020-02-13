@@ -110,7 +110,7 @@ public abstract class Game {
     return render();
   }
 
-  synchronized void processKeyEvent(GameKeyAdapter.KEventType type, String key) {
+  synchronized void processKeyEvent(GameUtils.KEventType type, String key) {
     try {
       if (this.worldExists) {
         this.onKeyEvent(type, key);
@@ -122,10 +122,10 @@ public abstract class Game {
       Runtime.getRuntime().halt(1);
     }
   }
-  public abstract void onKeyEvent(GameKeyAdapter.KEventType type, String key);
+  public abstract void onKeyEvent(GameUtils.KEventType type, String key);
 
-  synchronized void processMouseEvent(GameMouseAdapter.MEventType type,
-                                         GameMouseAdapter.MButton button, Point mPos) {
+  synchronized void processMouseEvent(GameUtils.MEventType type,
+                                      GameUtils.MButton button, Point mPos) {
     try {
       if (this.worldExists) {
         this.onMouseEvent(type, button, mPos);
@@ -137,8 +137,8 @@ public abstract class Game {
       Runtime.getRuntime().halt(1);
     }
   }
-  public abstract void onMouseEvent(GameMouseAdapter.MEventType type,
-                                    GameMouseAdapter.MButton button, Point mPos);
+  public abstract void onMouseEvent(GameUtils.MEventType type,
+                                    GameUtils.MButton button, Point mPos);
 
   public SceneImg getEmptyScene() {
     return new SceneImg(this.width, this.height);

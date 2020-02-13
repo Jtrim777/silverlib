@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.12.1] -- 2020-2-12
+### Added
+- `game.GameUtils`
+### Changed
+- Moved key/button enums to `GameUtils`
+
 ## [1.12] -- 2020-2-12
 ### Added
 - `test.SRList` for stupid classes

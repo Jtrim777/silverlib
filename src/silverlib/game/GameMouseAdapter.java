@@ -22,7 +22,7 @@ final class GameMouseAdapter extends MouseAdapter {
   public void mouseClicked(MouseEvent e) {
     this.currentGame.stopTimer = true;
     this.mousePosn = new Point(e.getX(), e.getY());
-    this.currentGame.processMouseEvent(MEventType.CLICKED, getButtonForEvent(e),
+    this.currentGame.processMouseEvent(GameUtils.MEventType.CLICKED, getButtonForEvent(e),
         this.adjustMousePosn(this.mousePosn));
     this.currentGame.stopTimer = false;
   }
@@ -30,7 +30,7 @@ final class GameMouseAdapter extends MouseAdapter {
   public void mouseEntered(MouseEvent e) {
     this.currentGame.stopTimer = true;
     this.mousePosn = new Point(e.getX(), e.getY());
-    this.currentGame.processMouseEvent(MEventType.ENTERED, getButtonForEvent(e),
+    this.currentGame.processMouseEvent(GameUtils.MEventType.ENTERED, getButtonForEvent(e),
         this.adjustMousePosn(this.mousePosn));
     this.currentGame.stopTimer = false;
   }
@@ -38,7 +38,7 @@ final class GameMouseAdapter extends MouseAdapter {
   public void mouseExited(MouseEvent e) {
     this.currentGame.stopTimer = true;
     this.mousePosn = new Point(e.getX(), e.getY());
-    this.currentGame.processMouseEvent(MEventType.EXITED, getButtonForEvent(e),
+    this.currentGame.processMouseEvent(GameUtils.MEventType.EXITED, getButtonForEvent(e),
         this.adjustMousePosn(this.mousePosn));
     this.currentGame.stopTimer = false;
   }
@@ -46,7 +46,7 @@ final class GameMouseAdapter extends MouseAdapter {
   public void mousePressed(MouseEvent e) {
     this.currentGame.stopTimer = true;
     this.mousePosn = new Point(e.getX(), e.getY());
-    this.currentGame.processMouseEvent(MEventType.PRESSED, getButtonForEvent(e),
+    this.currentGame.processMouseEvent(GameUtils.MEventType.PRESSED, getButtonForEvent(e),
         this.adjustMousePosn(this.mousePosn));
     this.currentGame.stopTimer = false;
   }
@@ -54,7 +54,7 @@ final class GameMouseAdapter extends MouseAdapter {
   public void mouseReleased(MouseEvent e) {
     this.currentGame.stopTimer = true;
     this.mousePosn = new Point(e.getX(), e.getY());
-    this.currentGame.processMouseEvent(MEventType.RELEASED, getButtonForEvent(e),
+    this.currentGame.processMouseEvent(GameUtils.MEventType.RELEASED, getButtonForEvent(e),
         this.adjustMousePosn(this.mousePosn));
     this.currentGame.stopTimer = false;
   }
@@ -62,35 +62,19 @@ final class GameMouseAdapter extends MouseAdapter {
   public void mouseMoved(MouseEvent e) {
     this.currentGame.stopTimer = true;
     this.mousePosn = new Point(e.getX(), e.getY());
-    this.currentGame.processMouseEvent(MEventType.MOVED, getButtonForEvent(e),
+    this.currentGame.processMouseEvent(GameUtils.MEventType.MOVED, getButtonForEvent(e),
         this.adjustMousePosn(this.mousePosn));
     this.currentGame.stopTimer = false;
   }
 
-  private static MButton getButtonForEvent(MouseEvent e){
+  private static GameUtils.MButton getButtonForEvent(MouseEvent e){
     if (SwingUtilities.isLeftMouseButton(e)) {
-      return MButton.LEFT;
+      return GameUtils.MButton.LEFT;
     } else if (SwingUtilities.isMiddleMouseButton(e)) {
-      return MButton.MIDDLE;
+      return GameUtils.MButton.MIDDLE;
     } else {
-      return SwingUtilities.isRightMouseButton(e) ? MButton.RIGHT : MButton.UNKNOWN;
+      return SwingUtilities.isRightMouseButton(e) ? GameUtils.MButton.RIGHT : GameUtils.MButton.UNKNOWN;
     }
-  }
-
-  enum MEventType {
-    CLICKED,
-    ENTERED,
-    EXITED,
-    PRESSED,
-    RELEASED,
-    MOVED
-  }
-
-  enum MButton {
-    LEFT,
-    MIDDLE,
-    RIGHT,
-    UNKNOWN
   }
 }
 
