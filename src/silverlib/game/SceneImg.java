@@ -18,4 +18,8 @@ public class SceneImg extends Img {
       obj.draw(this);
     }
   }
+
+  public void placeSprite(GameSprite sprite, int x, int y) {
+    sprite.drawOn(this, x, y);
+  }
 }

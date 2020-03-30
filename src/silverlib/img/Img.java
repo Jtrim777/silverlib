@@ -276,4 +276,20 @@ public class Img {
             }
         }
     }
+
+    public ArrayList<Pixel> asPixels() {
+        ArrayList<Pixel> out = new ArrayList<>();
+
+        for (int y=0; y<height; y++) {
+            for (int x=0; x<width; x++) {
+                Color cap = this.pixels[(y*width)+x];
+
+                if (cap.getAlpha() > 0) {
+                    out.add(new Pixel(x, y, cap));
+                }
+            }
+        }
+
+        return out;
+    }
 }

@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.12.2] -- 2020-3-29
+### Added
+- `img.Img.asPixels()`
+- `game.GameSprite`
+- `game.SceneImg.placeSprite()`
+
 ## [1.12.1] -- 2020-2-12
 ### Added
 - `game.GameUtils`
