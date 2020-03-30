@@ -284,9 +284,7 @@ public class Img {
             for (int x=0; x<width; x++) {
                 Color cap = this.pixels[(y*width)+x];
 
-                if (cap.getAlpha() > 0) {
-                    out.add(new Pixel(x, y, cap));
-                }
+                out.add(new Pixel(x, y, cap));
             }
         }
 
