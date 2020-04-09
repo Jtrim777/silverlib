@@ -3,11 +3,13 @@ package silverlib.geo;
 import silverlib.err.PointFormatException;
 import silverlib.math.graph.GraphType;
 
+import java.io.Serializable;
+
 /**
  * <h1> Basic Point Class </h1>
  * A class that represents a point in a 2D coordinate plane.
  */
-public class Point {
+public class Point implements Serializable {
     int x;
     int y;
 
@@ -142,7 +144,9 @@ public class Point {
         return new Point(rotX + o.x,rotY + o.y);
     }
 
-
+    public double distanceTo(Point p) {
+        return Math.sqrt(Math.pow(p.y-y,2)+Math.pow(p.x-x,2));
+    }
 
     /**
      * Tests for equality with another <code>Point</code>

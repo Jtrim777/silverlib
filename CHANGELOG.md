@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.12.3] -- 2020-4-9
+### Added
+- `geo.Point.distanceTo(Point other)`
+### Changed
+- `geo.Point implements Serializable`
+
 ## [1.12.2] -- 2020-3-29
 ### Added
 - `img.Img.asPixels()`
