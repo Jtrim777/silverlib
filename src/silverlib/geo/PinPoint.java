@@ -1,6 +1,7 @@
 package silverlib.geo;
 
 import silverlib.err.PointFormatException;
+import silverlib.math.graph.GraphType;
 
 /**
  * <h1> Basic PinPoint Class </h1>
@@ -42,6 +43,30 @@ public class PinPoint {
         else {
             throw new PointFormatException(s);
         }
+    }
+
+    /**
+     * Adjusts point from (0,0) to new origin
+     * @param p The input point
+     * @param o The new origin
+     * @return The adjusted <code>Point</code>
+     *
+     * @since 1.9.1
+     */
+    public static PinPoint adjustForOrigin(PinPoint p, PinPoint o) {
+        double xDiff = p.x + o.x;
+
+        double yDiff = p.y + o.y;
+
+//        if (sourceType == GraphType.CODE) {
+//            yDiff = o.y - p.y;
+//        }
+
+        return new PinPoint(xDiff, yDiff);
+    }
+
+    public Point round() {
+        return new Point((int)Math.round(this.x), (int)Math.round(this.y));
     }
 
     /**

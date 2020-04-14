@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file
 ## [1.12.4] -- 2020-4-14
 ### Added
 - `geo.PinPoint.distanceTo(PinPoint other)`
+- `static geo.PinPoint.adjustForOrigin(PinPoint p, PinPoint o)`
+- `geo.PinPoint.round()`
 
 ## [1.12.3] -- 2020-4-9
 ### Added
