@@ -66,6 +66,10 @@ public class PinPoint {
         return y;
     }
 
+    public double distanceTo(PinPoint p) {
+        return Math.sqrt(Math.pow(p.y-y,2)+Math.pow(p.x-x,2));
+    }
+
     /**
      * Returns the a String representation of the <code>PinPoint</code>, in the
      * form <code>(x,y)</code>.

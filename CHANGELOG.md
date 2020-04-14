@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.12.4] -- 2020-4-14
+### Added
+- `geo.PinPoint.distanceTo(PinPoint other)`
+
 ## [1.12.3] -- 2020-4-9
 ### Added
 - `geo.Point.distanceTo(Point other)`
