@@ -89,7 +89,7 @@ abstract class SlvSound {
      *
      * @since 1.10.0
      */
-    public void genEvents(Track track, int trackNum, int timeLoc, String tempo, int volume,
+    public void genEvents(Track track, int trackNum, int timeLoc, int tempo, int volume,
                           int channel) throws InvalidMidiDataException {
 
         int vol = volume + emphasis <= 127 ? volume + emphasis : 127;
@@ -140,7 +140,7 @@ abstract class SlvSound {
         }
     }
 
-    public void genTrill(Track track, int trackNum, int timeLoc, String tempo, int volume,
+    public void genTrill(Track track, int trackNum, int timeLoc, int tempo, int volume,
                          int channel) throws InvalidMidiDataException {
         int primaryKey = notes[0].getKeyNum();
         int secondKey = primaryKey - 1;
@@ -185,8 +185,7 @@ abstract class SlvSound {
      *
      * @since 1.10.0
      */
-    public int getDuration(String tempo){
-        int whole = Notes.match(tempo).getKeyNum();
-        return (int)((double)whole * duration);
+    public int getDuration(int tempo){
+        return (int)((double)tempo * duration);
     }
 }

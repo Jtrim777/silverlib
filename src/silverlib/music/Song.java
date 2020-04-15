@@ -66,13 +66,20 @@ public class Song implements Serializable{
         int beatsPerBar = Integer.parseInt(songInfo[1]);
         int beatLength = Integer.parseInt(songInfo[2]);
         //int wholeNote = beatLength * beatsPerBar;
-        String tempo = songInfo[3];
+        String rtempo = songInfo[3];
         String flats = songInfo[4];
         String sharps = songInfo[5];
 
+        int tempo;
+        try {
+            tempo = Integer.parseInt(rtempo);
+        } catch (NumberFormatException e) {
+            tempo = Notes.match(rtempo).getKeyNum();
+        }
+
         System.out.println("> Generating song \""+name+"\" from raw text data...");
 
-        int wholeNote = Notes.match(tempo).getKeyNum()/beatLength * beatsPerBar;
+        int wholeNote = tempo/beatLength * beatsPerBar;
 
         for (int i = 0; i < rawTxtTracks.length; i++) {
             ArrayList<String> rawList = new ArrayList<>(Arrays.asList(rawTxtTracks[i].replace("\n"," - ").split(" ")));
@@ -123,12 +130,19 @@ public class Song implements Serializable{
             repTracks[i] = new NoteObjList();
         }
 
-        String tempo = songInfo[3];
+        String rtempo = songInfo[3];
         String flats = songInfo[4];
         String sharps = songInfo[5];
 
-        int wholeNote = Notes.match(tempo).getKeyNum()/beatLength * beatsPerBar;
-        System.out.println("> Whole note for tempo "+tempo+" is "+Notes.match(tempo).getKeyNum()+"ms; With a beat of 1/"+beatLength+" and "+beatsPerBar+" beats per bar, the duration of a whole note is "+wholeNote+"ms");
+        int tempo;
+        try {
+            tempo = Integer.parseInt(rtempo);
+        } catch (NumberFormatException e) {
+            tempo = Notes.match(rtempo).getKeyNum();
+        }
+
+        int wholeNote = tempo/beatLength * beatsPerBar;
+        System.out.println("> Whole note for tempo "+rtempo+" is "+tempo+"ms; With a beat of 1/"+beatLength+" and "+beatsPerBar+" beats per bar, the duration of a whole note is "+wholeNote+"ms");
 
         System.out.println("> Generating song \""+name+"\" from raw text data...");
 
@@ -199,7 +213,8 @@ public class Song implements Serializable{
         }
     }
 
-    private void fillTrack(Track out, int trackNum, ArrayList<String> input, String tempo, String flats, String sharps, String trackName, int wholeNote, boolean debugMode) throws InvalidMidiDataException {
+    private void fillTrack(Track out, int trackNum, ArrayList<String> input, int tempo,
+                           String flats, String sharps, String trackName, int wholeNote, boolean debugMode) throws InvalidMidiDataException {
         //Set variables for beginning
         int volume = Notes.MF.getKeyNum();
         int playhead = 0;

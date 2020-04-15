@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file
 ### Changed
 - `music.Song.fillTrack()` uses separate channels for instruments
 - `music.Song.fillTrack()` no longer creates MIDI events for rests
+- `music.Song()` allows integer tempos
 
 ## [1.12.4] -- 2020-4-14
 ### Added
