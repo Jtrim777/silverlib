@@ -338,7 +338,12 @@ public class Song implements Serializable{
                         curMesLength += n2.getDuration(tempo);
                     }
                     break;
+                case 'S':
+                    SlvSound rest = SlvSound.process(curElem, flats, sharps);
 
+                    timeLoc += rest.getDuration(tempo);
+                    curMesLength += rest.getDuration(tempo);
+                    break;
                 default:
                     SlvSound nn = SlvSound.process(curElem, flats, sharps);
                     nn.genEvents(out, trackNum, timeLoc, tempo, volume, instChannelMap.get(instrument));
@@ -368,6 +373,8 @@ public class Song implements Serializable{
             return 'I';
         } else if (cmd.contains("=")) {
             return 'T';
+        } else if (cmd.contains("_")) {
+            return 'S';
         } else {
             return 'N';
         }
