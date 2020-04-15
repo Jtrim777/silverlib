@@ -209,6 +209,7 @@ public class Song implements Serializable{
         int measureCount = 1;
         int curMesLength = 0;
         MIntruments instrument = MIntruments.GRAND_PIANO;
+        instChannelMap.put(instrument, 0);
 
         System.out.println("\t> Loading "+trackName+"...");
 

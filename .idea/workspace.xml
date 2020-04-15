@@ -266,7 +266,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestSong">
+  <component name="RunManager" selected="Ant Target.Build Library">
     <configuration name="Build Library" type="AntRunConfiguration">
       <antsettings antfile="file://$PROJECT_DIR$/build.xml" target="commit" />
       <method v="2" />
