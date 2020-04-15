@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.12.5] -- 2020-4-15
+### Changed
+- `music.Song.fillTrack()` uses separate channels for instruments
+
 ## [1.12.4] -- 2020-4-14
 ### Added
 - `geo.PinPoint.distanceTo(PinPoint other)`

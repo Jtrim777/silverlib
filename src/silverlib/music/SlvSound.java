@@ -89,13 +89,14 @@ abstract class SlvSound {
      *
      * @since 1.10.0
      */
-    public void genEvents(Track track, int trackNum, int timeLoc, String tempo, int volume) throws InvalidMidiDataException {
+    public void genEvents(Track track, int trackNum, int timeLoc, String tempo, int volume,
+                          int channel) throws InvalidMidiDataException {
 
         int vol = volume + emphasis <= 127 ? volume + emphasis : 127;
 
         if (trill) {
 //            Log.log("Trilling note "+notes[0].getKey());
-            genTrill(track, trackNum, timeLoc, tempo, vol);
+            genTrill(track, trackNum, timeLoc, tempo, vol, channel);
             return;
         }
 
@@ -111,7 +112,7 @@ abstract class SlvSound {
                 }
             }
 
-            ShortMessage sm = new ShortMessage(ShortMessage.NOTE_ON,0,nNum, vol);
+            ShortMessage sm = new ShortMessage(ShortMessage.NOTE_ON,channel,nNum, vol);
             MidiEvent cEvent = new MidiEvent(sm,timeLoc);
 
             track.add(cEvent);
@@ -133,13 +134,14 @@ abstract class SlvSound {
                 }
             }
 
-            ShortMessage sm = new ShortMessage(ShortMessage.NOTE_OFF,0,nNum, vol);
+            ShortMessage sm = new ShortMessage(ShortMessage.NOTE_OFF,channel,nNum, vol);
             MidiEvent cEvent = new MidiEvent(sm,timeLoc);
             track.add(cEvent);
         }
     }
 
-    public void genTrill(Track track, int trackNum, int timeLoc, String tempo, int volume) throws InvalidMidiDataException {
+    public void genTrill(Track track, int trackNum, int timeLoc, String tempo, int volume,
+                         int channel) throws InvalidMidiDataException {
         int primaryKey = notes[0].getKeyNum();
         int secondKey = primaryKey - 1;
 
@@ -163,14 +165,14 @@ abstract class SlvSound {
         for (int i = 0; i < occurences; i++) {
             int toUse = i%2==0 ? secondKey : primaryKey;
 
-            ShortMessage sm1 = new ShortMessage(ShortMessage.NOTE_ON,0,toUse, volume);
+            ShortMessage sm1 = new ShortMessage(ShortMessage.NOTE_ON,channel,toUse, volume);
             MidiEvent cEvent1 = new MidiEvent(sm1,tl);
 
             track.add(cEvent1);
 
             tl += new Note(Notes.C4, (1.0/32.0), "", "").getDuration(tempo);
 
-            ShortMessage sm2 = new ShortMessage(ShortMessage.NOTE_OFF,0,toUse, volume);
+            ShortMessage sm2 = new ShortMessage(ShortMessage.NOTE_OFF,channel,toUse, volume);
             MidiEvent cEvent2 = new MidiEvent(sm2,tl);
             track.add(cEvent2);
         }

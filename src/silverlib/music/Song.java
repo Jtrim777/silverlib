@@ -11,6 +11,7 @@ import javax.sound.midi.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 
 /**
@@ -30,6 +31,9 @@ public class Song implements Serializable{
     private String name;
 
     private NoteObjList[] repTracks;
+
+    private HashMap<MIntruments, Integer> instChannelMap = new HashMap<>();
+    private int maxChannel = 0;
 
     /**
      * Initializes a <code>Song</code> object using the string file path of the source file
@@ -274,9 +278,19 @@ public class Song implements Serializable{
 
                 case 'I':
                     instrument = MIntruments.valueOf(curElem.split(":")[1]);
+                    if (!instChannelMap.containsKey(instrument)) {
+                        maxChannel ++;
+                        instChannelMap.put(instrument, maxChannel);
+                        if (maxChannel > 15) {
+                            throw new InvalidMidiDataException("Too many instruments were " +
+                                "added; Channel "+maxChannel+" is out of range [0,16)");
+                        }
+                    }
 
                     ShortMessage instChangeMsg = new ShortMessage();
-                    instChangeMsg.setMessage(ShortMessage.PROGRAM_CHANGE, 0, instrument.getId(), 0);
+                    instChangeMsg.setMessage(ShortMessage.PROGRAM_CHANGE, instChannelMap.get(instrument),
+                        instrument.getId(),
+                        0);
 
                     out.add(new MidiEvent(instChangeMsg, timeLoc));
 
@@ -314,11 +328,11 @@ public class Song implements Serializable{
                     SlvSound n2 = SlvSound.process(comp2[1] + ".16", flats, sharps);
 
                     for (int i = 0; i < occurences; i++) {
-                        n1.genEvents(out,trackNum,timeLoc,tempo,volume);
+                        n1.genEvents(out,trackNum,timeLoc,tempo,volume, instChannelMap.get(instrument));
                         timeLoc += n1.getDuration(tempo);
                         curMesLength += n1.getDuration(tempo);
 
-                        n2.genEvents(out,trackNum,timeLoc,tempo,volume);
+                        n2.genEvents(out,trackNum,timeLoc,tempo,volume, instChannelMap.get(instrument));
                         timeLoc += n2.getDuration(tempo);
                         curMesLength += n2.getDuration(tempo);
                     }
@@ -326,7 +340,7 @@ public class Song implements Serializable{
 
                 default:
                     SlvSound nn = SlvSound.process(curElem, flats, sharps);
-                    nn.genEvents(out, trackNum, timeLoc, tempo, volume);
+                    nn.genEvents(out, trackNum, timeLoc, tempo, volume, instChannelMap.get(instrument));
                     timeLoc += nn.getDuration(tempo);
                     curMesLength += nn.getDuration(tempo);
                     for (Notes n : nn.notes) {
