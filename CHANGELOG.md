@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.12.6] -- 2020-5-3
+### Added
+- `geo.Point.iterPoints(x1,y1,x2,y2)`
+- `game.SceneImg.overlayImg(Img img)`
+
 ## [1.12.5] -- 2020-4-15
 ### Changed
 - `music.Song.fillTrack()` uses separate channels for instruments

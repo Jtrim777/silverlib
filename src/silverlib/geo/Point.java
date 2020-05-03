@@ -4,6 +4,7 @@ import silverlib.err.PointFormatException;
 import silverlib.math.graph.GraphType;
 
 import java.io.Serializable;
+import java.util.Iterator;
 
 /**
  * <h1> Basic Point Class </h1>
@@ -106,6 +107,22 @@ public class Point implements Serializable {
 
     /**
      * Adjusts point from (0,0) to new origin
+     * @param p The input point
+     * @param o The new origin
+     * @return The adjusted <code>Point</code>
+     *
+     * @since 1.9.1
+     */
+    public static Point adjustForOrigin(Point p, Point o) {
+        int xDiff = p.x + o.x;
+
+        int yDiff = p.y + o.y;
+
+        return new Point(xDiff, yDiff);
+    }
+
+    /**
+     * Adjusts point from (0,0) to new origin
      * @param xP The x component of the input point
      * @param yP The x component of the input point
      * @param o The new origin
@@ -122,6 +139,23 @@ public class Point implements Serializable {
 //        if (sourceType == GraphType.CODE) {
 //            yDiff = o.y - yP;
 //        }
+
+        return new Point(xDiff, yDiff);
+    }
+
+    /**
+     * Adjusts point from (0,0) to new origin
+     * @param xP The x component of the input point
+     * @param yP The x component of the input point
+     * @param o The new origin
+     * @return The adjusted <code>Point</code>
+     *
+     * @since 1.12.6
+     */
+    public static Point adjustForOrigin(int xP, int yP, Point o) {
+        int xDiff = xP + o.x;
+
+        int yDiff = yP + o.y;
 
         return new Point(xDiff, yDiff);
     }
@@ -169,5 +203,34 @@ public class Point implements Serializable {
      */
     public String toString() {
         return "(" + x + "," + y + ")";
+    }
+
+    private static Iterator<Point> genIterator(int x1, int y1, int x2, int y2) {
+        return new Iterator<>() {
+            int cx = x1;
+            int cy = y1;
+
+            @Override
+            public boolean hasNext() {
+                return cx < x2 && cy < y2;
+            }
+
+            @Override
+            public Point next() {
+                Point p = new Point(cx, cy);
+
+                cx++;
+                if (cx >= x2) {
+                    cx = x1;
+                    cy ++;
+                }
+
+                return p;
+            }
+        };
+    }
+
+    public static Iterable<Point> iterPoints(int x1, int y1, int x2, int y2) {
+        return () -> Point.genIterator(x1,y1,x2,y2);
     }
 }
