@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.12.7] -- 2020-5-12
+### Changed
+- `game.GameKeyAdapter` no longer relies on javalib
+
 ## [1.12.6] -- 2020-5-3
 ### Added
 - `geo.Point.iterPoints(x1,y1,x2,y2)`
