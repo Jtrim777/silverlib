@@ -18,6 +18,9 @@ public class SceneImg extends Img {
   public SceneImg(int width, int height, Color bg) {
     super(width, height, bg);
   }
+  public SceneImg(SceneImg from){
+    super(from);
+  }
 
   public void add(Shape obj) {
     if (obj instanceof Fillable) {

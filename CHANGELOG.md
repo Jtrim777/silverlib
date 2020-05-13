@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file
 ## [1.12.7] -- 2020-5-12
 ### Changed
 - `game.GameKeyAdapter` no longer relies on javalib
+### Added
+- `game.SceneImg.init(SceneImg)` for legacy construction
 
 ## [1.12.6] -- 2020-5-3
 ### Added

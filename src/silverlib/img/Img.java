@@ -125,6 +125,12 @@ public class Img {
 //        Log.print("Initialized");
     }
 
+    public Img(Img from) {
+        this.height = from.height;
+        this.width = from.width;
+        this.pixels = from.pixels;
+    }
+
     /**
      * @return The width of the image, in pixels.
      *
