@@ -9,7 +9,7 @@ import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GameSprite {
+public class GameSprite implements ISceneDrawable {
   private ArrayList<Pixel> pixels;
 
   public GameSprite() {
@@ -33,6 +33,8 @@ public class GameSprite {
     }
   }
 
+//  public void drawText
+
   public ArrayList<Pixel> getPixels() {
     return pixels;
   }
@@ -46,5 +48,15 @@ public class GameSprite {
         img.set(nx, ny, px.col());
       }
     }
+  }
+
+  @Override
+  public void drawOnScene(SceneImg scene) {
+    scene.placeSprite(this, 0, 0);
+  }
+
+  @Override
+  public void drawOnScene(SceneImg scene, int x, int y) {
+    scene.placeSprite(this, x, y);
   }
 }

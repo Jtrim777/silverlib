@@ -89,7 +89,7 @@ public class GameCanvas {
     this.panel.clearPanel();
   }
 
-  public void drawScene(Img scene) {
+  public void drawScene(SceneImg scene) {
     if (scene.width() != this.width || scene.height() != this.height) {
       throw new InvalidSceneSizeException(
           String.format("The provided scene of size [%d, %d] does not match the canvas size [%d, " +
@@ -102,6 +102,7 @@ public class GameCanvas {
 
     this.clear();
     this.panel.drawImage(scene, 0,0);
+    scene.getStrings().forEach(this.panel::drawString);
   }
 
   static class InvalidSceneSizeException extends IllegalArgumentException {

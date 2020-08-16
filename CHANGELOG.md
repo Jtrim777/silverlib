@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.12.8] -- 2020-8-16
+### Changed
+- `game.GameSprite` now implements `game.ISceneDrawable`
+### Added
+- `game.ISceneDrawable` to represent objects that can be drawn onto a SceneImg
+- `game.ScreenString` to represent text that is to be drawn on a scene
+- `game.ImgPanel.drawString()` to render a ScreenString
+
 ## [1.12.7] -- 2020-5-12
 ### Changed
 - `game.GameKeyAdapter` no longer relies on javalib

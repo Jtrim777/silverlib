@@ -6,9 +6,13 @@ import silverlib.geo.Fillable;
 import silverlib.img.Img;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 import java.io.IOException;
 
 public class SceneImg extends Img {
+  private List<ScreenString> strings = new ArrayList<>();
+
   public SceneImg(String fpth) throws IOException {
     super(fpth);
   }
@@ -32,6 +36,18 @@ public class SceneImg extends Img {
 
   public void placeSprite(GameSprite sprite, int x, int y) {
     sprite.drawOn(this, x, y);
+  }
+
+  public void addString(String text, int drawX, int drawY) {
+    this.strings.add(new ScreenString(text, drawX, drawY));
+  }
+
+  public void addString(ScreenString str) {
+    this.strings.add(str);
+  }
+
+  public List<ScreenString> getStrings() {
+    return strings;
   }
 
   public void overlayImg(Img img) {

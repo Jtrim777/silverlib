@@ -92,6 +92,10 @@ public class ImgPanel extends JPanel {
     this.repaint();
   }
 
+  public void drawString(ScreenString str) {
+    str.draw(this.getBufferGraphics());
+  }
+
   public final void setFocusable(boolean focusable) {
     this.getInnerPanel().setFocusable(focusable);
   }
