@@ -121,14 +121,14 @@ public class SymbolParser {
     }
   }
 
-  public static void main(String[] args) {
-    String testValue = "~=C4.4";
-    MusicalContext ctxt = new MusicalContext(4, 4, 120, List.of(), List.of());
-
-    SoundEvent out = (SoundEvent) SymbolParser.parseSymbol(testValue, ctxt);
-
-    System.out.println(out.toString());
-  }
+//  public static void main(String[] args) {
+//    String testValue = "~=C4.4";
+//    MusicalContext ctxt = new MusicalContext(4, 4, 120, List.of(), List.of());
+//
+//    SoundEvent out = (SoundEvent) SymbolParser.parseSymbol(testValue, ctxt);
+//
+//    System.out.println(out.toString());
+//  }
 
   enum Modifier {
     TREMOLO('=', 5, 0b00001001, (base, context) -> {
