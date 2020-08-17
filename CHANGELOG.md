@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file
 - `game.ISceneDrawable` to represent objects that can be drawn onto a SceneImg
 - `game.ScreenString` to represent text that is to be drawn on a scene
 - `game.ImgPanel.drawString()` to render a ScreenString
+- `img.Img` now can be constructed from a File object
 
 ## [1.12.7] -- 2020-5-12
 ### Changed

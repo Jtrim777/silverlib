@@ -6,6 +6,7 @@ import silverlib.geo.Fillable;
 import silverlib.img.Img;
 
 import java.awt.Color;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
@@ -15,6 +16,9 @@ public class SceneImg extends Img {
 
   public SceneImg(String fpth) throws IOException {
     super(fpth);
+  }
+  public SceneImg(File file) throws IOException {
+    super(file);
   }
   public SceneImg(int width, int height) {
     super(width, height, Color.WHITE);

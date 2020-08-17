@@ -6,6 +6,7 @@ import silverlib.img.Img;
 import silverlib.img.Pixel;
 
 import java.awt.Color;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -18,6 +19,12 @@ public class GameSprite implements ISceneDrawable {
 
   public GameSprite(String filepath) throws IOException {
     Img imgForm = new Img(filepath);
+
+    this.pixels = imgForm.asPixels();
+  }
+
+  public GameSprite(File file) throws IOException {
+    Img imgForm = new Img(file);
 
     this.pixels = imgForm.asPixels();
   }

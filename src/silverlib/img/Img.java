@@ -22,13 +22,12 @@ public class Img {
     private int width;
 
     /**
-     * Initializes an <code>Img</code> object uploaded from an image file at the given location.
-     * <code>nm</code> must be a valid file location that points to a .png, .jpg, or .jpeg
-     * file.
+     * Initializes an <code>Img</code> object uploaded from an image file.
+     * <code>nm</code> must be a valid file of type .png, .jpg, or .jpeg.
      *
      * @param nm The absolute file location of the desired image
      *
-     * @since 1.3
+     * @since 1.12.8
      */
     public Img(String nm) throws IOException {
         File f = new File(nm);
@@ -48,6 +47,31 @@ public class Img {
         }
     }
 
+    /**
+     * Initializes an <code>Img</code> object uploaded from an image file at the given location.
+     * <code>nm</code> must be a valid file location that points to a .png, .jpg, or .jpeg
+     * file.
+     *
+     * @param f The file which is the source of the image
+     *
+     * @since 1.3
+     */
+    public Img(File f) throws IOException {
+        BufferedImage rawImg = ImageIO.read(f);
+
+        width = rawImg.getWidth();
+        height = rawImg.getHeight();
+
+        int[] rawPix = rawImg.getRGB(0, 0, width, height, null, 0, width);
+
+        //Log.print(rawPix.length + "");
+
+        pixels = new Color[width * height];
+
+        for (int i = 0; i < pixels.length; i++) {
+            pixels[i] = new Color(rawPix[i]);
+        }
+    }
     /**
      * Initializes an <code>Img</code> object given an array of <code>Color</code> objects
      * and the width of the image.The length of <code>pix</code> must be a multiple of <code>w</code>.
