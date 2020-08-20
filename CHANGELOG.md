@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file
 
 ##  [Unreleased]
 
+## [1.12.9] -- 2020-8-20
+### Added
+- `music2` package as a revamp of the music package
+
 ## [1.12.8] -- 2020-8-16
 ### Changed
 - `game.GameSprite` now implements `game.ISceneDrawable`
