@@ -41,17 +41,17 @@ class SoundEvent implements SongEvent {
     return duration;
   }
 
-  public void addToTrack(Track track) throws InvalidMidiDataException {
+  public void addToTrack(Track track, int baseTime) throws InvalidMidiDataException {
     for (SubEvent noe : noteOns) {
       ShortMessage sm = new ShortMessage(ShortMessage.NOTE_ON, channel, noe.noteValue, volume);
-      MidiEvent me = new MidiEvent(sm, startTime + noe.relTime);
+      MidiEvent me = new MidiEvent(sm, baseTime + noe.relTime);
 
       track.add(me);
     }
 
     for (SubEvent noe : noteOffs) {
       ShortMessage sm = new ShortMessage(ShortMessage.NOTE_OFF, channel, noe.noteValue, volume);
-      MidiEvent me = new MidiEvent(sm, startTime + noe.relTime);
+      MidiEvent me = new MidiEvent(sm, baseTime + noe.relTime);
 
       track.add(me);
     }

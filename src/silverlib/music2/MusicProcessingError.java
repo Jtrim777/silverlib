@@ -5,6 +5,12 @@ class MusicProcessingError extends IllegalArgumentException {
     super(message);
   }
 
+  static class SongGenerationError extends MusicProcessingError {
+    SongGenerationError(String msg) {
+      super(msg);
+    }
+  }
+
   static class BadMetadataException extends MusicProcessingError {
     BadMetadataException() {
       super("Metadata line should be provided in the format: " +

@@ -11,7 +11,7 @@ public class RestEvent implements SongEvent {
   }
 
   @Override
-  public void addToTrack(Track track) throws InvalidMidiDataException {
+  public void addToTrack(Track track, int bt) throws InvalidMidiDataException {
 
   }
 

@@ -28,10 +28,23 @@ public class SymbolParser {
       throw new SymbolParsingError("Meta sequences must start with a '?'", raw);
     }
 
-    String body = raw.substring(1);
+    String[] args = raw.substring(1).split(":");
 
+    MetaSequence sequence;
+    try {
+      sequence = MetaSequence.matchSequence(args[0]);
+    } catch (SymbolParsingError e) {
+      throw new SymbolParsingError(e.getMessage(), raw);
+    }
 
-    return null;
+    MetaSongEvent out;
+    try {
+      out = sequence.factory.apply(context, args);
+    } catch (MetaParsingError e) {
+      throw new MetaParsingError(sequence, raw);
+    }
+
+    return out;
   }
 
   private static SoundEvent parseNote(String raw, MusicalContext context) {
@@ -87,7 +100,16 @@ public class SymbolParser {
   }
 
   private static RestEvent parseRest(String raw, MusicalContext context) {
-    return null;
+    if (raw.length() == 1) {
+      return new RestEvent(context.getMeasureDur());
+    } else {
+      String durDel = raw.substring(1,2);
+      String dur = raw.substring(2);
+
+      int idur = (int) (parseDuration(durDel, dur, raw) * context.getWholeNoteDur());
+
+      return new RestEvent(idur);
+    }
   }
 
   private static double parseDuration(String delimiter, String duration, String raw) {
@@ -403,16 +425,42 @@ public class SymbolParser {
       context.setKeySignature(sharps, flats);
 
       return null;
-    })/*,
+    }),
     MARK("key - The name of this mark", (context, args) -> {
       if (args.length != 2) {
         throw new MetaParsingError(null, "");
       }
 
-
+      String key = args[1];
+      return new MetaSongEvent(key);
     }),
-    GOTO(),
-    MSR()*/;
+    VOLTA("key - The name of the volta; idx - The index within the volta", (context, args) -> {
+      if (args.length != 3) {
+        throw new MetaParsingError(null, "");
+      }
+
+      if (args[2].equals("0")) {
+        return new MetaSongEvent(args[1] + "!", "VOLTA");
+      } else {
+        try {
+          int i = Integer.parseInt(args[2]);
+        } catch (NumberFormatException e) {
+          throw new MetaParsingError(null, "");
+        }
+
+        return new MetaSongEvent(args[1] + args[2], "VOLTA");
+      }
+    }),
+    GOTO("key - The mark to go to", (context, args) -> {
+      if (args.length != 2) {
+        throw new MetaParsingError(null, "");
+      }
+
+      return new MetaSongEvent(args[1], "GOTO");
+    }),
+    MSR("", (context, args) -> {
+      return new MetaSongEvent("", "MSR");
+    });
 
     String argDesc;
     BiFunction<MusicalContext, String[], MetaSongEvent> factory;
@@ -420,6 +468,16 @@ public class SymbolParser {
     MetaSequence(String argDesc, BiFunction<MusicalContext, String[], MetaSongEvent> factory) {
       this.argDesc = argDesc;
       this.factory = factory;
+    }
+
+    static MetaSequence matchSequence(String name) {
+      for (MetaSequence m : values()) {
+        if (m.name().equals(name)) {
+          return m;
+        }
+      }
+
+      throw new SymbolParsingError("Unknown meta sequence: " + name, "[]");
     }
   }
 }
