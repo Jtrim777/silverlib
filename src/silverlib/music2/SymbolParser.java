@@ -49,7 +49,7 @@ public class SymbolParser {
 
   private static SoundEvent parseNote(String raw, MusicalContext context) {
     Pattern basePattern = Pattern.compile("([=~^]*)([ABCDEFG]\\d[$#b]?(?:\\|[ABCDEFG]\\d[$#b]?)*)" +
-        "([.*])((?:\\d|\\.|/)*)((?:[+&>!])*)");
+        "(?:([.*])((?:\\d|\\.|/)*))?((?:[+&>!])*)");
 
     Matcher match = basePattern.matcher(raw);
 
@@ -59,15 +59,32 @@ public class SymbolParser {
 
     String prefixes = match.group(1);
     String body = match.group(2);
-    String delimiter = match.group(3);
-    String duration = match.group(4);
-    String suffixes = match.group(5);
+
+    String delimiter;
+    String duration;
+    String suffixes;
+    if (match.groupCount() > 3) {
+      delimiter = match.group(3);
+      duration = match.group(4);
+      suffixes = match.group(5);
+    } else {
+      delimiter = null;
+      duration = null;
+      suffixes = match.group(3);
+    }
 
     List<Note> baseNotes = Arrays.stream(body.split("\\|"))
         .map(Note::new).collect(Collectors.toList());
 
-    double relDur = parseDuration(delimiter, duration, raw);
-    int dur = (int) (relDur * context.getWholeNoteDur());
+    int dur;
+
+    if (delimiter != null) {
+      double relDur = parseDuration(delimiter, duration, raw);
+      dur = (int) (relDur * context.getWholeNoteDur());
+    } else {
+      dur = context.getWholeNoteDur() / 4;
+    }
+
 
     SoundEvent rawEvent = new SoundEvent(context.getTime(), context.getChannel(),
         context.getVolume());
