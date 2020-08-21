@@ -69,13 +69,13 @@ public class Song {
       throw new MusicProcessingError.BadMetadataException();
     }
 
-    int tempo, tsNum, tsDen;
-    String sharps, flats;
+    int tsNum, tsDen;
+    String sharps, flats, tempo;
 
     Scanner metaScanner = new Scanner(metadata);
 
     try {
-      tempo = metaScanner.nextInt();
+      tempo = metaScanner.next();
       tsNum = metaScanner.nextInt();
       tsDen = metaScanner.nextInt();
       sharps = metaScanner.next();
@@ -84,12 +84,23 @@ public class Song {
       throw new MusicProcessingError.BadMetadataException();
     }
 
+    int itempo;
+    try {
+      itempo = Integer.parseInt(tempo);
+    } catch (NumberFormatException e) {
+      try {
+        itempo = Tempos.valueOf(tempo).bpm;
+      } catch (IllegalArgumentException e2) {
+        throw new MusicProcessingError.BadMetadataException("Could not identify tempo");
+      }
+    }
+
     List<Character> sharpsO = extractCharacters(sharps);
 
     List<Character> flatsO = extractCharacters(flats);
 
 
-    return new MusicalContext(tsNum, tsDen, tempo, sharpsO, flatsO);
+    return new MusicalContext(tsNum, tsDen, itempo, sharpsO, flatsO);
   }
 
   private static List<Character> extractCharacters(String raw) {
@@ -97,7 +108,8 @@ public class Song {
         .map(letter -> {
           char c = letter.charAt(0);
           if (!Note.NOTES.contains(c) && c != 'X') {
-            throw new MusicProcessingError.BadMetadataException();
+            throw new MusicProcessingError.BadMetadataException("Unknown symbol for key " +
+                "signature: "+c);
           }
 
           return c;

@@ -17,6 +17,10 @@ class MusicProcessingError extends IllegalArgumentException {
           "\"tempo time_sig_num time_sig_den sharps flats\"; where tempo, time_sig_num, and " +
           "time_sig_den are integers, while sharps and flats are colon-separated characters");
     }
+
+    BadMetadataException(String msg) {
+      super("Error parsing metadata line: " + msg);
+    }
   }
 
   static class NoteFormatException extends MusicProcessingError {

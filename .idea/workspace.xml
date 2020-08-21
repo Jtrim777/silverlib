@@ -4,6 +4,7 @@
     <list default="true" id="28334c4a-e8f2-43ee-9545-8aca2ba8ffcc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Tempos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Tempos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,6 +264,7 @@
       <workItem from="1597856088181" duration="3082000" />
       <workItem from="1597861640722" duration="460000" />
       <workItem from="1597947833875" duration="2517000" />
+      <workItem from="1597969547794" duration="1244000" />
     </task>
     <task id="LOCAL-00001" summary="v1.9.1">
       <created>1520838081145</created>
