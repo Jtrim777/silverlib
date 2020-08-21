@@ -78,8 +78,20 @@ public class SymbolParser {
     }
 
     List<Modifier> mods = new ArrayList<>();
-    prefixes.chars().forEach(c -> mods.add(Modifier.matchSymbol((char) c)));
-    suffixes.chars().forEach(c -> mods.add(Modifier.matchSymbol((char) c)));
+    prefixes.chars().forEach(c -> {
+      try {
+        mods.add(Modifier.matchSymbol((char) c));
+      } catch (NoteParsingError e) {
+        throw new NoteParsingError(e.getMessage(), raw);
+      }
+    });
+    suffixes.chars().forEach(c -> {
+      try {
+        mods.add(Modifier.matchSymbol((char) c));
+      } catch (NoteParsingError e) {
+        throw new NoteParsingError(e.getMessage(), raw);
+      }
+    });
 
     mods.sort((m1, m2) -> m2.precedence - m1.precedence);
 

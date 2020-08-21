@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="28334c4a-e8f2-43ee-9545-8aca2ba8ffcc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/MetaSongEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/MetaSongEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/MusicProcessingError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/MusicProcessingError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/MusicalContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/MusicalContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/RestEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/RestEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/SongEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/SongEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/SoundEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/SoundEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/SymbolParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/SymbolParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +262,7 @@
       <workItem from="1597531643417" duration="4942000" />
       <workItem from="1597856088181" duration="3082000" />
       <workItem from="1597861640722" duration="460000" />
-      <workItem from="1597947833875" duration="1463000" />
+      <workItem from="1597947833875" duration="2517000" />
     </task>
     <task id="LOCAL-00001" summary="v1.9.1">
       <created>1520838081145</created>
@@ -374,6 +367,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1597857158977" />
+    <state x="458" y="205" key="extract.method.dialog" timestamp="1597949816959">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="205" key="extract.method.dialog/0.0.1440.900@0.0.1440.900" timestamp="1597949816959" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1597859884834">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

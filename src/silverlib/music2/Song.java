@@ -84,27 +84,24 @@ public class Song {
       throw new MusicProcessingError.BadMetadataException();
     }
 
-    List<Character> sharpsO = Arrays.stream(sharps.split(":"))
-        .map(letter -> {
-          Character c = letter.charAt(0);
-          if (!Note.NOTES.contains(c)) {
-            throw new MusicProcessingError.BadMetadataException();
-          }
+    List<Character> sharpsO = extractCharacters(sharps);
 
-          return c;
-        }).collect(Collectors.toList());
+    List<Character> flatsO = extractCharacters(flats);
 
-    List<Character> flatsO = Arrays.stream(flats.split(":"))
-        .map(letter -> {
-          Character c = letter.charAt(0);
-          if (!Note.NOTES.contains(c)) {
-            throw new MusicProcessingError.BadMetadataException();
-          }
-
-          return c;
-        }).collect(Collectors.toList());
 
     return new MusicalContext(tsNum, tsDen, tempo, sharpsO, flatsO);
+  }
+
+  private static List<Character> extractCharacters(String raw) {
+    return Arrays.stream(raw.split(":"))
+        .map(letter -> {
+          char c = letter.charAt(0);
+          if (!Note.NOTES.contains(c) && c != 'X') {
+            throw new MusicProcessingError.BadMetadataException();
+          }
+
+          return c;
+        }).filter(c -> c != 'X').collect(Collectors.toList());
   }
 
   private void populateMidiTrack(int number, Track track, List<SongEvent> source)
