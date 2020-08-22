@@ -6,13 +6,13 @@ import java.util.Map;
 class Note {
   static final List<Character> NOTES = List.of('A', 'B', 'C', 'D', 'E', 'F', 'G');
   static final Map<Character, Integer>  NOTE_VALUES = Map.ofEntries(
-      Map.entry('A', 0),
-      Map.entry('B', 2),
-      Map.entry('C', 3),
-      Map.entry('D', 5),
-      Map.entry('E', 7),
-      Map.entry('F', 8),
-      Map.entry('G', 10)
+      Map.entry('A', 9),
+      Map.entry('B', 11),
+      Map.entry('C', 0),
+      Map.entry('D', 2),
+      Map.entry('E', 4),
+      Map.entry('F', 5),
+      Map.entry('G', 7)
   );
 
   char base;
@@ -40,7 +40,7 @@ class Note {
   int getValue(MusicalContext context) {
     context.modify(this);
 
-    return NOTE_VALUES.get(base) + (octave * 13) + mod.diff;
+    return NOTE_VALUES.get(base) + ((octave+1) * 12) + mod.diff;
   }
 
   enum NoteModifier {

@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28334c4a-e8f2-43ee-9545-8aca2ba8ffcc" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/silverlib/music2/BondTheme2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/silverlib/music2/Test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Note.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Song.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/silverlib/music2/SymbolParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/SymbolParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Tempos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Tempos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,17 +26,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>-</find>
-      <find>+</find>
-      <find>$</find>
-      <find>print</find>
-      <find>1.10.3.2</find>
-      <find>_</find>
-      <find>, &quot;.+&quot;</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -87,7 +81,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last.edited.regexp" value="B4.4" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/silverlib/geo" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/silverlib/music2" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -100,8 +94,11 @@
       <recent name="silverlib.geo" />
       <recent name="silverlib.math.graph" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/silverlib/music2" />
+    </key>
   </component>
-  <component name="RunManager" selected="Ant Target.Build Library">
+  <component name="RunManager" selected="Application.Song">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -126,8 +123,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SymbolParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="silverlib.music2.SymbolParser" />
+    <configuration name="Song" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="silverlib.music2.Song" />
       <module name="silverlib" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -140,10 +137,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="silverlib.geo.three_dim.Test" />
+    <configuration name="SymbolParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="silverlib.music2.SymbolParser" />
       <module name="silverlib" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="silverlib.music2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -205,17 +208,17 @@
       <item itemvalue="Ant Target.Build Library" />
       <item itemvalue="Application.ExamplesTest" />
       <item itemvalue="Application.TestSong" />
-      <item itemvalue="Application.Test" />
       <item itemvalue="Application.TestTestGame" />
       <item itemvalue="Application.SymbolParser" />
+      <item itemvalue="Application.Song" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Song" />
         <item itemvalue="Application.SymbolParser" />
         <item itemvalue="Application.TestSong" />
         <item itemvalue="Application.TestTestGame" />
         <item itemvalue="Application.ExamplesTest" />
-        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +266,7 @@
       <workItem from="1597856088181" duration="3082000" />
       <workItem from="1597861640722" duration="460000" />
       <workItem from="1597947833875" duration="2517000" />
-      <workItem from="1597969547794" duration="1853000" />
+      <workItem from="1597969547794" duration="5242000" />
     </task>
     <task id="LOCAL-00001" summary="v1.9.1">
       <created>1520838081145</created>
@@ -368,6 +371,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1597857158977" />
+    <state width="1398" height="392" key="GridCell.Tab.0.bottom" timestamp="1597975175396">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="392" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1597975175396" />
+    <state width="1398" height="392" key="GridCell.Tab.0.center" timestamp="1597975175395">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="392" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1597975175395" />
+    <state width="1398" height="392" key="GridCell.Tab.0.left" timestamp="1597975175394">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="392" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1597975175394" />
+    <state width="1398" height="392" key="GridCell.Tab.0.right" timestamp="1597975175395">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="392" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1597975175395" />
     <state x="458" y="205" key="extract.method.dialog" timestamp="1597949816959">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

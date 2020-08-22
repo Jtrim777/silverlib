@@ -489,6 +489,19 @@ public class SymbolParser {
     }),
     MSR("", (context, args) -> {
       return new MetaSongEvent("", "MSR");
+    }),
+    INST("instrument - The name of the instrument", (context, args) -> {
+      if (args.length != 2) {
+        throw new MetaParsingError(null, "");
+      }
+
+      try {
+        MInstruments inst = MInstruments.valueOf(args[1]);
+        context.setInstrument(inst);
+        return null;
+      } catch (IllegalArgumentException e) {
+        throw new MetaParsingError(null, "");
+      }
     });
 
     String argDesc;

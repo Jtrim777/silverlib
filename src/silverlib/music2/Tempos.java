@@ -6,7 +6,7 @@ enum Tempos {
   ADAGIO(76),
   ANDANTE(108),
   MODERATO(120),
-  ALLEGRO(156),
+  ALLEGRO(150),
   VIVACE(176),
   PRESTO(200);
 

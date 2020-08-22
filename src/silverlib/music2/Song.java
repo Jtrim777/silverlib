@@ -47,6 +47,8 @@ public class Song {
 
     Track[] midiTracks = midiData.getTracks();
 
+//    populateMidiTrack(0, midiTracks[0], tracks.get(0));
+
     for (int i = 0; i < tracks.size(); i++) {
       Track thisTrack = midiTracks[i];
 
@@ -54,12 +56,24 @@ public class Song {
     }
   }
 
+  public static void main(String[] args) throws IOException, InvalidMidiDataException,
+      InterruptedException, MidiUnavailableException {
+    Song testSong = new Song("James Bond Theme", "src/silverlib/music2/BondTheme2.txt");
+
+    testSong.play();
+//    testSong.writeToFile(new File("src/silverlib/music2/lots.midi"));
+
+    System.out.println("Done");
+    System.exit(0);
+  }
+
   private List<SongEvent> generateTrackEvents(List<String> input, MusicalContext context) {
     List<SongEvent> output = new ArrayList<>();
 
-    for (String rawSymbol : input) {
-      output.add(SymbolParser.parseSymbol(rawSymbol, context));
-    }
+    input.stream()
+        .map(raw -> SymbolParser.parseSymbol(raw, context))
+        .filter(Objects::nonNull)
+        .forEach(output::add);
 
     return output;
   }
@@ -118,6 +132,8 @@ public class Song {
 
   private void populateMidiTrack(int number, Track track, List<SongEvent> source)
       throws InvalidMidiDataException {
+    System.out.println("Parsing track #"+number+"...");
+    System.out.println("Track has "+source.size()+" symbols");
     int head = 0;
     int time = 0;
 
@@ -130,7 +146,12 @@ public class Song {
     while (head < source.size()) {
       SongEvent event = source.get(head);
 
-      event.addToTrack(track, time);
+      try {
+        event.addToTrack(track, time);
+      } catch (NullPointerException e) {
+        System.out.println("Could not find an event at head position "+head);
+        throw e;
+      }
       head++;
       time += event.getDuration();
       measureLength += event.getDuration();
@@ -138,7 +159,7 @@ public class Song {
       if (event instanceof MetaSongEvent) {
         MetaSongEvent metaEvent = (MetaSongEvent)event;
 
-        if (metaEvent.getType().isEmpty()) {
+        if (metaEvent.getType() == null) {
           head++;
         }
         else if (metaEvent.getType().equals("GOTO")) {
@@ -179,7 +200,7 @@ public class Song {
   }
 
   private void onEndMeasure(int measure, int length, int trackIndex) {
-
+    System.out.println("[Track " + trackIndex + "] Measure "+measure+" had "+length+" ms");
   }
 
   private static int findMarkIndex(String mark, List<SongEvent> source) {
