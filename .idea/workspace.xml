@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28334c4a-e8f2-43ee-9545-8aca2ba8ffcc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/silverlib/music2/BondTheme2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/silverlib/music2/Test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Note.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/SymbolParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/SymbolParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Tempos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Tempos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +93,7 @@
       <recent name="$PROJECT_DIR$/src/silverlib/music2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Song">
+  <component name="RunManager" selected="Ant Target.Build Library">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -267,6 +262,7 @@
       <workItem from="1597861640722" duration="460000" />
       <workItem from="1597947833875" duration="2517000" />
       <workItem from="1597969547794" duration="5242000" />
+      <workItem from="1598378018117" duration="637000" />
     </task>
     <task id="LOCAL-00001" summary="v1.9.1">
       <created>1520838081145</created>

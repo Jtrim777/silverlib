@@ -56,16 +56,16 @@ public class Song {
     }
   }
 
-  public static void main(String[] args) throws IOException, InvalidMidiDataException,
-      InterruptedException, MidiUnavailableException {
-    Song testSong = new Song("James Bond Theme", "src/silverlib/music2/BondTheme2.txt");
-
-    testSong.play();
-//    testSong.writeToFile(new File("src/silverlib/music2/lots.midi"));
-
-    System.out.println("Done");
-    System.exit(0);
-  }
+//  public static void main(String[] args) throws IOException, InvalidMidiDataException,
+//      InterruptedException, MidiUnavailableException {
+//    Song testSong = new Song("James Bond Theme", "src/silverlib/music2/BondTheme2.txt");
+//
+//    testSong.play();
+////    testSong.writeToFile(new File("src/silverlib/music2/lots.midi"));
+//
+//    System.out.println("Done");
+//    System.exit(0);
+//  }
 
   private List<SongEvent> generateTrackEvents(List<String> input, MusicalContext context) {
     List<SongEvent> output = new ArrayList<>();
@@ -142,6 +142,7 @@ public class Song {
 
     int measureCount = 1;
     int measureLength = 0;
+    int totalLength = 0;
 
     while (head < source.size()) {
       SongEvent event = source.get(head);
@@ -155,6 +156,7 @@ public class Song {
       head++;
       time += event.getDuration();
       measureLength += event.getDuration();
+      totalLength += event.getDuration();
 
       if (event instanceof MetaSongEvent) {
         MetaSongEvent metaEvent = (MetaSongEvent)event;
@@ -191,16 +193,19 @@ public class Song {
           }
         }
         else if (metaEvent.getType().equals("MSR")) {
-          onEndMeasure(measureCount, measureLength, number);
-          measureCount += 1;
-          measureLength = 0;
+          if (measureLength > 0) {
+            onEndMeasure(measureCount, measureLength, totalLength, number);
+            measureCount += 1;
+            measureLength = 0;
+          }
         }
       }
     }
   }
 
-  private void onEndMeasure(int measure, int length, int trackIndex) {
-    System.out.println("[Track " + trackIndex + "] Measure "+measure+" had "+length+" ms");
+  private void onEndMeasure(int measure, int length, int tLen, int trackIndex) {
+    System.out.println(String.format("[Track %d] Measure %d had %d ms (ended at time %d)",
+        trackIndex, measure, length, tLen));
   }
 
   private static int findMarkIndex(String mark, List<SongEvent> source) {
