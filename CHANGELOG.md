@@ -93,7 +93,7 @@ All notable changes to this project will be documented in this file
 - New initializer for `music.Song` from MIDI file
 - `music.Song.playAt(int pos)` to play Song at position
 - `music.Song.getSheet()` to generate sheet music as a `img.Img`
-- `geo.Point.rotateAbout(Point other)` 
+- `geo.Point.rotateAbout(Point other)`
 ### Changed
 - `geo.Point.adjustForOrigin(Point in, Point newOrigin)` uses new algorithm
 - Primary constructor for `geo.Line` uses new algorithm
