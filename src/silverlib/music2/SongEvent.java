@@ -7,4 +7,8 @@ interface SongEvent {
   void addToTrack(Track track, int baseTime) throws InvalidMidiDataException;
 
   int getDuration();
+
+  default int getTrueDuration() {
+    return getDuration();
+  }
 }

@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28334c4a-e8f2-43ee-9545-8aca2ba8ffcc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/SongEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/SongEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/SoundEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/SoundEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/SymbolParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/SymbolParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Tempos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Tempos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silverlib/music2/Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/silverlib/music2/Test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,33 +39,7 @@
       <GitPushTagMode />
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
-  </component>
   <component name="ProjectId" id="1g9fHQLdC0OzW8GFmEhKUh0VOUC" />
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Spelling</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Javadoc issuesJava</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -81,7 +61,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -93,7 +73,7 @@
       <recent name="$PROJECT_DIR$/src/silverlib/music2" />
     </key>
   </component>
-  <component name="RunManager" selected="Ant Target.Build Library">
+  <component name="RunManager" selected="Application.Song">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -262,7 +242,9 @@
       <workItem from="1597861640722" duration="460000" />
       <workItem from="1597947833875" duration="2517000" />
       <workItem from="1597969547794" duration="5242000" />
-      <workItem from="1598378018117" duration="637000" />
+      <workItem from="1598378018117" duration="2828000" />
+      <workItem from="1598417274961" duration="8000" />
+      <workItem from="1599878361519" duration="691000" />
     </task>
     <task id="LOCAL-00001" summary="v1.9.1">
       <created>1520838081145</created>
@@ -367,22 +349,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1597857158977" />
-    <state width="1398" height="392" key="GridCell.Tab.0.bottom" timestamp="1597975175396">
+    <state width="1398" height="552" key="GridCell.Tab.0.bottom" timestamp="1598381811265">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="392" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1597975175396" />
-    <state width="1398" height="392" key="GridCell.Tab.0.center" timestamp="1597975175395">
+    <state width="1398" height="552" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1598381811265" />
+    <state width="1398" height="552" key="GridCell.Tab.0.center" timestamp="1598381811263">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="392" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1597975175395" />
-    <state width="1398" height="392" key="GridCell.Tab.0.left" timestamp="1597975175394">
+    <state width="1398" height="552" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1598381811263" />
+    <state width="1398" height="552" key="GridCell.Tab.0.left" timestamp="1598381811263">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="392" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1597975175394" />
-    <state width="1398" height="392" key="GridCell.Tab.0.right" timestamp="1597975175395">
+    <state width="1398" height="552" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1598381811263" />
+    <state width="1398" height="552" key="GridCell.Tab.0.right" timestamp="1598381811264">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="392" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1597975175395" />
+    <state width="1398" height="552" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1598381811264" />
+    <state x="221" y="69" key="SettingsEditor" timestamp="1599878997651">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state x="221" y="69" key="SettingsEditor/0.23.1440.814/-218.-1057.1920.1057@0.23.1440.814" timestamp="1599878997651" />
     <state x="458" y="205" key="extract.method.dialog" timestamp="1597949816959">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

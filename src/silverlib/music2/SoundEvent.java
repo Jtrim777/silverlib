@@ -41,6 +41,25 @@ class SoundEvent implements SongEvent {
     return duration;
   }
 
+  public int getTrueDuration() {
+    int maxEnd = 0;
+    int minStart = Integer.MAX_VALUE;
+
+    for (SubEvent se : noteOns) {
+      if (se.relTime < minStart) {
+        minStart = se.relTime;
+      }
+    }
+
+    for (SubEvent se : noteOffs) {
+      if (se.relTime > maxEnd) {
+        maxEnd = se.relTime;
+      }
+    }
+
+    return maxEnd - minStart;
+  }
+
   public void addToTrack(Track track, int baseTime) throws InvalidMidiDataException {
     for (SubEvent noe : noteOns) {
       ShortMessage sm = new ShortMessage(ShortMessage.NOTE_ON, channel, noe.noteValue, volume);

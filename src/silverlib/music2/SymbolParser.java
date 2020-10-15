@@ -239,8 +239,9 @@ public class SymbolParser {
       return base;
     }),
     DOT('+', -1, 0, (base, context) -> {
-      int od = base.getDuration();
+      int od = base.getTrueDuration();
       int nd = (int) ((double) od * 1.5);
+      System.out.println("[Note Detail] Applying dot (+) to note; Duration "+od+" -> "+nd);
 
       SoundEvent ne = base.copyCore();
       for (SoundEvent.SubEvent se : base.getNoteOns()) {
@@ -251,6 +252,8 @@ public class SymbolParser {
         int nt = (off.relTime - od) + nd;
         ne.addOffEvent(nt, off.noteValue);
       }
+
+      ne.setDuration(base.getDuration());
 
       return ne;
     }),

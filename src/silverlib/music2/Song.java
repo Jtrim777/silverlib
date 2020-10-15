@@ -56,16 +56,16 @@ public class Song {
     }
   }
 
-//  public static void main(String[] args) throws IOException, InvalidMidiDataException,
-//      InterruptedException, MidiUnavailableException {
-//    Song testSong = new Song("James Bond Theme", "src/silverlib/music2/BondTheme2.txt");
-//
+  public static void main(String[] args) throws IOException, InvalidMidiDataException,
+      InterruptedException, MidiUnavailableException {
+    Song testSong = new Song("Magic to Do", "src/silverlib/music2/Test.txt");
+
 //    testSong.play();
-////    testSong.writeToFile(new File("src/silverlib/music2/lots.midi"));
-//
-//    System.out.println("Done");
-//    System.exit(0);
-//  }
+    testSong.writeToFile(new File("src/silverlib/music2/test.midi"));
+
+    System.out.println("Done");
+    System.exit(0);
+  }
 
   private List<SongEvent> generateTrackEvents(List<String> input, MusicalContext context) {
     List<SongEvent> output = new ArrayList<>();
@@ -155,8 +155,8 @@ public class Song {
       }
       head++;
       time += event.getDuration();
-      measureLength += event.getDuration();
-      totalLength += event.getDuration();
+      measureLength += event.getTrueDuration();
+      totalLength += event.getTrueDuration();
 
       if (event instanceof MetaSongEvent) {
         MetaSongEvent metaEvent = (MetaSongEvent)event;
